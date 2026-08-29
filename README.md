@@ -1,4 +1,4 @@
-# GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 Crypto Cycle Dashboard
+# GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 Crypto Cycle Dashboard
 
 Public, masked static dashboard generated from the isolated GPT-5.6 research
 fork at `../crypto-cycle-detection-gpt56`.
