@@ -9150,14 +9150,14 @@
     ],
     "status": "CORE_FAILED_STRICTER_GATES"
   },
-  "generated_at": "2026-08-30T10:30:27-04:00",
+  "generated_at": "2026-08-30T11:00:28-04:00",
   "ledger": {
-    "count": 657,
+    "count": 658,
     "last": {
       "data_age_days": 0,
       "data_as_of": "2026-08-30",
-      "generated_at": "2026-08-30T10:30:25-04:00",
-      "key": "live|2026-08-30|2026-08-30T10:30",
+      "generated_at": "2026-08-30T11:00:26-04:00",
+      "key": "live|2026-08-30|2026-08-30T11:00",
       "material": true,
       "run_date": "2026-08-30",
       "run_kind": "live",
@@ -9170,21 +9170,21 @@
             "raw-policy divergence >=15pp"
           ],
           "full_policy_target": 0.3482,
-          "price": 78836.0,
+          "price": 78783.0,
           "prior_close_target": 0.4618,
-          "raw_policy_gap": 0.1591,
-          "raw_posterior_target": 0.1891,
+          "raw_policy_gap": 0.159,
+          "raw_posterior_target": 0.1892,
           "top_keep": 1.0,
           "top_phase": "hold",
-          "top_risk": 0.3234
+          "top_risk": 0.3233
         },
         "ETH": {
           "action": "HOLD",
           "flags": [],
-          "full_policy_target": 0.4415,
-          "price": 2475.38,
+          "full_policy_target": 0.4417,
+          "price": 2476.47,
           "prior_close_target": 0.5562,
-          "raw_policy_gap": 0.0936,
+          "raw_policy_gap": 0.0938,
           "raw_posterior_target": 0.3479,
           "top_keep": 1.0,
           "top_phase": "inactive",
@@ -9193,15 +9193,6 @@
       }
     },
     "open_material_signals": [
-      {
-        "action": "BUY_RAISE_TARGET",
-        "asset": "ETH",
-        "flags": [
-          "policy above today-only posterior"
-        ],
-        "gap": 0.1214,
-        "generated_at": "2026-08-29T16:01:03-04:00"
-      },
       {
         "action": "OPTIONAL_CATCHUP_ONLY",
         "asset": "BTC",
@@ -9269,14 +9260,24 @@
         ],
         "gap": 0.1591,
         "generated_at": "2026-08-30T10:30:25-04:00"
+      },
+      {
+        "action": "OPTIONAL_CATCHUP_ONLY",
+        "asset": "BTC",
+        "flags": [
+          "policy above today-only posterior",
+          "raw-policy divergence >=15pp"
+        ],
+        "gap": 0.159,
+        "generated_at": "2026-08-30T11:00:26-04:00"
       }
     ]
   },
   "live_record": {
     "data_age_days": 0,
     "data_as_of": "2026-08-30",
-    "generated_at": "2026-08-30T10:30:25-04:00",
-    "key": "live|2026-08-30|2026-08-30T10:30",
+    "generated_at": "2026-08-30T11:00:26-04:00",
+    "key": "live|2026-08-30|2026-08-30T11:00",
     "material": true,
     "run_date": "2026-08-30",
     "run_kind": "live",
@@ -9289,21 +9290,21 @@
           "raw-policy divergence >=15pp"
         ],
         "full_policy_target": 0.3482,
-        "price": 78836.0,
+        "price": 78783.0,
         "prior_close_target": 0.4618,
-        "raw_policy_gap": 0.1591,
-        "raw_posterior_target": 0.1891,
+        "raw_policy_gap": 0.159,
+        "raw_posterior_target": 0.1892,
         "top_keep": 1.0,
         "top_phase": "hold",
-        "top_risk": 0.3234
+        "top_risk": 0.3233
       },
       "ETH": {
         "action": "HOLD",
         "flags": [],
-        "full_policy_target": 0.4415,
-        "price": 2475.38,
+        "full_policy_target": 0.4417,
+        "price": 2476.47,
         "prior_close_target": 0.5562,
-        "raw_policy_gap": 0.0936,
+        "raw_policy_gap": 0.0938,
         "raw_posterior_target": 0.3479,
         "top_keep": 1.0,
         "top_phase": "inactive",
@@ -9334,15 +9335,15 @@
   "schema_version": 1,
   "watchdog": {
     "data_age_days": 0.0,
-    "expected_latest_slot_et": "2026-08-30T10:30-04:00",
+    "expected_latest_slot_et": "2026-08-30T11:00-04:00",
     "last_close_log_done": "2026-08-29 20:31:40",
-    "last_live_log_done": "2026-08-30 10:01:03",
+    "last_live_log_done": "2026-08-30 10:31:03",
     "minutes_behind_expected": 0.0,
     "reasons": [
       "refresh cadence healthy"
     ],
-    "site_index_mtime_et": "2026-08-30T10:00:30-04:00",
-    "snapshot_generated_at_et": "2026-08-30T10:30-04:00",
+    "site_index_mtime_et": "2026-08-30T10:30:30-04:00",
+    "snapshot_generated_at_et": "2026-08-30T11:00-04:00",
     "status": "PASS"
   }
 }
