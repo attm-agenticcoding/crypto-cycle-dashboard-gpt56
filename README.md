@@ -1,7 +1,7 @@
-# GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 GPT-5.6 Crypto Cycle Dashboard
+# GPT-5.6 GPT-5.6 Crypto Cycle Dashboard
 
-Public, masked static dashboard generated from the isolated GPT-5.6 research
-fork at `../crypto-cycle-detection-gpt56`.
+Public, masked static dashboard generated from
+`crypto-cycle-dashboard-gpt56-source`.
 
 The dashboard keeps the incumbent posterior and historical full-policy replay,
 but its marginal-action planner treats the contemporaneous raw posterior as the
