@@ -1,6 +1,6 @@
 # Common Exam Audit
 
-Generated: 2026-08-30T16:19:15.381143+00:00
+Generated: 2026-08-31T18:59:30.515444+00:00
 Verdict: **FAIL**
 Pre-adjudication (absolute gates): **FAIL** — adjudicated 2026-07-10 (OPTION_A_PLUS_FRONTIER_SCOPED; see docs/COMMON_EXAM_ADJUDICATION_DECISION_2026-07-10.md)
 
@@ -8,7 +8,7 @@ The current dashboard verdict is scoped to the historical utility audit. The str
 
 ## Boundary
 
-- Current utility audit: **WATCH**
+- Current utility audit: **PASS**
 - Common-exam gates: **FAIL**
 - Reason: The existing PASS covers utility, historical replay, jitter, target 90/110/lagged perturbations, leave-one-episode-out, and chronological holdout. The common exam below is a stricter promotion layer and should be read separately from the current utility verdict and from the Fable 2026-07-05 core-only cross-audit.
 
@@ -42,14 +42,14 @@ The current dashboard verdict is scoped to the historical utility audit. The str
 
 | Cap | Source | Effect | Threshold | Observed | Status | Implementation |
 |---|---:|---:|---:|---:|---:|---:|
-| forecast.bottom_down20_calibration_mae_0_18 | policy_risk_tolerance | WATCH_ONLY | <= 0.18 | 0.1959 | TRIGGERED | ENFORCED |
-| forecast.bottom_loco_log_loss_vs_null | baseline_relative_gate | REPORT_ONLY | <= 0.0 | 0.0394 | TRIGGERED | ENFORCED |
-| forecast.bottom_raw_p10_p90_coverage_80 | nominal_statistical_target | REPORT_ONLY | >= 0.8 | 0.5294 | TRIGGERED | ENFORCED |
+| forecast.bottom_loco_log_loss_vs_null | baseline_relative_gate | REPORT_ONLY | <= 0.0 | 0.0441 | TRIGGERED | ENFORCED |
+| forecast.bottom_raw_p10_p90_coverage_80 | nominal_statistical_target | REPORT_ONLY | >= 0.8 | 0.5413 | TRIGGERED | ENFORCED |
 | forecast.bottom_conformal_each_fold_coverage_80 | heuristic_stress_gate | RESEARCH_WARNING | >= 0.8 | 0.0000 | TRIGGERED | ENFORCED |
 | common_exam.parameter_plateau_heldout_edge_deterioration_5pp | heuristic_stress_gate | HARD_PROMOTION_BLOCK | >= -0.05 | -0.1299 | TRIGGERED | ENFORCED |
 | common_exam.synthetic_delayed_lower_low_avg_premium_60 | heuristic_stress_gate | HARD_PROMOTION_BLOCK | <= 0.6 | 0.7336 | TRIGGERED | ENFORCED |
 | common_exam.synthetic_false_bottom_unlock_20pp | heuristic_stress_gate | HARD_PROMOTION_BLOCK | <= 0.2 | 0.2260 | TRIGGERED | ENFORCED |
-| forecast.top_drawdown35_calibration_mae_0_18 | policy_risk_tolerance | WATCH_ONLY | <= 0.18 | 0.1681 | PASS | ENFORCED |
+| forecast.bottom_down20_calibration_mae_0_18 | policy_risk_tolerance | WATCH_ONLY | <= 0.18 | 0.1772 | PASS | ENFORCED |
+| forecast.top_drawdown35_calibration_mae_0_18 | policy_risk_tolerance | WATCH_ONLY | <= 0.18 | 0.1730 | PASS | ENFORCED |
 | current_utility.accum_parameter_stability_terminal_win_50 | heuristic_stress_gate | WATCH_ONLY | >= 0.5 | 0.8750 | PASS | ENFORCED |
 | current_utility.accum_window_jitter_terminal_win_60 | heuristic_stress_gate | WATCH_ONLY | >= 0.6 | 0.7500 | PASS | ENFORCED |
 | current_utility.accum_window_jitter_cost_win_50 | heuristic_stress_gate | WATCH_ONLY | >= 0.5 | 0.6250 | PASS | ENFORCED |
@@ -59,7 +59,7 @@ The current dashboard verdict is scoped to the historical utility audit. The str
 | current_utility.accum_target_perturbation_worst_terminal_edge_minus15 | heuristic_stress_gate | WATCH_ONLY | >= -0.15 | -0.0371 | PASS | ENFORCED |
 | current_utility.accum_loo_worst_terminal_edge_minus15 | heuristic_stress_gate | WATCH_ONLY | >= -0.15 | -0.0197 | PASS | ENFORCED |
 | current_utility.distribution_parameter_stability_win_rate_70 | heuristic_stress_gate | WATCH_ONLY | >= 0.7 | 1.0000 | PASS | ENFORCED |
-| current_utility.distribution_parameter_stability_end_value_75 | heuristic_stress_gate | WATCH_ONLY | >= 0.75 | 1.0927 | PASS | ENFORCED |
+| current_utility.distribution_parameter_stability_end_value_75 | heuristic_stress_gate | WATCH_ONLY | >= 0.75 | 0.8572 | PASS | ENFORCED |
 | ... | ... | ... | ... | ... | ... | 9 more in JSON |
 
 ## Pre-Registered Gates

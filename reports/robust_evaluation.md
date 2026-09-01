@@ -1,10 +1,11 @@
 # Robust Evaluation
 
-Generated: 2026-08-30T16:19:15.381143+00:00
-Verdict: **WATCH_CURRENT_UTILITY_AUDIT**
+Generated: 2026-08-31T18:59:30.515444+00:00
+Verdict: **PASS_CURRENT_UTILITY_AUDIT**
 
 Reasons:
-- bottom calibration MAE 0.20 > 0.18
+- all current utility promotion gates passed
+- common-exam plateau and synthetic adverse-path gates are reported separately and are not included in this scoped verdict
 
 Boundary:
 - This verdict covers the historical utility audit, replay/jitter/target perturbation checks, leave-one-episode-out, and chronological holdout shown below.
@@ -30,14 +31,14 @@ Boundary:
 
 | Cap | Source | Effect | Threshold | Observed | Status | Implementation |
 |---|---:|---:|---:|---:|---:|---:|
-| forecast.bottom_down20_calibration_mae_0_18 | policy_risk_tolerance | WATCH_ONLY | <= 0.18 | 0.1959 | TRIGGERED | ENFORCED |
-| forecast.bottom_loco_log_loss_vs_null | baseline_relative_gate | REPORT_ONLY | <= 0.0 | 0.0394 | TRIGGERED | ENFORCED |
-| forecast.bottom_raw_p10_p90_coverage_80 | nominal_statistical_target | REPORT_ONLY | >= 0.8 | 0.5294 | TRIGGERED | ENFORCED |
+| forecast.bottom_loco_log_loss_vs_null | baseline_relative_gate | REPORT_ONLY | <= 0.0 | 0.0441 | TRIGGERED | ENFORCED |
+| forecast.bottom_raw_p10_p90_coverage_80 | nominal_statistical_target | REPORT_ONLY | >= 0.8 | 0.5413 | TRIGGERED | ENFORCED |
 | forecast.bottom_conformal_each_fold_coverage_80 | heuristic_stress_gate | RESEARCH_WARNING | >= 0.8 | 0.0000 | TRIGGERED | ENFORCED |
 | common_exam.parameter_plateau_heldout_edge_deterioration_5pp | heuristic_stress_gate | HARD_PROMOTION_BLOCK | >= -0.05 | -0.1299 | TRIGGERED | ENFORCED |
 | common_exam.synthetic_delayed_lower_low_avg_premium_60 | heuristic_stress_gate | HARD_PROMOTION_BLOCK | <= 0.6 | 0.7336 | TRIGGERED | ENFORCED |
 | common_exam.synthetic_false_bottom_unlock_20pp | heuristic_stress_gate | HARD_PROMOTION_BLOCK | <= 0.2 | 0.2260 | TRIGGERED | ENFORCED |
-| forecast.top_drawdown35_calibration_mae_0_18 | policy_risk_tolerance | WATCH_ONLY | <= 0.18 | 0.1681 | PASS | ENFORCED |
+| forecast.bottom_down20_calibration_mae_0_18 | policy_risk_tolerance | WATCH_ONLY | <= 0.18 | 0.1772 | PASS | ENFORCED |
+| forecast.top_drawdown35_calibration_mae_0_18 | policy_risk_tolerance | WATCH_ONLY | <= 0.18 | 0.1730 | PASS | ENFORCED |
 | current_utility.accum_parameter_stability_terminal_win_50 | heuristic_stress_gate | WATCH_ONLY | >= 0.5 | 0.8750 | PASS | ENFORCED |
 | current_utility.accum_window_jitter_terminal_win_60 | heuristic_stress_gate | WATCH_ONLY | >= 0.6 | 0.7500 | PASS | ENFORCED |
 | current_utility.accum_window_jitter_cost_win_50 | heuristic_stress_gate | WATCH_ONLY | >= 0.5 | 0.6250 | PASS | ENFORCED |
@@ -47,17 +48,17 @@ Boundary:
 | current_utility.accum_target_perturbation_worst_terminal_edge_minus15 | heuristic_stress_gate | WATCH_ONLY | >= -0.15 | -0.0371 | PASS | ENFORCED |
 | current_utility.accum_loo_worst_terminal_edge_minus15 | heuristic_stress_gate | WATCH_ONLY | >= -0.15 | -0.0197 | PASS | ENFORCED |
 | current_utility.distribution_parameter_stability_win_rate_70 | heuristic_stress_gate | WATCH_ONLY | >= 0.7 | 1.0000 | PASS | ENFORCED |
-| current_utility.distribution_parameter_stability_end_value_75 | heuristic_stress_gate | WATCH_ONLY | >= 0.75 | 1.0927 | PASS | ENFORCED |
+| current_utility.distribution_parameter_stability_end_value_75 | heuristic_stress_gate | WATCH_ONLY | >= 0.75 | 0.8572 | PASS | ENFORCED |
 | ... | ... | ... | ... | ... | ... | 9 more in JSON |
 
 ## Forecast Calibration
 
-- BTC bottom: n=444, down20 MAE raw→cal=0.30479→0.15683, brier raw→cal=0.3371→0.28649, median low abs err=32.6%, timing abs days=84.0
-  - LOCO: low<spot LL raw/cal/null=0.23296/0.19106/0.15862; down20 LL raw/cal/null=1.19817/0.75529/0.72042; p10-p90 coverage=59.0% (target 80%); conformal candidate coverage=84.2% scale med/final=2.03128/2.00311, folds=WEAK_FOLDS min=0.0%
-- ETH bottom: n=391, down20 MAE raw→cal=0.20247→0.19587, brier raw→cal=0.27125→0.2788, median low abs err=50.0%, timing abs days=73.0
-  - LOCO: low<spot LL raw/cal/null=0.27359/0.20643/0.16704; down20 LL raw/cal/null=1.068/0.70995/0.70484; p10-p90 coverage=52.9% (target 80%); conformal candidate coverage=84.7% scale med/final=1.95694/1.95107, folds=WEAK_FOLDS min=4.8%
-- BTC top: n=129, dd35 MAE raw→cal=0.10218→0.10999, brier raw→cal=0.22805→0.23257, event rate=30.2%, avg pred raw→cal=23.1%→31.5%
-- ETH top: n=92, dd35 MAE raw→cal=0.27205→0.16814, brier raw→cal=0.3253→0.3104, event rate=50.0%, avg pred raw→cal=22.8%→33.4%
+- BTC bottom: n=452, down20 MAE raw→cal=0.29615→0.15435, brier raw→cal=0.32976→0.28008, median low abs err=33.1%, timing abs days=85.0
+  - LOCO: low<spot LL raw/cal/null=0.22511/0.19955/0.16792; down20 LL raw/cal/null=1.18077/0.74588/0.71645; p10-p90 coverage=57.3% (target 80%); conformal candidate coverage=84.1% scale med/final=2.00042/1.99381, folds=WEAK_FOLDS min=0.0%
+- ETH bottom: n=399, down20 MAE raw→cal=0.20672→0.17722, brier raw→cal=0.27016→0.27712, median low abs err=50.7%, timing abs days=75.0
+  - LOCO: low<spot LL raw/cal/null=0.21948/0.14487/0.10076; down20 LL raw/cal/null=1.06955/0.7085/0.7056; p10-p90 coverage=54.1% (target 80%); conformal candidate coverage=84.5% scale med/final=1.95689/1.94657, folds=WEAK_FOLDS min=0.0%
+- BTC top: n=130, dd35 MAE raw→cal=0.09764→0.10566, brier raw→cal=0.22813→0.23235, event rate=30.8%, avg pred raw→cal=23.4%→31.7%
+- ETH top: n=93, dd35 MAE raw→cal=0.27704→0.17298, brier raw→cal=0.32763→0.31117, event rate=50.5%, avg pred raw→cal=22.8%→33.5%
 
 ## Policy Objective
 
@@ -70,8 +71,8 @@ Boundary:
 
 | Asset | Status | Accum eps | Dist windows | Acc utility | Dist utility | Bottom MAE | Top MAE | Reasons |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| BTC | PASS | 4 | 4 | 0.275421 | 7.082879 | 0.15683 | 0.10999 | current utility asset gate passed |
-| ETH | WATCH | 4 | 3 | 0.033213 | 9.568079 | 0.19587 | 0.16814 | bottom calibration watch |
+| BTC | PASS | 4 | 4 | 0.275421 | 8.159739 | 0.15435 | 0.10566 | current utility asset gate passed |
+| ETH | PASS | 4 | 3 | 0.033213 | 9.082234 | 0.17722 | 0.17298 | current utility asset gate passed |
 
 ## Accumulation Policy
 
@@ -286,41 +287,41 @@ Accumulation anti-overfit checks:
 - Windows: 7
 - Value-at-low win-rate vs hold: 100%
 - Windows with end value below 75% of hold: 0
-- Worst end value vs hold: 139.0%
-- Mean value-at-low edge vs hold: +5.46
+- Worst end value vs hold: 134.3%
+- Mean value-at-low edge vs hold: +5.48
 
 | Asset | Top | Sold | Avg/peak | Value@low | End vs hold | Utility |
 |---|---:|---:|---:|---:|---:|---:|
-| BTC | 2017-12-17 | 77% | 94% | 18.07 | 382.0% | 18.052682 |
-| BTC | 2021-04-14 | 90% | 79% | 7.49 | 139.0% | 6.704192 |
-| BTC | 2021-11-10 | 90% | 79% | 3.22 | 207.2% | 2.619057 |
-| BTC | 2025-10-06 | 77% | 91% | 1.68 | 146.2% | 0.955583 |
-| ETH | 2021-05-12 | 100% | 74% | 20.19 | 299.6% | 19.889905 |
-| ETH | 2021-11-10 | 100% | 74% | 8.75 | 255.2% | 8.308763 |
-| ETH | 2025-08-22 | 78% | 93% | 1.09 | 216.0% | 0.505568 |
+| BTC | 2017-12-17 | 77% | 91% | 19.99 | 392.0% | 19.979985 |
+| BTC | 2021-04-14 | 100% | 79% | 8.97 | 154.5% | 8.254199 |
+| BTC | 2021-11-10 | 100% | 79% | 3.97 | 265.5% | 3.579023 |
+| BTC | 2025-10-06 | 77% | 92% | 1.59 | 134.3% | 0.82575 |
+| ETH | 2021-05-12 | 100% | 70% | 19.65 | 219.2% | 19.099476 |
+| ETH | 2021-11-10 | 100% | 70% | 8.29 | 248.3% | 7.81773 |
+| ETH | 2025-08-22 | 76% | 94% | 1.07 | 164.5% | 0.329495 |
 
 Distribution anti-overfit checks:
-- Parameter perturbations: min win-rate 100%, worst low/hold 121.1%, worst end/hold 109.3%
-- Top-date jitter [-60, -30, 0, 30, 60]: min win-rate 100%, worst low/hold 100.0%, worst end/hold 114.3%
-- Leave-one-top-out: worst held-out low/hold 142.2%, worst held-out end/hold 139.0%
-- Chronological holdout since 2021-01-01: win-rate 100%, worst end/hold 139.0%
+- Parameter perturbations: min win-rate 100%, worst low/hold 118.8%, worst end/hold 85.7%
+- Top-date jitter [-60, -30, 0, 30, 60]: min win-rate 100%, worst low/hold 100.0%, worst end/hold 114.0%
+- Leave-one-top-out: worst held-out low/hold 153.2%, worst held-out end/hold 134.3%
+- Chronological holdout since 2021-01-01: win-rate 100%, worst end/hold 134.3%
 
 | Perturbation | Windows | Win-rate | Worst low/hold | Worst end/hold | Median avg/peak |
 |---|---:|---:|---:|---:|---:|
-| live | 7 | 100% | 142.2% | 139.0% | 79% |
-| earlier_tighter | 7 | 100% | 145.6% | 142.2% | 80% |
-| later_looser | 7 | 100% | 121.1% | 109.3% | 84% |
-| less_rerisk | 7 | 100% | 139.2% | 136.0% | 77% |
+| live | 7 | 100% | 153.2% | 134.3% | 79% |
+| earlier_tighter | 7 | 100% | 155.5% | 136.3% | 79% |
+| later_looser | 7 | 100% | 118.8% | 85.7% | 78% |
+| less_rerisk | 7 | 100% | 150.3% | 134.9% | 77% |
 
 | Top-date jitter | Windows | Win-rate | Worst low/hold | Worst end/hold |
 |---:|---:|---:|---:|---:|
-| -60d | 7 | 100% | 100.0% | 114.7% |
-| -30d | 7 | 100% | 146.1% | 114.3% |
-| 0d | 7 | 100% | 142.2% | 139.0% |
-| 30d | 7 | 100% | 151.3% | 146.2% |
-| 60d | 7 | 100% | 151.3% | 146.2% |
+| -60d | 7 | 100% | 100.0% | 114.0% |
+| -30d | 7 | 100% | 147.4% | 126.2% |
+| 0d | 7 | 100% | 153.2% | 134.3% |
+| 30d | 7 | 100% | 153.2% | 134.3% |
+| 60d | 7 | 100% | 153.2% | 134.3% |
 
 Distribution diagnostics:
-- Worst value at post-top low: BTC 2021-04-14 sold=90% low/hold=142.2% end/hold=139.0%; BTC 2025-10-06 sold=77% low/hold=151.3% end/hold=146.2%; BTC 2021-11-10 sold=90% low/hold=215.4% end/hold=207.2%
-- Worst end value vs hold: BTC 2021-04-14 sold=90% low/hold=142.2% end/hold=139.0%; BTC 2025-10-06 sold=77% low/hold=151.3% end/hold=146.2%; BTC 2021-11-10 sold=90% low/hold=215.4% end/hold=207.2%
-- Lowest sold fraction: BTC 2017-12-17 sold=77% low/hold=418.9% end/hold=382.0%; BTC 2025-10-06 sold=77% low/hold=151.3% end/hold=146.2%; ETH 2025-08-22 sold=78% low/hold=243.3% end/hold=216.0%
+- Worst value at post-top low: BTC 2025-10-06 sold=77% low/hold=153.2% end/hold=134.3%; BTC 2021-04-14 sold=100% low/hold=154.5% end/hold=154.5%; ETH 2021-05-12 sold=100% low/hold=219.2% end/hold=219.2%
+- Worst end value vs hold: BTC 2025-10-06 sold=77% low/hold=153.2% end/hold=134.3%; BTC 2021-04-14 sold=100% low/hold=154.5% end/hold=154.5%; ETH 2025-08-22 sold=76% low/hold=241.1% end/hold=164.5%
+- Lowest sold fraction: ETH 2025-08-22 sold=76% low/hold=241.1% end/hold=164.5%; BTC 2017-12-17 sold=77% low/hold=431.5% end/hold=392.0%; BTC 2025-10-06 sold=77% low/hold=153.2% end/hold=134.3%

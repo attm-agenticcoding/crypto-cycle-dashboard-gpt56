@@ -3,26 +3,26 @@
     "BTC": {
       "accumulation_episodes": 4,
       "avg_accumulation_utility": 0.275421,
-      "avg_distribution_utility": 7.082879,
-      "bottom_calibration_mae": 0.15683,
+      "avg_distribution_utility": 8.159739,
+      "bottom_calibration_mae": 0.15435,
       "distribution_windows": 4,
       "reasons": [
         "current utility asset gate passed"
       ],
       "status": "PASS",
-      "top_calibration_mae": 0.10999
+      "top_calibration_mae": 0.10566
     },
     "ETH": {
       "accumulation_episodes": 4,
       "avg_accumulation_utility": 0.033213,
-      "avg_distribution_utility": 9.568079,
-      "bottom_calibration_mae": 0.19587,
+      "avg_distribution_utility": 9.082234,
+      "bottom_calibration_mae": 0.17722,
       "distribution_windows": 3,
       "reasons": [
-        "bottom calibration watch"
+        "current utility asset gate passed"
       ],
-      "status": "WATCH",
-      "top_calibration_mae": 0.16814
+      "status": "PASS",
+      "top_calibration_mae": 0.17298
     }
   },
   "common_exam": {
@@ -93,8 +93,8 @@
           "implementation_status": "ENFORCED",
           "metric": "weighted calibration MAE",
           "metric_is_standard": true,
-          "observed_status": "TRIGGERED",
-          "observed_value": 0.19587,
+          "observed_status": "PASS",
+          "observed_value": 0.17722,
           "rationale": "Calibration MAE is a standard reliability summary, but the 0.18 watch cap is a local tolerance chosen for dashboard governance.",
           "recommendation": "Keep as WATCH until paired with relative log-loss/ECE and uncertainty-aware sample support; do not treat 0.18 as an industry constant.",
           "review_required": true,
@@ -113,7 +113,7 @@
           "metric": "weighted calibration MAE",
           "metric_is_standard": true,
           "observed_status": "PASS",
-          "observed_value": 0.16814,
+          "observed_value": 0.17298,
           "rationale": "Same governance tolerance as the bottom calibration cap; the metric is standard, the exact cap is local.",
           "recommendation": "Prefer baseline-relative calibration diagnostics before promotion.",
           "review_required": true,
@@ -132,7 +132,7 @@
           "metric": "LOCO log-loss delta versus null",
           "metric_is_standard": true,
           "observed_status": "TRIGGERED",
-          "observed_value": 0.03939,
+          "observed_value": 0.04411,
           "rationale": "Log-loss and leave-one-cluster-out are standard anti-overfit tools; the meaningful test is whether the model beats raw/null baselines out of cluster.",
           "recommendation": "Promote probability changes only when LOCO log-loss beats null with stable folds.",
           "review_required": false,
@@ -151,7 +151,7 @@
           "metric": "p10-p90 realized low interval coverage",
           "metric_is_standard": true,
           "observed_status": "TRIGGERED",
-          "observed_value": 0.52941,
+          "observed_value": 0.54135,
           "rationale": "The 80% target follows the label of a p10-p90 interval. It is a nominal statistical target, not proof that every historical cluster must clear 80%.",
           "recommendation": "Use as calibration evidence; inspect cluster failures before treating it as a blocker.",
           "review_required": false,
@@ -170,7 +170,7 @@
           "metric": "research conformal interval coverage",
           "metric_is_standard": true,
           "observed_status": "PASS",
-          "observed_value": 0.84234,
+          "observed_value": 0.84071,
           "rationale": "The target is nominal coverage; the conformal method is research-only and not a live default.",
           "recommendation": "Require cluster stability before using a conformal scale in production.",
           "review_required": false,
@@ -474,7 +474,7 @@
           "metric": "parameter-stability worst end value versus hold",
           "metric_is_standard": false,
           "observed_status": "PASS",
-          "observed_value": 1.092727,
+          "observed_value": 0.857212,
           "rationale": "Distribution left-tail perturbation gate; threshold is local.",
           "recommendation": "",
           "review_required": true,
@@ -512,7 +512,7 @@
           "metric": "top-date jitter worst end value versus hold",
           "metric_is_standard": false,
           "observed_status": "PASS",
-          "observed_value": 1.143258,
+          "observed_value": 1.140173,
           "rationale": "Date-jitter left-tail gate; threshold is local.",
           "recommendation": "",
           "review_required": true,
@@ -531,7 +531,7 @@
           "metric": "leave-one-top-out worst value at low versus hold",
           "metric_is_standard": false,
           "observed_status": "PASS",
-          "observed_value": 1.422153,
+          "observed_value": 1.531599,
           "rationale": "Out-of-window utility must beat hold at post-top low; baseline-relative, not canonical.",
           "recommendation": "",
           "review_required": false,
@@ -817,8 +817,8 @@
           "implementation_status": "ENFORCED",
           "metric": "weighted calibration MAE",
           "metric_is_standard": true,
-          "observed_status": "TRIGGERED",
-          "observed_value": 0.19587,
+          "observed_status": "PASS",
+          "observed_value": 0.17722,
           "rationale": "Calibration MAE is a standard reliability summary, but the 0.18 watch cap is a local tolerance chosen for dashboard governance.",
           "recommendation": "Keep as WATCH until paired with relative log-loss/ECE and uncertainty-aware sample support; do not treat 0.18 as an industry constant.",
           "review_required": true,
@@ -837,7 +837,7 @@
           "metric": "weighted calibration MAE",
           "metric_is_standard": true,
           "observed_status": "PASS",
-          "observed_value": 0.16814,
+          "observed_value": 0.17298,
           "rationale": "Same governance tolerance as the bottom calibration cap; the metric is standard, the exact cap is local.",
           "recommendation": "Prefer baseline-relative calibration diagnostics before promotion.",
           "review_required": true,
@@ -1046,7 +1046,7 @@
           "metric": "parameter-stability worst end value versus hold",
           "metric_is_standard": false,
           "observed_status": "PASS",
-          "observed_value": 1.092727,
+          "observed_value": 0.857212,
           "rationale": "Distribution left-tail perturbation gate; threshold is local.",
           "recommendation": "",
           "review_required": true,
@@ -1084,7 +1084,7 @@
           "metric": "top-date jitter worst end value versus hold",
           "metric_is_standard": false,
           "observed_status": "PASS",
-          "observed_value": 1.143258,
+          "observed_value": 1.140173,
           "rationale": "Date-jitter left-tail gate; threshold is local.",
           "recommendation": "",
           "review_required": true,
@@ -1313,28 +1313,9 @@
         "noncanonical_threshold_count": 38,
         "review_required_count": 25,
         "standard_metric_count": 6,
-        "triggered_count": 7
+        "triggered_count": 6
       },
       "triggered_rows": [
-        {
-          "comparator": "<=",
-          "family": "forecast_calibration",
-          "gate_effect": "WATCH_ONLY",
-          "id": "forecast.bottom_down20_calibration_mae_0_18",
-          "implementation_status": "ENFORCED",
-          "metric": "weighted calibration MAE",
-          "metric_is_standard": true,
-          "observed_status": "TRIGGERED",
-          "observed_value": 0.19587,
-          "rationale": "Calibration MAE is a standard reliability summary, but the 0.18 watch cap is a local tolerance chosen for dashboard governance.",
-          "recommendation": "Keep as WATCH until paired with relative log-loss/ECE and uncertainty-aware sample support; do not treat 0.18 as an industry constant.",
-          "review_required": true,
-          "source_note": "The threshold encodes a local risk tolerance; it is not an industry constant.",
-          "source_type": "policy_risk_tolerance",
-          "threshold": 0.18,
-          "threshold_display": null,
-          "threshold_is_canonical": false
-        },
         {
           "comparator": "<=",
           "family": "forecast_calibration",
@@ -1344,7 +1325,7 @@
           "metric": "LOCO log-loss delta versus null",
           "metric_is_standard": true,
           "observed_status": "TRIGGERED",
-          "observed_value": 0.03939,
+          "observed_value": 0.04411,
           "rationale": "Log-loss and leave-one-cluster-out are standard anti-overfit tools; the meaningful test is whether the model beats raw/null baselines out of cluster.",
           "recommendation": "Promote probability changes only when LOCO log-loss beats null with stable folds.",
           "review_required": false,
@@ -1363,7 +1344,7 @@
           "metric": "p10-p90 realized low interval coverage",
           "metric_is_standard": true,
           "observed_status": "TRIGGERED",
-          "observed_value": 0.52941,
+          "observed_value": 0.54135,
           "rationale": "The 80% target follows the label of a p10-p90 interval. It is a nominal statistical target, not proof that every historical cluster must clear 80%.",
           "recommendation": "Use as calibration evidence; inspect cluster failures before treating it as a blocker.",
           "review_required": false,
@@ -5260,7 +5241,7 @@
       "scope": "research_only_governance_proposal",
       "status": "PROPOSED_FRONTIER_AWARE_PASS"
     },
-    "generated_at": "2026-08-30T16:19:15.381143+00:00",
+    "generated_at": "2026-08-31T18:59:30.515444+00:00",
     "known_risks": [
       {
         "evidence": "The live policy now uses deploy_duration_cdf_floor() with horizon multipliers (1.0, 1.5, 2.0) instead of a single linear 52-week clock.",
@@ -8232,7 +8213,7 @@
     "relationship_to_current_verdict": {
       "common_exam_status": "FAIL",
       "current_utility_audit_artifact": "reports/robust_evaluation.json",
-      "current_utility_audit_status": "WATCH",
+      "current_utility_audit_status": "PASS",
       "reason": "The existing PASS covers utility, historical replay, jitter, target 90/110/lagged perturbations, leave-one-episode-out, and chronological holdout. The common exam below is a stricter promotion layer and should be read separately from the current utility verdict and from the Fable 2026-07-05 core-only cross-audit."
     },
     "release_hardening_candidate": {
@@ -8976,99 +8957,99 @@
   "distribution_diagnostics": {
     "lowest_sold_fraction": [
       {
-        "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.9411,
-        "end_value_vs_hold": 3.8196,
-        "max_portfolio_drawdown": 0.2647,
-        "sold_fraction": 0.7704,
-        "top": "2017-12-17",
-        "utility": 18.052682,
-        "value_at_low_vs_hold": 4.1889
-      },
-      {
-        "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.913,
-        "end_value_vs_hold": 1.4622,
-        "max_portfolio_drawdown": 0.2409,
-        "sold_fraction": 0.7718,
-        "top": "2025-10-06",
-        "utility": 0.955583,
-        "value_at_low_vs_hold": 1.5128
-      },
-      {
         "asset": "ETH",
-        "avg_sell_pct_of_peak": 0.9269,
-        "end_value_vs_hold": 2.1598,
-        "max_portfolio_drawdown": 0.6088,
-        "sold_fraction": 0.7785,
+        "avg_sell_pct_of_peak": 0.9364,
+        "end_value_vs_hold": 1.645,
+        "max_portfolio_drawdown": 0.6064,
+        "sold_fraction": 0.762,
         "top": "2025-08-22",
-        "utility": 0.505568,
-        "value_at_low_vs_hold": 2.433
+        "utility": 0.329495,
+        "value_at_low_vs_hold": 2.4111
+      },
+      {
+        "asset": "BTC",
+        "avg_sell_pct_of_peak": 0.9057,
+        "end_value_vs_hold": 3.9202,
+        "max_portfolio_drawdown": 0.3476,
+        "sold_fraction": 0.7656,
+        "top": "2017-12-17",
+        "utility": 19.979985,
+        "value_at_low_vs_hold": 4.3148
+      },
+      {
+        "asset": "BTC",
+        "avg_sell_pct_of_peak": 0.9194,
+        "end_value_vs_hold": 1.3427,
+        "max_portfolio_drawdown": 0.2501,
+        "sold_fraction": 0.7684,
+        "top": "2025-10-06",
+        "utility": 0.82575,
+        "value_at_low_vs_hold": 1.5316
       }
     ],
     "windows": 7,
     "worst_end_value_vs_hold": [
       {
         "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.795,
-        "end_value_vs_hold": 1.3899,
-        "max_portfolio_drawdown": 0.2845,
-        "sold_fraction": 0.905,
-        "top": "2021-04-14",
-        "utility": 6.704192,
-        "value_at_low_vs_hold": 1.4222
-      },
-      {
-        "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.913,
-        "end_value_vs_hold": 1.4622,
-        "max_portfolio_drawdown": 0.2409,
-        "sold_fraction": 0.7718,
+        "avg_sell_pct_of_peak": 0.9194,
+        "end_value_vs_hold": 1.3427,
+        "max_portfolio_drawdown": 0.2501,
+        "sold_fraction": 0.7684,
         "top": "2025-10-06",
-        "utility": 0.955583,
-        "value_at_low_vs_hold": 1.5128
+        "utility": 0.82575,
+        "value_at_low_vs_hold": 1.5316
       },
       {
         "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.795,
-        "end_value_vs_hold": 2.0723,
-        "max_portfolio_drawdown": 0.3887,
-        "sold_fraction": 0.905,
-        "top": "2021-11-10",
-        "utility": 2.619057,
-        "value_at_low_vs_hold": 2.1538
+        "avg_sell_pct_of_peak": 0.785,
+        "end_value_vs_hold": 1.5454,
+        "max_portfolio_drawdown": 0.1923,
+        "sold_fraction": 1.0,
+        "top": "2021-04-14",
+        "utility": 8.254199,
+        "value_at_low_vs_hold": 1.5454
+      },
+      {
+        "asset": "ETH",
+        "avg_sell_pct_of_peak": 0.9364,
+        "end_value_vs_hold": 1.645,
+        "max_portfolio_drawdown": 0.6064,
+        "sold_fraction": 0.762,
+        "top": "2025-08-22",
+        "utility": 0.329495,
+        "value_at_low_vs_hold": 2.4111
       }
     ],
     "worst_value_at_low_vs_hold": [
       {
         "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.795,
-        "end_value_vs_hold": 1.3899,
-        "max_portfolio_drawdown": 0.2845,
-        "sold_fraction": 0.905,
-        "top": "2021-04-14",
-        "utility": 6.704192,
-        "value_at_low_vs_hold": 1.4222
-      },
-      {
-        "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.913,
-        "end_value_vs_hold": 1.4622,
-        "max_portfolio_drawdown": 0.2409,
-        "sold_fraction": 0.7718,
+        "avg_sell_pct_of_peak": 0.9194,
+        "end_value_vs_hold": 1.3427,
+        "max_portfolio_drawdown": 0.2501,
+        "sold_fraction": 0.7684,
         "top": "2025-10-06",
-        "utility": 0.955583,
-        "value_at_low_vs_hold": 1.5128
+        "utility": 0.82575,
+        "value_at_low_vs_hold": 1.5316
       },
       {
         "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.795,
-        "end_value_vs_hold": 2.0723,
-        "max_portfolio_drawdown": 0.3887,
-        "sold_fraction": 0.905,
-        "top": "2021-11-10",
-        "utility": 2.619057,
-        "value_at_low_vs_hold": 2.1538
+        "avg_sell_pct_of_peak": 0.785,
+        "end_value_vs_hold": 1.5454,
+        "max_portfolio_drawdown": 0.1923,
+        "sold_fraction": 1.0,
+        "top": "2021-04-14",
+        "utility": 8.254199,
+        "value_at_low_vs_hold": 1.5454
+      },
+      {
+        "asset": "ETH",
+        "avg_sell_pct_of_peak": 0.7046,
+        "end_value_vs_hold": 2.1915,
+        "max_portfolio_drawdown": 0.2684,
+        "sold_fraction": 1.0,
+        "top": "2021-05-12",
+        "utility": 19.099476,
+        "value_at_low_vs_hold": 2.1915
       }
     ]
   },
@@ -9101,14 +9082,14 @@
     ],
     "status": "CORE_FAILED_STRICTER_GATES"
   },
-  "generated_at": "2026-08-31T21:36:48-04:00",
+  "generated_at": "2026-08-31T22:21:08-04:00",
   "ledger": {
-    "count": 688,
+    "count": 689,
     "last": {
       "data_age_days": 0,
       "data_as_of": "2026-08-31",
-      "generated_at": "2026-08-31T21:36:46-04:00",
-      "key": "close|2026-08-31|2026-08-31T21:36",
+      "generated_at": "2026-08-31T22:21:06-04:00",
+      "key": "close|2026-08-31|2026-08-31T22:21",
       "material": true,
       "run_date": "2026-08-31",
       "run_kind": "close",
@@ -9134,10 +9115,10 @@
           "flags": [
             "policy above today-only posterior"
           ],
-          "full_policy_target": 0.5205,
+          "full_policy_target": 0.5132,
           "price": 2467.41,
-          "prior_close_target": 0.5133,
-          "raw_policy_gap": 0.1123,
+          "prior_close_target": 0.5132,
+          "raw_policy_gap": 0.105,
           "raw_posterior_target": 0.4082,
           "top_keep": 1.0,
           "top_phase": "inactive",
@@ -9146,25 +9127,6 @@
       }
     },
     "open_material_signals": [
-      {
-        "action": "OPTIONAL_CATCHUP_ONLY",
-        "asset": "BTC",
-        "flags": [
-          "policy above today-only posterior",
-          "raw-policy divergence >=15pp"
-        ],
-        "gap": 0.1652,
-        "generated_at": "2026-08-31T15:01:04-04:00"
-      },
-      {
-        "action": "OPTIONAL_CATCHUP_ONLY",
-        "asset": "ETH",
-        "flags": [
-          "policy above today-only posterior"
-        ],
-        "gap": 0.1146,
-        "generated_at": "2026-08-31T15:01:04-04:00"
-      },
       {
         "action": "OPTIONAL_CATCHUP_ONLY",
         "asset": "BTC",
@@ -9221,14 +9183,33 @@
         ],
         "gap": 0.1123,
         "generated_at": "2026-08-31T21:36:46-04:00"
+      },
+      {
+        "action": "OPTIONAL_CATCHUP_ONLY",
+        "asset": "BTC",
+        "flags": [
+          "policy above today-only posterior",
+          "raw-policy divergence >=15pp"
+        ],
+        "gap": 0.1642,
+        "generated_at": "2026-08-31T22:21:06-04:00"
+      },
+      {
+        "action": "OPTIONAL_CATCHUP_ONLY",
+        "asset": "ETH",
+        "flags": [
+          "policy above today-only posterior"
+        ],
+        "gap": 0.105,
+        "generated_at": "2026-08-31T22:21:06-04:00"
       }
     ]
   },
   "live_record": {
     "data_age_days": 0,
     "data_as_of": "2026-08-31",
-    "generated_at": "2026-08-31T21:36:46-04:00",
-    "key": "close|2026-08-31|2026-08-31T21:36",
+    "generated_at": "2026-08-31T22:21:06-04:00",
+    "key": "close|2026-08-31|2026-08-31T22:21",
     "material": true,
     "run_date": "2026-08-31",
     "run_kind": "close",
@@ -9254,10 +9235,10 @@
         "flags": [
           "policy above today-only posterior"
         ],
-        "full_policy_target": 0.5205,
+        "full_policy_target": 0.5132,
         "price": 2467.41,
-        "prior_close_target": 0.5133,
-        "raw_policy_gap": 0.1123,
+        "prior_close_target": 0.5132,
+        "raw_policy_gap": 0.105,
         "raw_posterior_target": 0.4082,
         "top_keep": 1.0,
         "top_phase": "inactive",
@@ -9285,18 +9266,30 @@
     "purpose": "Judge policy changes by causal capital-deployment outcomes, not by bottom/top forecast aesthetics.",
     "version": "policy-utility-v1"
   },
+  "policy_readjudication": {
+    "artifact": "reports/live_parity_policy_readjudication_gpt56.json",
+    "candidate_id": "g2.50_f0.75_a0.60_h52_r+0.00",
+    "candidate_robustness_status": "FAIL",
+    "catchup_divisor": 3,
+    "incumbent_robustness_status": "FAIL",
+    "integrity_pass": true,
+    "production_change_authorized": false,
+    "production_parameter_change": false,
+    "spec": "specs/0008-live-parity-policy-readjudication.md",
+    "status": "DEMOTED_REVIEW"
+  },
   "schema_version": 1,
   "watchdog": {
     "data_age_days": 0.0,
     "expected_latest_slot_et": "2026-08-31T20:30-04:00",
-    "last_close_log_done": "2026-08-30 20:02:06",
+    "last_close_log_done": "2026-08-31 21:53:12",
     "last_live_log_done": "2026-08-31 16:01:29",
     "minutes_behind_expected": 0.0,
     "reasons": [
       "refresh cadence healthy"
     ],
-    "site_index_mtime_et": "2026-08-31T16:00:55-04:00",
-    "snapshot_generated_at_et": "2026-08-31T21:36-04:00",
+    "site_index_mtime_et": "2026-08-31T21:41:30-04:00",
+    "snapshot_generated_at_et": "2026-08-31T22:21-04:00",
     "status": "PASS"
   }
 }

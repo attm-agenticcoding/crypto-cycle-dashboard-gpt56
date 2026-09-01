@@ -9486,26 +9486,26 @@
     "BTC": {
       "accumulation_episodes": 4,
       "avg_accumulation_utility": 0.275421,
-      "avg_distribution_utility": 7.082879,
-      "bottom_calibration_mae": 0.15683,
+      "avg_distribution_utility": 8.159739,
+      "bottom_calibration_mae": 0.15435,
       "distribution_windows": 4,
       "reasons": [
         "current utility asset gate passed"
       ],
       "status": "PASS",
-      "top_calibration_mae": 0.10999
+      "top_calibration_mae": 0.10566
     },
     "ETH": {
       "accumulation_episodes": 4,
       "avg_accumulation_utility": 0.033213,
-      "avg_distribution_utility": 9.568079,
-      "bottom_calibration_mae": 0.19587,
+      "avg_distribution_utility": 9.082234,
+      "bottom_calibration_mae": 0.17722,
       "distribution_windows": 3,
       "reasons": [
-        "bottom calibration watch"
+        "current utility asset gate passed"
       ],
-      "status": "WATCH",
-      "top_calibration_mae": 0.16814
+      "status": "PASS",
+      "top_calibration_mae": 0.17298
     }
   },
   "cap_rationale_audit": {
@@ -9520,8 +9520,8 @@
         "implementation_status": "ENFORCED",
         "metric": "weighted calibration MAE",
         "metric_is_standard": true,
-        "observed_status": "TRIGGERED",
-        "observed_value": 0.19587,
+        "observed_status": "PASS",
+        "observed_value": 0.17722,
         "rationale": "Calibration MAE is a standard reliability summary, but the 0.18 watch cap is a local tolerance chosen for dashboard governance.",
         "recommendation": "Keep as WATCH until paired with relative log-loss/ECE and uncertainty-aware sample support; do not treat 0.18 as an industry constant.",
         "review_required": true,
@@ -9540,7 +9540,7 @@
         "metric": "weighted calibration MAE",
         "metric_is_standard": true,
         "observed_status": "PASS",
-        "observed_value": 0.16814,
+        "observed_value": 0.17298,
         "rationale": "Same governance tolerance as the bottom calibration cap; the metric is standard, the exact cap is local.",
         "recommendation": "Prefer baseline-relative calibration diagnostics before promotion.",
         "review_required": true,
@@ -9559,7 +9559,7 @@
         "metric": "LOCO log-loss delta versus null",
         "metric_is_standard": true,
         "observed_status": "TRIGGERED",
-        "observed_value": 0.03939,
+        "observed_value": 0.04411,
         "rationale": "Log-loss and leave-one-cluster-out are standard anti-overfit tools; the meaningful test is whether the model beats raw/null baselines out of cluster.",
         "recommendation": "Promote probability changes only when LOCO log-loss beats null with stable folds.",
         "review_required": false,
@@ -9578,7 +9578,7 @@
         "metric": "p10-p90 realized low interval coverage",
         "metric_is_standard": true,
         "observed_status": "TRIGGERED",
-        "observed_value": 0.52941,
+        "observed_value": 0.54135,
         "rationale": "The 80% target follows the label of a p10-p90 interval. It is a nominal statistical target, not proof that every historical cluster must clear 80%.",
         "recommendation": "Use as calibration evidence; inspect cluster failures before treating it as a blocker.",
         "review_required": false,
@@ -9597,7 +9597,7 @@
         "metric": "research conformal interval coverage",
         "metric_is_standard": true,
         "observed_status": "PASS",
-        "observed_value": 0.84234,
+        "observed_value": 0.84071,
         "rationale": "The target is nominal coverage; the conformal method is research-only and not a live default.",
         "recommendation": "Require cluster stability before using a conformal scale in production.",
         "review_required": false,
@@ -9901,7 +9901,7 @@
         "metric": "parameter-stability worst end value versus hold",
         "metric_is_standard": false,
         "observed_status": "PASS",
-        "observed_value": 1.092727,
+        "observed_value": 0.857212,
         "rationale": "Distribution left-tail perturbation gate; threshold is local.",
         "recommendation": "",
         "review_required": true,
@@ -9939,7 +9939,7 @@
         "metric": "top-date jitter worst end value versus hold",
         "metric_is_standard": false,
         "observed_status": "PASS",
-        "observed_value": 1.143258,
+        "observed_value": 1.140173,
         "rationale": "Date-jitter left-tail gate; threshold is local.",
         "recommendation": "",
         "review_required": true,
@@ -9958,7 +9958,7 @@
         "metric": "leave-one-top-out worst value at low versus hold",
         "metric_is_standard": false,
         "observed_status": "PASS",
-        "observed_value": 1.422153,
+        "observed_value": 1.531599,
         "rationale": "Out-of-window utility must beat hold at post-top low; baseline-relative, not canonical.",
         "recommendation": "",
         "review_required": false,
@@ -10244,8 +10244,8 @@
         "implementation_status": "ENFORCED",
         "metric": "weighted calibration MAE",
         "metric_is_standard": true,
-        "observed_status": "TRIGGERED",
-        "observed_value": 0.19587,
+        "observed_status": "PASS",
+        "observed_value": 0.17722,
         "rationale": "Calibration MAE is a standard reliability summary, but the 0.18 watch cap is a local tolerance chosen for dashboard governance.",
         "recommendation": "Keep as WATCH until paired with relative log-loss/ECE and uncertainty-aware sample support; do not treat 0.18 as an industry constant.",
         "review_required": true,
@@ -10264,7 +10264,7 @@
         "metric": "weighted calibration MAE",
         "metric_is_standard": true,
         "observed_status": "PASS",
-        "observed_value": 0.16814,
+        "observed_value": 0.17298,
         "rationale": "Same governance tolerance as the bottom calibration cap; the metric is standard, the exact cap is local.",
         "recommendation": "Prefer baseline-relative calibration diagnostics before promotion.",
         "review_required": true,
@@ -10473,7 +10473,7 @@
         "metric": "parameter-stability worst end value versus hold",
         "metric_is_standard": false,
         "observed_status": "PASS",
-        "observed_value": 1.092727,
+        "observed_value": 0.857212,
         "rationale": "Distribution left-tail perturbation gate; threshold is local.",
         "recommendation": "",
         "review_required": true,
@@ -10511,7 +10511,7 @@
         "metric": "top-date jitter worst end value versus hold",
         "metric_is_standard": false,
         "observed_status": "PASS",
-        "observed_value": 1.143258,
+        "observed_value": 1.140173,
         "rationale": "Date-jitter left-tail gate; threshold is local.",
         "recommendation": "",
         "review_required": true,
@@ -10740,28 +10740,9 @@
       "noncanonical_threshold_count": 38,
       "review_required_count": 25,
       "standard_metric_count": 6,
-      "triggered_count": 7
+      "triggered_count": 6
     },
     "triggered_rows": [
-      {
-        "comparator": "<=",
-        "family": "forecast_calibration",
-        "gate_effect": "WATCH_ONLY",
-        "id": "forecast.bottom_down20_calibration_mae_0_18",
-        "implementation_status": "ENFORCED",
-        "metric": "weighted calibration MAE",
-        "metric_is_standard": true,
-        "observed_status": "TRIGGERED",
-        "observed_value": 0.19587,
-        "rationale": "Calibration MAE is a standard reliability summary, but the 0.18 watch cap is a local tolerance chosen for dashboard governance.",
-        "recommendation": "Keep as WATCH until paired with relative log-loss/ECE and uncertainty-aware sample support; do not treat 0.18 as an industry constant.",
-        "review_required": true,
-        "source_note": "The threshold encodes a local risk tolerance; it is not an industry constant.",
-        "source_type": "policy_risk_tolerance",
-        "threshold": 0.18,
-        "threshold_display": null,
-        "threshold_is_canonical": false
-      },
       {
         "comparator": "<=",
         "family": "forecast_calibration",
@@ -10771,7 +10752,7 @@
         "metric": "LOCO log-loss delta versus null",
         "metric_is_standard": true,
         "observed_status": "TRIGGERED",
-        "observed_value": 0.03939,
+        "observed_value": 0.04411,
         "rationale": "Log-loss and leave-one-cluster-out are standard anti-overfit tools; the meaningful test is whether the model beats raw/null baselines out of cluster.",
         "recommendation": "Promote probability changes only when LOCO log-loss beats null with stable folds.",
         "review_required": false,
@@ -10790,7 +10771,7 @@
         "metric": "p10-p90 realized low interval coverage",
         "metric_is_standard": true,
         "observed_status": "TRIGGERED",
-        "observed_value": 0.52941,
+        "observed_value": 0.54135,
         "rationale": "The 80% target follows the label of a p10-p90 interval. It is a nominal statistical target, not proof that every historical cluster must clear 80%.",
         "recommendation": "Use as calibration evidence; inspect cluster failures before treating it as a blocker.",
         "review_required": false,
@@ -10946,8 +10927,8 @@
           "implementation_status": "ENFORCED",
           "metric": "weighted calibration MAE",
           "metric_is_standard": true,
-          "observed_status": "TRIGGERED",
-          "observed_value": 0.19587,
+          "observed_status": "PASS",
+          "observed_value": 0.17722,
           "rationale": "Calibration MAE is a standard reliability summary, but the 0.18 watch cap is a local tolerance chosen for dashboard governance.",
           "recommendation": "Keep as WATCH until paired with relative log-loss/ECE and uncertainty-aware sample support; do not treat 0.18 as an industry constant.",
           "review_required": true,
@@ -10966,7 +10947,7 @@
           "metric": "weighted calibration MAE",
           "metric_is_standard": true,
           "observed_status": "PASS",
-          "observed_value": 0.16814,
+          "observed_value": 0.17298,
           "rationale": "Same governance tolerance as the bottom calibration cap; the metric is standard, the exact cap is local.",
           "recommendation": "Prefer baseline-relative calibration diagnostics before promotion.",
           "review_required": true,
@@ -10985,7 +10966,7 @@
           "metric": "LOCO log-loss delta versus null",
           "metric_is_standard": true,
           "observed_status": "TRIGGERED",
-          "observed_value": 0.03939,
+          "observed_value": 0.04411,
           "rationale": "Log-loss and leave-one-cluster-out are standard anti-overfit tools; the meaningful test is whether the model beats raw/null baselines out of cluster.",
           "recommendation": "Promote probability changes only when LOCO log-loss beats null with stable folds.",
           "review_required": false,
@@ -11004,7 +10985,7 @@
           "metric": "p10-p90 realized low interval coverage",
           "metric_is_standard": true,
           "observed_status": "TRIGGERED",
-          "observed_value": 0.52941,
+          "observed_value": 0.54135,
           "rationale": "The 80% target follows the label of a p10-p90 interval. It is a nominal statistical target, not proof that every historical cluster must clear 80%.",
           "recommendation": "Use as calibration evidence; inspect cluster failures before treating it as a blocker.",
           "review_required": false,
@@ -11023,7 +11004,7 @@
           "metric": "research conformal interval coverage",
           "metric_is_standard": true,
           "observed_status": "PASS",
-          "observed_value": 0.84234,
+          "observed_value": 0.84071,
           "rationale": "The target is nominal coverage; the conformal method is research-only and not a live default.",
           "recommendation": "Require cluster stability before using a conformal scale in production.",
           "review_required": false,
@@ -11327,7 +11308,7 @@
           "metric": "parameter-stability worst end value versus hold",
           "metric_is_standard": false,
           "observed_status": "PASS",
-          "observed_value": 1.092727,
+          "observed_value": 0.857212,
           "rationale": "Distribution left-tail perturbation gate; threshold is local.",
           "recommendation": "",
           "review_required": true,
@@ -11365,7 +11346,7 @@
           "metric": "top-date jitter worst end value versus hold",
           "metric_is_standard": false,
           "observed_status": "PASS",
-          "observed_value": 1.143258,
+          "observed_value": 1.140173,
           "rationale": "Date-jitter left-tail gate; threshold is local.",
           "recommendation": "",
           "review_required": true,
@@ -11384,7 +11365,7 @@
           "metric": "leave-one-top-out worst value at low versus hold",
           "metric_is_standard": false,
           "observed_status": "PASS",
-          "observed_value": 1.422153,
+          "observed_value": 1.531599,
           "rationale": "Out-of-window utility must beat hold at post-top low; baseline-relative, not canonical.",
           "recommendation": "",
           "review_required": false,
@@ -11670,8 +11651,8 @@
           "implementation_status": "ENFORCED",
           "metric": "weighted calibration MAE",
           "metric_is_standard": true,
-          "observed_status": "TRIGGERED",
-          "observed_value": 0.19587,
+          "observed_status": "PASS",
+          "observed_value": 0.17722,
           "rationale": "Calibration MAE is a standard reliability summary, but the 0.18 watch cap is a local tolerance chosen for dashboard governance.",
           "recommendation": "Keep as WATCH until paired with relative log-loss/ECE and uncertainty-aware sample support; do not treat 0.18 as an industry constant.",
           "review_required": true,
@@ -11690,7 +11671,7 @@
           "metric": "weighted calibration MAE",
           "metric_is_standard": true,
           "observed_status": "PASS",
-          "observed_value": 0.16814,
+          "observed_value": 0.17298,
           "rationale": "Same governance tolerance as the bottom calibration cap; the metric is standard, the exact cap is local.",
           "recommendation": "Prefer baseline-relative calibration diagnostics before promotion.",
           "review_required": true,
@@ -11899,7 +11880,7 @@
           "metric": "parameter-stability worst end value versus hold",
           "metric_is_standard": false,
           "observed_status": "PASS",
-          "observed_value": 1.092727,
+          "observed_value": 0.857212,
           "rationale": "Distribution left-tail perturbation gate; threshold is local.",
           "recommendation": "",
           "review_required": true,
@@ -11937,7 +11918,7 @@
           "metric": "top-date jitter worst end value versus hold",
           "metric_is_standard": false,
           "observed_status": "PASS",
-          "observed_value": 1.143258,
+          "observed_value": 1.140173,
           "rationale": "Date-jitter left-tail gate; threshold is local.",
           "recommendation": "",
           "review_required": true,
@@ -12166,28 +12147,9 @@
         "noncanonical_threshold_count": 38,
         "review_required_count": 25,
         "standard_metric_count": 6,
-        "triggered_count": 7
+        "triggered_count": 6
       },
       "triggered_rows": [
-        {
-          "comparator": "<=",
-          "family": "forecast_calibration",
-          "gate_effect": "WATCH_ONLY",
-          "id": "forecast.bottom_down20_calibration_mae_0_18",
-          "implementation_status": "ENFORCED",
-          "metric": "weighted calibration MAE",
-          "metric_is_standard": true,
-          "observed_status": "TRIGGERED",
-          "observed_value": 0.19587,
-          "rationale": "Calibration MAE is a standard reliability summary, but the 0.18 watch cap is a local tolerance chosen for dashboard governance.",
-          "recommendation": "Keep as WATCH until paired with relative log-loss/ECE and uncertainty-aware sample support; do not treat 0.18 as an industry constant.",
-          "review_required": true,
-          "source_note": "The threshold encodes a local risk tolerance; it is not an industry constant.",
-          "source_type": "policy_risk_tolerance",
-          "threshold": 0.18,
-          "threshold_display": null,
-          "threshold_is_canonical": false
-        },
         {
           "comparator": "<=",
           "family": "forecast_calibration",
@@ -12197,7 +12159,7 @@
           "metric": "LOCO log-loss delta versus null",
           "metric_is_standard": true,
           "observed_status": "TRIGGERED",
-          "observed_value": 0.03939,
+          "observed_value": 0.04411,
           "rationale": "Log-loss and leave-one-cluster-out are standard anti-overfit tools; the meaningful test is whether the model beats raw/null baselines out of cluster.",
           "recommendation": "Promote probability changes only when LOCO log-loss beats null with stable folds.",
           "review_required": false,
@@ -12216,7 +12178,7 @@
           "metric": "p10-p90 realized low interval coverage",
           "metric_is_standard": true,
           "observed_status": "TRIGGERED",
-          "observed_value": 0.52941,
+          "observed_value": 0.54135,
           "rationale": "The 80% target follows the label of a p10-p90 interval. It is a nominal statistical target, not proof that every historical cluster must clear 80%.",
           "recommendation": "Use as calibration evidence; inspect cluster failures before treating it as a blocker.",
           "review_required": false,
@@ -16113,7 +16075,7 @@
       "scope": "research_only_governance_proposal",
       "status": "PROPOSED_FRONTIER_AWARE_PASS"
     },
-    "generated_at": "2026-08-30T16:19:15.381143+00:00",
+    "generated_at": "2026-08-31T18:59:30.515444+00:00",
     "known_risks": [
       {
         "evidence": "The live policy now uses deploy_duration_cdf_floor() with horizon multipliers (1.0, 1.5, 2.0) instead of a single linear 52-week clock.",
@@ -19085,7 +19047,7 @@
     "relationship_to_current_verdict": {
       "common_exam_status": "FAIL",
       "current_utility_audit_artifact": "reports/robust_evaluation.json",
-      "current_utility_audit_status": "WATCH",
+      "current_utility_audit_status": "PASS",
       "reason": "The existing PASS covers utility, historical replay, jitter, target 90/110/lagged perturbations, leave-one-episode-out, and chronological holdout. The common exam below is a stricter promotion layer and should be read separately from the current utility verdict and from the Fable 2026-07-05 core-only cross-audit."
     },
     "release_hardening_candidate": {
@@ -19826,83 +19788,83 @@
     "status": "FAIL",
     "summary": "The current dashboard verdict is scoped to the historical utility audit. The stricter common-exam gates now replay parameter plateau and synthetic adverse paths through the dashboard full stack. Fable's external core-only cross-audit remains recorded as a separate warning because it failed the convex core on plateau and synthetic-shape stress."
   },
-  "data_through": "2026-08-29",
+  "data_through": "2026-08-30",
   "distribution": {
     "anti_overfit": {
       "holdout": {
         "chronological_holdout": {
           "end_value_below_75pct_hold_count": 0,
-          "mean_value_at_low_edge_vs_hold": 4.077032,
-          "median_avg_sell_pct_of_peak": 0.794971,
-          "min_avg_sell_pct_of_peak": 0.743742,
+          "mean_value_at_low_edge_vs_hold": 3.832831,
+          "median_avg_sell_pct_of_peak": 0.78504,
+          "min_avg_sell_pct_of_peak": 0.704645,
           "n": 6,
           "start": "2021-01-01",
           "value_at_low_win_rate_vs_hold": 1.0,
-          "worst_end_value_vs_hold": 1.38993,
-          "worst_value_at_low_vs_hold": 1.422153
+          "worst_end_value_vs_hold": 1.342718,
+          "worst_value_at_low_vs_hold": 1.531599
         },
         "leave_one_top_out": {
           "min_remaining_value_at_low_win_rate_vs_hold": 1.0,
           "rows": [
             {
               "asset": "BTC",
-              "heldout_end_value_vs_hold": 3.81956,
-              "heldout_value_at_low_vs_hold": 4.188855,
+              "heldout_end_value_vs_hold": 3.920235,
+              "heldout_value_at_low_vs_hold": 4.314757,
               "remaining_value_at_low_win_rate_vs_hold": 1.0,
-              "remaining_worst_end_value_vs_hold": 1.38993,
+              "remaining_worst_end_value_vs_hold": 1.342718,
               "top": "2017-12-17"
             },
             {
               "asset": "BTC",
-              "heldout_end_value_vs_hold": 1.38993,
-              "heldout_value_at_low_vs_hold": 1.422153,
+              "heldout_end_value_vs_hold": 1.545432,
+              "heldout_value_at_low_vs_hold": 1.545432,
               "remaining_value_at_low_win_rate_vs_hold": 1.0,
-              "remaining_worst_end_value_vs_hold": 1.462155,
+              "remaining_worst_end_value_vs_hold": 1.342718,
               "top": "2021-04-14"
             },
             {
               "asset": "BTC",
-              "heldout_end_value_vs_hold": 2.07228,
-              "heldout_value_at_low_vs_hold": 2.153785,
+              "heldout_end_value_vs_hold": 2.655179,
+              "heldout_value_at_low_vs_hold": 2.777162,
               "remaining_value_at_low_win_rate_vs_hold": 1.0,
-              "remaining_worst_end_value_vs_hold": 1.38993,
+              "remaining_worst_end_value_vs_hold": 1.342718,
               "top": "2021-11-10"
             },
             {
               "asset": "BTC",
-              "heldout_end_value_vs_hold": 1.462155,
-              "heldout_value_at_low_vs_hold": 1.512774,
+              "heldout_end_value_vs_hold": 1.342718,
+              "heldout_value_at_low_vs_hold": 1.531599,
               "remaining_value_at_low_win_rate_vs_hold": 1.0,
-              "remaining_worst_end_value_vs_hold": 1.38993,
+              "remaining_worst_end_value_vs_hold": 1.545432,
               "top": "2025-10-06"
             },
             {
               "asset": "ETH",
-              "heldout_end_value_vs_hold": 2.996169,
-              "heldout_value_at_low_vs_hold": 2.996169,
+              "heldout_end_value_vs_hold": 2.191518,
+              "heldout_value_at_low_vs_hold": 2.191518,
               "remaining_value_at_low_win_rate_vs_hold": 1.0,
-              "remaining_worst_end_value_vs_hold": 1.38993,
+              "remaining_worst_end_value_vs_hold": 1.342718,
               "top": "2021-05-12"
             },
             {
               "asset": "ETH",
-              "heldout_end_value_vs_hold": 2.551654,
-              "heldout_value_at_low_vs_hold": 3.017465,
+              "heldout_end_value_vs_hold": 2.483192,
+              "heldout_value_at_low_vs_hold": 2.894715,
               "remaining_value_at_low_win_rate_vs_hold": 1.0,
-              "remaining_worst_end_value_vs_hold": 1.38993,
+              "remaining_worst_end_value_vs_hold": 1.342718,
               "top": "2021-11-10"
             },
             {
               "asset": "ETH",
-              "heldout_end_value_vs_hold": 2.159831,
-              "heldout_value_at_low_vs_hold": 2.433044,
+              "heldout_end_value_vs_hold": 1.644986,
+              "heldout_value_at_low_vs_hold": 2.411061,
               "remaining_value_at_low_win_rate_vs_hold": 1.0,
-              "remaining_worst_end_value_vs_hold": 1.38993,
+              "remaining_worst_end_value_vs_hold": 1.342718,
               "top": "2025-08-22"
             }
           ],
-          "worst_heldout_end_value_vs_hold": 1.38993,
-          "worst_heldout_value_at_low_vs_hold": 1.422153
+          "worst_heldout_end_value_vs_hold": 1.342718,
+          "worst_heldout_value_at_low_vs_hold": 1.531599
         }
       },
       "parameter_stability": {
@@ -19910,51 +19872,51 @@
         "sets": [
           {
             "end_value_below_75pct_hold_count": 0,
-            "mean_value_at_low_edge_vs_hold": 5.459933,
-            "median_avg_sell_pct_of_peak": 0.794971,
-            "min_avg_sell_pct_of_peak": 0.743742,
+            "mean_value_at_low_edge_vs_hold": 5.479401,
+            "median_avg_sell_pct_of_peak": 0.78504,
+            "min_avg_sell_pct_of_peak": 0.704645,
             "n": 7,
             "name": "live",
             "value_at_low_win_rate_vs_hold": 1.0,
-            "worst_end_value_vs_hold": 1.38993,
-            "worst_value_at_low_vs_hold": 1.422153
+            "worst_end_value_vs_hold": 1.342718,
+            "worst_value_at_low_vs_hold": 1.531599
           },
           {
             "end_value_below_75pct_hold_count": 0,
-            "mean_value_at_low_edge_vs_hold": 5.314296,
-            "median_avg_sell_pct_of_peak": 0.801617,
-            "min_avg_sell_pct_of_peak": 0.68529,
+            "mean_value_at_low_edge_vs_hold": 5.68644,
+            "median_avg_sell_pct_of_peak": 0.791862,
+            "min_avg_sell_pct_of_peak": 0.702351,
             "n": 7,
             "name": "earlier_tighter",
             "value_at_low_win_rate_vs_hold": 1.0,
-            "worst_end_value_vs_hold": 1.42223,
-            "worst_value_at_low_vs_hold": 1.456444
+            "worst_end_value_vs_hold": 1.362999,
+            "worst_value_at_low_vs_hold": 1.555169
           },
           {
             "end_value_below_75pct_hold_count": 0,
-            "mean_value_at_low_edge_vs_hold": 5.067804,
-            "median_avg_sell_pct_of_peak": 0.841411,
-            "min_avg_sell_pct_of_peak": 0.418596,
+            "mean_value_at_low_edge_vs_hold": 5.089474,
+            "median_avg_sell_pct_of_peak": 0.777743,
+            "min_avg_sell_pct_of_peak": 0.410763,
             "n": 7,
             "name": "later_looser",
             "value_at_low_win_rate_vs_hold": 1.0,
-            "worst_end_value_vs_hold": 1.092727,
-            "worst_value_at_low_vs_hold": 1.2108
+            "worst_end_value_vs_hold": 0.857212,
+            "worst_value_at_low_vs_hold": 1.188058
           },
           {
             "end_value_below_75pct_hold_count": 0,
-            "mean_value_at_low_edge_vs_hold": 5.317818,
-            "median_avg_sell_pct_of_peak": 0.771769,
-            "min_avg_sell_pct_of_peak": 0.731931,
+            "mean_value_at_low_edge_vs_hold": 5.439689,
+            "median_avg_sell_pct_of_peak": 0.77058,
+            "min_avg_sell_pct_of_peak": 0.745603,
             "n": 7,
             "name": "less_rerisk",
             "value_at_low_win_rate_vs_hold": 1.0,
-            "worst_end_value_vs_hold": 1.359676,
-            "worst_value_at_low_vs_hold": 1.391875
+            "worst_end_value_vs_hold": 1.348788,
+            "worst_value_at_low_vs_hold": 1.503088
           }
         ],
-        "worst_end_value_vs_hold": 1.092727,
-        "worst_value_at_low_vs_hold": 1.2108
+        "worst_end_value_vs_hold": 0.857212,
+        "worst_value_at_low_vs_hold": 1.188058
       },
       "top_date_jitter": {
         "jitter_days": [
@@ -19969,72 +19931,72 @@
           {
             "end_value_below_75pct_hold_count": 0,
             "jitter_days": -60,
-            "mean_value_at_low_edge_vs_hold": 3.669897,
-            "median_avg_sell_pct_of_peak": 0.794971,
-            "min_avg_sell_pct_of_peak": 0.743742,
+            "mean_value_at_low_edge_vs_hold": 3.620008,
+            "median_avg_sell_pct_of_peak": 0.78504,
+            "min_avg_sell_pct_of_peak": 0.704645,
             "n": 7,
             "value_at_low_win_rate_vs_hold": 1.0,
-            "worst_end_value_vs_hold": 1.147389,
+            "worst_end_value_vs_hold": 1.140173,
             "worst_value_at_low_vs_hold": 1.0
           },
           {
             "end_value_below_75pct_hold_count": 0,
             "jitter_days": -30,
-            "mean_value_at_low_edge_vs_hold": 4.963331,
-            "median_avg_sell_pct_of_peak": 0.794971,
-            "min_avg_sell_pct_of_peak": 0.743742,
+            "mean_value_at_low_edge_vs_hold": 4.82541,
+            "median_avg_sell_pct_of_peak": 0.78504,
+            "min_avg_sell_pct_of_peak": 0.704645,
             "n": 7,
             "value_at_low_win_rate_vs_hold": 1.0,
-            "worst_end_value_vs_hold": 1.143258,
-            "worst_value_at_low_vs_hold": 1.461307
+            "worst_end_value_vs_hold": 1.262341,
+            "worst_value_at_low_vs_hold": 1.473569
           },
           {
             "end_value_below_75pct_hold_count": 0,
             "jitter_days": 0,
-            "mean_value_at_low_edge_vs_hold": 5.459933,
-            "median_avg_sell_pct_of_peak": 0.794971,
-            "min_avg_sell_pct_of_peak": 0.743742,
+            "mean_value_at_low_edge_vs_hold": 5.479401,
+            "median_avg_sell_pct_of_peak": 0.78504,
+            "min_avg_sell_pct_of_peak": 0.704645,
             "n": 7,
             "value_at_low_win_rate_vs_hold": 1.0,
-            "worst_end_value_vs_hold": 1.38993,
-            "worst_value_at_low_vs_hold": 1.422153
+            "worst_end_value_vs_hold": 1.342718,
+            "worst_value_at_low_vs_hold": 1.531599
           },
           {
             "end_value_below_75pct_hold_count": 0,
             "jitter_days": 30,
-            "mean_value_at_low_edge_vs_hold": 4.719509,
-            "median_avg_sell_pct_of_peak": 0.794971,
-            "min_avg_sell_pct_of_peak": 0.743742,
+            "mean_value_at_low_edge_vs_hold": 5.014066,
+            "median_avg_sell_pct_of_peak": 0.78504,
+            "min_avg_sell_pct_of_peak": 0.704645,
             "n": 7,
             "value_at_low_win_rate_vs_hold": 1.0,
-            "worst_end_value_vs_hold": 1.462155,
-            "worst_value_at_low_vs_hold": 1.512774
+            "worst_end_value_vs_hold": 1.342718,
+            "worst_value_at_low_vs_hold": 1.531599
           },
           {
             "end_value_below_75pct_hold_count": 0,
             "jitter_days": 60,
-            "mean_value_at_low_edge_vs_hold": 4.248244,
-            "median_avg_sell_pct_of_peak": 0.794971,
-            "min_avg_sell_pct_of_peak": 0.743742,
+            "mean_value_at_low_edge_vs_hold": 4.378269,
+            "median_avg_sell_pct_of_peak": 0.78504,
+            "min_avg_sell_pct_of_peak": 0.704645,
             "n": 7,
             "value_at_low_win_rate_vs_hold": 1.0,
-            "worst_end_value_vs_hold": 1.462155,
-            "worst_value_at_low_vs_hold": 1.512774
+            "worst_end_value_vs_hold": 1.342718,
+            "worst_value_at_low_vs_hold": 1.531599
           }
         ],
-        "worst_end_value_vs_hold": 1.143258,
+        "worst_end_value_vs_hold": 1.140173,
         "worst_value_at_low_vs_hold": 1.0
       }
     },
     "summary": {
       "end_value_below_75pct_hold_count": 0,
-      "mean_value_at_low_edge_vs_hold": 5.459933,
-      "median_avg_sell_pct_of_peak": 0.794971,
-      "min_avg_sell_pct_of_peak": 0.743742,
+      "mean_value_at_low_edge_vs_hold": 5.479401,
+      "median_avg_sell_pct_of_peak": 0.78504,
+      "min_avg_sell_pct_of_peak": 0.704645,
       "n": 7,
       "value_at_low_win_rate_vs_hold": 1.0,
-      "worst_end_value_vs_hold": 1.38993,
-      "worst_value_at_low_vs_hold": 1.422153
+      "worst_end_value_vs_hold": 1.342718,
+      "worst_value_at_low_vs_hold": 1.531599
     },
     "windows": [
       {
@@ -20043,57 +20005,57 @@
           "hold": {
             "avg_sell_pct_of_peak": null,
             "avg_sell_price": null,
-            "end_value": 4.757988,
+            "end_value": 5.129423,
             "end_value_vs_hold": 1.0,
-            "max_portfolio_drawdown": 0.81688,
+            "max_portfolio_drawdown": 0.830057,
             "sold_fraction": 0.0,
-            "utility": 3.12082,
+            "utility": 3.437458,
             "value_at_low_vs_hold": 1.0,
-            "value_at_post_top_low": 4.314196
+            "value_at_post_top_low": 4.633469
           },
           "ma_drawdown_guard": {
-            "avg_sell_pct_of_peak": 0.284908,
-            "avg_sell_price": 5044.84,
-            "end_value": 6.512657,
-            "end_value_vs_hold": 1.368784,
-            "max_portfolio_drawdown": 0.455505,
-            "sold_fraction": 0.897858,
-            "utility": 5.543843,
-            "value_at_low_vs_hold": 1.499081,
-            "value_at_post_top_low": 6.467327
+            "avg_sell_pct_of_peak": 0.381439,
+            "avg_sell_price": 7301.04,
+            "end_value": 9.678634,
+            "end_value_vs_hold": 1.886886,
+            "max_portfolio_drawdown": 0.485624,
+            "sold_fraction": 0.863152,
+            "utility": 8.855993,
+            "value_at_low_vs_hold": 2.074205,
+            "value_at_post_top_low": 9.610764
           },
           "trailing_stop_25": {
-            "avg_sell_pct_of_peak": 0.052947,
-            "avg_sell_price": 937.52,
-            "end_value": 1.247391,
-            "end_value_vs_hold": 0.262168,
-            "max_portfolio_drawdown": 0.264684,
+            "avg_sell_pct_of_peak": 0.100822,
+            "avg_sell_price": 1929.82,
+            "end_value": 2.74891,
+            "end_value_vs_hold": 0.53591,
+            "max_portfolio_drawdown": 0.347617,
             "sold_fraction": 1.0,
-            "utility": -0.016306,
-            "value_at_low_vs_hold": 0.289136,
-            "value_at_post_top_low": 1.247391
+            "utility": 1.560324,
+            "value_at_low_vs_hold": 0.593272,
+            "value_at_post_top_low": 2.74891
           }
         },
         "model": {
-          "avg_sell_pct_of_peak": 0.941061,
-          "avg_sell_price": 16663.26,
-          "end_value": 18.173419,
-          "end_value_vs_hold": 3.81956,
-          "max_portfolio_drawdown": 0.264684,
-          "sold_fraction": 0.770433,
-          "utility": 18.052682,
-          "value_at_low_vs_hold": 4.188855,
-          "value_at_post_top_low": 18.071539
+          "avg_sell_pct_of_peak": 0.905725,
+          "avg_sell_price": 17336.3,
+          "end_value": 20.108542,
+          "end_value_vs_hold": 3.920235,
+          "max_portfolio_drawdown": 0.347617,
+          "sold_fraction": 0.765605,
+          "utility": 19.979985,
+          "value_at_low_vs_hold": 4.314757,
+          "value_at_post_top_low": 19.992293
         },
         "edges_vs_hold": {
-          "end_value": 13.415431,
-          "value_at_post_top_low": 13.757343
+          "end_value": 14.979119,
+          "value_at_post_top_low": 15.358824
         },
-        "end": "2019-01-25",
+        "end": "2019-01-20",
         "eval_top": "2017-12-17",
         "jitter_days": 0,
         "param_set": "live",
-        "start": "2016-11-18",
+        "start": "2016-11-13",
         "top": "2017-12-17"
       },
       {
@@ -20102,57 +20064,57 @@
           "hold": {
             "avg_sell_pct_of_peak": null,
             "avg_sell_price": null,
-            "end_value": 5.448586,
+            "end_value": 5.805505,
             "end_value_vs_hold": 1.0,
-            "max_portfolio_drawdown": 0.543564,
+            "max_portfolio_drawdown": 0.521817,
             "sold_fraction": 0.0,
-            "utility": 4.124523,
+            "utility": 4.671142,
             "value_at_low_vs_hold": 1.0,
-            "value_at_post_top_low": 5.263236
+            "value_at_post_top_low": 5.805505
           },
           "ma_drawdown_guard": {
-            "avg_sell_pct_of_peak": 0.576018,
-            "avg_sell_price": 36954.95,
-            "end_value": 6.43637,
-            "end_value_vs_hold": 1.181292,
-            "max_portfolio_drawdown": 0.421298,
-            "sold_fraction": 0.827595,
-            "utility": 5.489747,
-            "value_at_low_vs_hold": 1.216821,
-            "value_at_post_top_low": 6.404415
+            "avg_sell_pct_of_peak": 0.615061,
+            "avg_sell_price": 40266.11,
+            "end_value": 7.15275,
+            "end_value_vs_hold": 1.232063,
+            "max_portfolio_drawdown": 0.36036,
+            "sold_fraction": 0.81071,
+            "utility": 6.273309,
+            "value_at_low_vs_hold": 1.232063,
+            "value_at_post_top_low": 7.15275
           },
           "trailing_stop_25": {
-            "avg_sell_pct_of_peak": 0.581469,
-            "avg_sell_price": 37304.69,
-            "end_value": 6.705006,
-            "end_value_vs_hold": 1.230596,
-            "max_portfolio_drawdown": 0.394137,
+            "avg_sell_pct_of_peak": 0.531117,
+            "avg_sell_price": 34770.58,
+            "end_value": 6.448173,
+            "end_value_vs_hold": 1.1107,
+            "max_portfolio_drawdown": 0.422463,
             "sold_fraction": 1.0,
-            "utility": 5.811651,
-            "value_at_low_vs_hold": 1.273932,
-            "value_at_post_top_low": 6.705006
+            "utility": 5.503114,
+            "value_at_low_vs_hold": 1.1107,
+            "value_at_post_top_low": 6.448173
           }
         },
         "model": {
-          "avg_sell_pct_of_peak": 0.794971,
-          "avg_sell_price": 51002.09,
-          "end_value": 7.573151,
-          "end_value_vs_hold": 1.38993,
-          "max_portfolio_drawdown": 0.284532,
-          "sold_fraction": 0.904968,
-          "utility": 6.704192,
-          "value_at_low_vs_hold": 1.422153,
-          "value_at_post_top_low": 7.485125
+          "avg_sell_pct_of_peak": 0.78504,
+          "avg_sell_price": 51394.11,
+          "end_value": 8.972013,
+          "end_value_vs_hold": 1.545432,
+          "max_portfolio_drawdown": 0.192256,
+          "sold_fraction": 1.0,
+          "utility": 8.254199,
+          "value_at_low_vs_hold": 1.545432,
+          "value_at_post_top_low": 8.972013
         },
         "edges_vs_hold": {
-          "end_value": 2.124565,
-          "value_at_post_top_low": 2.221889
+          "end_value": 3.166508,
+          "value_at_post_top_low": 3.166508
         },
-        "end": "2022-05-20",
+        "end": "2022-05-15",
         "eval_top": "2021-04-14",
         "jitter_days": 0,
         "param_set": "live",
-        "start": "2020-03-13",
+        "start": "2020-03-15",
         "top": "2021-04-14"
       },
       {
@@ -20161,57 +20123,57 @@
           "hold": {
             "avg_sell_pct_of_peak": null,
             "avg_sell_price": null,
-            "end_value": 1.569428,
+            "end_value": 1.502453,
             "end_value_vs_hold": 1.0,
-            "max_portfolio_drawdown": 0.742474,
+            "max_portfolio_drawdown": 0.751144,
             "sold_fraction": 0.0,
-            "utility": 0.314741,
+            "utility": 0.250865,
             "value_at_low_vs_hold": 1.0,
-            "value_at_post_top_low": 1.493236
+            "value_at_post_top_low": 1.431094
           },
           "ma_drawdown_guard": {
-            "avg_sell_pct_of_peak": 0.576018,
-            "avg_sell_price": 36954.95,
-            "end_value": 3.03472,
-            "end_value_vs_hold": 1.933647,
-            "max_portfolio_drawdown": 0.45703,
-            "sold_fraction": 0.827595,
-            "utility": 2.325476,
-            "value_at_low_vs_hold": 2.023514,
-            "value_at_post_top_low": 3.021584
+            "avg_sell_pct_of_peak": 0.615061,
+            "avg_sell_price": 40266.11,
+            "end_value": 3.151899,
+            "end_value_vs_hold": 2.097836,
+            "max_portfolio_drawdown": 0.40656,
+            "sold_fraction": 0.81071,
+            "utility": 2.509442,
+            "value_at_low_vs_hold": 2.193002,
+            "value_at_post_top_low": 3.138391
           },
           "trailing_stop_25": {
-            "avg_sell_pct_of_peak": 0.581469,
-            "avg_sell_price": 37304.69,
-            "end_value": 3.371579,
-            "end_value_vs_hold": 2.148286,
-            "max_portfolio_drawdown": 0.394137,
+            "avg_sell_pct_of_peak": 0.531117,
+            "avg_sell_price": 34770.58,
+            "end_value": 3.054289,
+            "end_value_vs_hold": 2.032869,
+            "max_portfolio_drawdown": 0.422463,
             "sold_fraction": 1.0,
-            "utility": 2.753531,
-            "value_at_low_vs_hold": 2.257902,
-            "value_at_post_top_low": 3.371579
+            "utility": 2.38588,
+            "value_at_low_vs_hold": 2.134234,
+            "value_at_post_top_low": 3.054289
           }
         },
         "model": {
-          "avg_sell_pct_of_peak": 0.794971,
-          "avg_sell_price": 51002.09,
-          "end_value": 3.252294,
-          "end_value_vs_hold": 2.07228,
-          "max_portfolio_drawdown": 0.388653,
-          "sold_fraction": 0.904968,
-          "utility": 2.619057,
-          "value_at_low_vs_hold": 2.153785,
-          "value_at_post_top_low": 3.216109
+          "avg_sell_pct_of_peak": 0.78504,
+          "avg_sell_price": 51394.11,
+          "end_value": 3.98928,
+          "end_value_vs_hold": 2.655179,
+          "max_portfolio_drawdown": 0.244595,
+          "sold_fraction": 1.0,
+          "utility": 3.579023,
+          "value_at_low_vs_hold": 2.777162,
+          "value_at_post_top_low": 3.97438
         },
         "edges_vs_hold": {
-          "end_value": 1.682866,
-          "value_at_post_top_low": 1.722873
+          "end_value": 2.486827,
+          "value_at_post_top_low": 2.543286
         },
-        "end": "2022-12-16",
+        "end": "2022-12-11",
         "eval_top": "2021-11-10",
         "jitter_days": 0,
         "param_set": "live",
-        "start": "2020-10-09",
+        "start": "2020-10-11",
         "top": "2021-11-10"
       },
       {
@@ -20220,57 +20182,57 @@
           "hold": {
             "avg_sell_pct_of_peak": null,
             "avg_sell_price": null,
-            "end_value": 1.186333,
+            "end_value": 1.354806,
             "end_value_vs_hold": 1.0,
-            "max_portfolio_drawdown": 0.509253,
+            "max_portfolio_drawdown": 0.518462,
             "sold_fraction": 0.0,
-            "utility": -0.019649,
+            "utility": -0.096171,
             "value_at_low_vs_hold": 1.0,
-            "value_at_post_top_low": 1.112202
+            "value_at_post_top_low": 1.037521
           },
           "ma_drawdown_guard": {
-            "avg_sell_pct_of_peak": 0.709016,
-            "avg_sell_price": 86688.9,
-            "end_value": 1.520731,
-            "end_value_vs_hold": 1.281876,
-            "max_portfolio_drawdown": 0.225122,
-            "sold_fraction": 0.79516,
-            "utility": 0.686888,
-            "value_at_low_vs_hold": 1.353663,
-            "value_at_post_top_low": 1.505546
+            "avg_sell_pct_of_peak": 0.659633,
+            "avg_sell_price": 81473.59,
+            "end_value": 1.408044,
+            "end_value_vs_hold": 1.039295,
+            "max_portfolio_drawdown": 0.260751,
+            "sold_fraction": 0.801298,
+            "utility": 0.436564,
+            "value_at_low_vs_hold": 1.296358,
+            "value_at_post_top_low": 1.344999
           },
           "trailing_stop_25": {
-            "avg_sell_pct_of_peak": 0.695944,
-            "avg_sell_price": 85090.69,
-            "end_value": 1.57725,
-            "end_value_vs_hold": 1.329518,
-            "max_portfolio_drawdown": 0.304056,
+            "avg_sell_pct_of_peak": 0.633247,
+            "avg_sell_price": 78214.48,
+            "end_value": 1.364393,
+            "end_value_vs_hold": 1.007076,
+            "max_portfolio_drawdown": 0.250091,
             "sold_fraction": 1.0,
-            "utility": 0.754483,
-            "value_at_low_vs_hold": 1.418133,
-            "value_at_post_top_low": 1.57725
+            "utility": 0.443147,
+            "value_at_low_vs_hold": 1.315051,
+            "value_at_post_top_low": 1.364393
           }
         },
         "model": {
-          "avg_sell_pct_of_peak": 0.913008,
-          "avg_sell_price": 111630.28,
-          "end_value": 1.734602,
-          "end_value_vs_hold": 1.462155,
-          "max_portfolio_drawdown": 0.240876,
-          "sold_fraction": 0.771821,
-          "utility": 0.955583,
-          "value_at_low_vs_hold": 1.512774,
-          "value_at_post_top_low": 1.68251
+          "avg_sell_pct_of_peak": 0.919434,
+          "avg_sell_price": 113562.44,
+          "end_value": 1.819122,
+          "end_value_vs_hold": 1.342718,
+          "max_portfolio_drawdown": 0.250091,
+          "sold_fraction": 0.768368,
+          "utility": 0.82575,
+          "value_at_low_vs_hold": 1.531599,
+          "value_at_post_top_low": 1.589066
         },
         "edges_vs_hold": {
-          "end_value": 0.548269,
-          "value_at_post_top_low": 0.570308
+          "end_value": 0.464316,
+          "value_at_post_top_low": 0.551545
         },
-        "end": "2026-07-10",
+        "end": "2026-08-30",
         "eval_top": "2025-10-06",
         "jitter_days": 0,
         "param_set": "live",
-        "start": "2024-09-06",
+        "start": "2024-09-01",
         "top": "2025-10-06"
       },
       {
@@ -20279,57 +20241,57 @@
           "hold": {
             "avg_sell_pct_of_peak": null,
             "avg_sell_price": null,
-            "end_value": 6.740195,
+            "end_value": 8.968566,
             "end_value_vs_hold": 1.0,
-            "max_portfolio_drawdown": 0.771223,
+            "max_portfolio_drawdown": 0.687613,
             "sold_fraction": 0.0,
-            "utility": 5.55595,
+            "utility": 7.801043,
             "value_at_low_vs_hold": 1.0,
-            "value_at_post_top_low": 6.740195
+            "value_at_post_top_low": 8.968566
           },
           "ma_drawdown_guard": {
-            "avg_sell_pct_of_peak": 0.535801,
-            "avg_sell_price": 2500.65,
-            "end_value": 14.304698,
-            "end_value_vs_hold": 2.122298,
-            "max_portfolio_drawdown": 0.444469,
-            "sold_fraction": 0.836275,
-            "utility": 13.659654,
-            "value_at_low_vs_hold": 2.122298,
-            "value_at_post_top_low": 14.304698
+            "avg_sell_pct_of_peak": 0.512499,
+            "avg_sell_price": 2371.01,
+            "end_value": 13.818642,
+            "end_value_vs_hold": 1.540786,
+            "max_portfolio_drawdown": 0.463053,
+            "sold_fraction": 0.844202,
+            "utility": 12.990767,
+            "value_at_low_vs_hold": 1.540786,
+            "value_at_post_top_low": 13.818642
           },
           "trailing_stop_25": {
-            "avg_sell_pct_of_peak": 0.309835,
-            "avg_sell_price": 1446.03,
-            "end_value": 9.128283,
-            "end_value_vs_hold": 1.354306,
-            "max_portfolio_drawdown": 0.26229,
+            "avg_sell_pct_of_peak": 0.306083,
+            "avg_sell_price": 1416.05,
+            "end_value": 8.787561,
+            "end_value_vs_hold": 0.979818,
+            "max_portfolio_drawdown": 0.268419,
             "sold_fraction": 1.0,
-            "utility": 8.244084,
-            "value_at_low_vs_hold": 1.354306,
-            "value_at_post_top_low": 9.128283
+            "utility": 7.789039,
+            "value_at_low_vs_hold": 0.979818,
+            "value_at_post_top_low": 8.787561
           }
         },
         "model": {
-          "avg_sell_pct_of_peak": 0.743742,
-          "avg_sell_price": 3471.13,
-          "end_value": 20.194764,
-          "end_value_vs_hold": 2.996169,
-          "max_portfolio_drawdown": 0.26229,
+          "avg_sell_pct_of_peak": 0.704645,
+          "avg_sell_price": 3259.94,
+          "end_value": 19.654775,
+          "end_value_vs_hold": 2.191518,
+          "max_portfolio_drawdown": 0.268419,
           "sold_fraction": 1.0,
-          "utility": 19.889905,
-          "value_at_low_vs_hold": 2.996169,
-          "value_at_post_top_low": 20.194764
+          "utility": 19.099476,
+          "value_at_low_vs_hold": 2.191518,
+          "value_at_post_top_low": 19.654775
         },
         "edges_vs_hold": {
-          "end_value": 13.454569,
-          "value_at_post_top_low": 13.454569
+          "end_value": 10.686209,
+          "value_at_post_top_low": 10.686209
         },
-        "end": "2022-06-17",
+        "end": "2022-06-12",
         "eval_top": "2021-05-12",
         "jitter_days": 0,
         "param_set": "live",
-        "start": "2020-04-10",
+        "start": "2020-04-12",
         "top": "2021-05-12"
       },
       {
@@ -20338,57 +20300,57 @@
           "hold": {
             "avg_sell_pct_of_peak": null,
             "avg_sell_price": null,
-            "end_value": 3.463859,
+            "end_value": 3.36904,
             "end_value_vs_hold": 1.0,
-            "max_portfolio_drawdown": 0.772929,
+            "max_portfolio_drawdown": 0.767902,
             "sold_fraction": 0.0,
-            "utility": 1.714197,
+            "utility": 1.678714,
             "value_at_low_vs_hold": 1.0,
-            "value_at_post_top_low": 2.898783
+            "value_at_post_top_low": 2.862294
           },
           "ma_drawdown_guard": {
-            "avg_sell_pct_of_peak": 0.535801,
-            "avg_sell_price": 2500.65,
-            "end_value": 6.287258,
-            "end_value_vs_hold": 1.815102,
-            "max_portfolio_drawdown": 0.444789,
-            "sold_fraction": 0.836275,
-            "utility": 5.457474,
-            "value_at_low_vs_hold": 2.137015,
-            "value_at_post_top_low": 6.194741
+            "avg_sell_pct_of_peak": 0.512499,
+            "avg_sell_price": 2371.01,
+            "end_value": 5.860489,
+            "end_value_vs_hold": 1.739513,
+            "max_portfolio_drawdown": 0.463053,
+            "sold_fraction": 0.844202,
+            "utility": 5.013282,
+            "value_at_low_vs_hold": 2.019897,
+            "value_at_post_top_low": 5.781539
           },
           "trailing_stop_25": {
-            "avg_sell_pct_of_peak": 0.309835,
-            "avg_sell_price": 1446.03,
-            "end_value": 3.955337,
-            "end_value_vs_hold": 1.141888,
-            "max_portfolio_drawdown": 0.26229,
+            "avg_sell_pct_of_peak": 0.306083,
+            "avg_sell_price": 1416.05,
+            "end_value": 3.774701,
+            "end_value_vs_hold": 1.120408,
+            "max_portfolio_drawdown": 0.268419,
             "sold_fraction": 1.0,
-            "utility": 3.007412,
-            "value_at_low_vs_hold": 1.364482,
-            "value_at_post_top_low": 3.955337
+            "utility": 2.818356,
+            "value_at_low_vs_hold": 1.318767,
+            "value_at_post_top_low": 3.774701
           }
         },
         "model": {
-          "avg_sell_pct_of_peak": 0.743742,
-          "avg_sell_price": 3471.13,
-          "end_value": 8.838571,
-          "end_value_vs_hold": 2.551654,
-          "max_portfolio_drawdown": 0.26229,
+          "avg_sell_pct_of_peak": 0.704645,
+          "avg_sell_price": 3259.94,
+          "end_value": 8.365974,
+          "end_value_vs_hold": 2.483192,
+          "max_portfolio_drawdown": 0.268419,
           "sold_fraction": 1.0,
-          "utility": 8.308763,
-          "value_at_low_vs_hold": 3.017465,
-          "value_at_post_top_low": 8.746976
+          "utility": 7.81773,
+          "value_at_low_vs_hold": 2.894715,
+          "value_at_post_top_low": 8.285527
         },
         "edges_vs_hold": {
-          "end_value": 5.374712,
-          "value_at_post_top_low": 5.848193
+          "end_value": 4.996934,
+          "value_at_post_top_low": 5.423233
         },
-        "end": "2022-12-16",
+        "end": "2022-12-11",
         "eval_top": "2021-11-10",
         "jitter_days": 0,
         "param_set": "live",
-        "start": "2020-10-09",
+        "start": "2020-10-11",
         "top": "2021-11-10"
       },
       {
@@ -20397,57 +20359,57 @@
           "hold": {
             "avg_sell_pct_of_peak": null,
             "avg_sell_price": null,
-            "end_value": 0.513021,
+            "end_value": 0.683621,
             "end_value_vs_hold": 1.0,
-            "max_portfolio_drawdown": 0.673729,
+            "max_portfolio_drawdown": 0.671631,
             "sold_fraction": 0.0,
-            "utility": -0.715103,
+            "utility": -0.720543,
             "value_at_low_vs_hold": 1.0,
-            "value_at_post_top_low": 0.449643
+            "value_at_post_top_low": 0.443783
           },
           "ma_drawdown_guard": {
-            "avg_sell_pct_of_peak": 0.490867,
-            "avg_sell_price": 2371.55,
-            "end_value": 0.651554,
-            "end_value_vs_hold": 1.270032,
-            "max_portfolio_drawdown": 0.369702,
-            "sold_fraction": 0.847523,
-            "utility": -0.252867,
-            "value_at_low_vs_hold": 1.427555,
-            "value_at_post_top_low": 0.64189
+            "avg_sell_pct_of_peak": 0.502375,
+            "avg_sell_price": 2401.17,
+            "end_value": 0.679672,
+            "end_value_vs_hold": 0.994223,
+            "max_portfolio_drawdown": 0.369308,
+            "sold_fraction": 0.845343,
+            "utility": -0.332541,
+            "value_at_low_vs_hold": 1.447957,
+            "value_at_post_top_low": 0.642579
           },
           "trailing_stop_25": {
-            "avg_sell_pct_of_peak": 0.538069,
-            "avg_sell_price": 2599.6,
-            "end_value": 0.741527,
-            "end_value_vs_hold": 1.445412,
-            "max_portfolio_drawdown": 0.258473,
+            "avg_sell_pct_of_peak": 0.534193,
+            "avg_sell_price": 2553.25,
+            "end_value": 0.72195,
+            "end_value_vs_hold": 1.056068,
+            "max_portfolio_drawdown": 0.27805,
             "sold_fraction": 1.0,
-            "utility": -0.06893,
-            "value_at_low_vs_hold": 1.649148,
-            "value_at_post_top_low": 0.741527
+            "utility": -0.210001,
+            "value_at_low_vs_hold": 1.626807,
+            "value_at_post_top_low": 0.72195
           }
         },
         "model": {
-          "avg_sell_pct_of_peak": 0.926867,
-          "avg_sell_price": 4478.02,
-          "end_value": 1.10804,
-          "end_value_vs_hold": 2.159831,
-          "max_portfolio_drawdown": 0.608781,
-          "sold_fraction": 0.778495,
-          "utility": 0.505568,
-          "value_at_low_vs_hold": 2.433044,
-          "value_at_post_top_low": 1.094001
+          "avg_sell_pct_of_peak": 0.936434,
+          "avg_sell_price": 4475.82,
+          "end_value": 1.124547,
+          "end_value_vs_hold": 1.644986,
+          "max_portfolio_drawdown": 0.606379,
+          "sold_fraction": 0.762004,
+          "utility": 0.329495,
+          "value_at_low_vs_hold": 2.411061,
+          "value_at_post_top_low": 1.069988
         },
         "edges_vs_hold": {
-          "end_value": 0.595019,
-          "value_at_post_top_low": 0.644358
+          "end_value": 0.440926,
+          "value_at_post_top_low": 0.626205
         },
-        "end": "2026-07-10",
+        "end": "2026-08-30",
         "eval_top": "2025-08-22",
         "jitter_days": 0,
         "param_set": "live",
-        "start": "2024-07-19",
+        "start": "2024-07-21",
         "top": "2025-08-22"
       }
     ]
@@ -20455,99 +20417,99 @@
   "distribution_diagnostics": {
     "lowest_sold_fraction": [
       {
-        "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.9411,
-        "end_value_vs_hold": 3.8196,
-        "max_portfolio_drawdown": 0.2647,
-        "sold_fraction": 0.7704,
-        "top": "2017-12-17",
-        "utility": 18.052682,
-        "value_at_low_vs_hold": 4.1889
-      },
-      {
-        "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.913,
-        "end_value_vs_hold": 1.4622,
-        "max_portfolio_drawdown": 0.2409,
-        "sold_fraction": 0.7718,
-        "top": "2025-10-06",
-        "utility": 0.955583,
-        "value_at_low_vs_hold": 1.5128
-      },
-      {
         "asset": "ETH",
-        "avg_sell_pct_of_peak": 0.9269,
-        "end_value_vs_hold": 2.1598,
-        "max_portfolio_drawdown": 0.6088,
-        "sold_fraction": 0.7785,
+        "avg_sell_pct_of_peak": 0.9364,
+        "end_value_vs_hold": 1.645,
+        "max_portfolio_drawdown": 0.6064,
+        "sold_fraction": 0.762,
         "top": "2025-08-22",
-        "utility": 0.505568,
-        "value_at_low_vs_hold": 2.433
+        "utility": 0.329495,
+        "value_at_low_vs_hold": 2.4111
+      },
+      {
+        "asset": "BTC",
+        "avg_sell_pct_of_peak": 0.9057,
+        "end_value_vs_hold": 3.9202,
+        "max_portfolio_drawdown": 0.3476,
+        "sold_fraction": 0.7656,
+        "top": "2017-12-17",
+        "utility": 19.979985,
+        "value_at_low_vs_hold": 4.3148
+      },
+      {
+        "asset": "BTC",
+        "avg_sell_pct_of_peak": 0.9194,
+        "end_value_vs_hold": 1.3427,
+        "max_portfolio_drawdown": 0.2501,
+        "sold_fraction": 0.7684,
+        "top": "2025-10-06",
+        "utility": 0.82575,
+        "value_at_low_vs_hold": 1.5316
       }
     ],
     "windows": 7,
     "worst_end_value_vs_hold": [
       {
         "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.795,
-        "end_value_vs_hold": 1.3899,
-        "max_portfolio_drawdown": 0.2845,
-        "sold_fraction": 0.905,
-        "top": "2021-04-14",
-        "utility": 6.704192,
-        "value_at_low_vs_hold": 1.4222
-      },
-      {
-        "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.913,
-        "end_value_vs_hold": 1.4622,
-        "max_portfolio_drawdown": 0.2409,
-        "sold_fraction": 0.7718,
+        "avg_sell_pct_of_peak": 0.9194,
+        "end_value_vs_hold": 1.3427,
+        "max_portfolio_drawdown": 0.2501,
+        "sold_fraction": 0.7684,
         "top": "2025-10-06",
-        "utility": 0.955583,
-        "value_at_low_vs_hold": 1.5128
+        "utility": 0.82575,
+        "value_at_low_vs_hold": 1.5316
       },
       {
         "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.795,
-        "end_value_vs_hold": 2.0723,
-        "max_portfolio_drawdown": 0.3887,
-        "sold_fraction": 0.905,
-        "top": "2021-11-10",
-        "utility": 2.619057,
-        "value_at_low_vs_hold": 2.1538
+        "avg_sell_pct_of_peak": 0.785,
+        "end_value_vs_hold": 1.5454,
+        "max_portfolio_drawdown": 0.1923,
+        "sold_fraction": 1.0,
+        "top": "2021-04-14",
+        "utility": 8.254199,
+        "value_at_low_vs_hold": 1.5454
+      },
+      {
+        "asset": "ETH",
+        "avg_sell_pct_of_peak": 0.9364,
+        "end_value_vs_hold": 1.645,
+        "max_portfolio_drawdown": 0.6064,
+        "sold_fraction": 0.762,
+        "top": "2025-08-22",
+        "utility": 0.329495,
+        "value_at_low_vs_hold": 2.4111
       }
     ],
     "worst_value_at_low_vs_hold": [
       {
         "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.795,
-        "end_value_vs_hold": 1.3899,
-        "max_portfolio_drawdown": 0.2845,
-        "sold_fraction": 0.905,
-        "top": "2021-04-14",
-        "utility": 6.704192,
-        "value_at_low_vs_hold": 1.4222
-      },
-      {
-        "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.913,
-        "end_value_vs_hold": 1.4622,
-        "max_portfolio_drawdown": 0.2409,
-        "sold_fraction": 0.7718,
+        "avg_sell_pct_of_peak": 0.9194,
+        "end_value_vs_hold": 1.3427,
+        "max_portfolio_drawdown": 0.2501,
+        "sold_fraction": 0.7684,
         "top": "2025-10-06",
-        "utility": 0.955583,
-        "value_at_low_vs_hold": 1.5128
+        "utility": 0.82575,
+        "value_at_low_vs_hold": 1.5316
       },
       {
         "asset": "BTC",
-        "avg_sell_pct_of_peak": 0.795,
-        "end_value_vs_hold": 2.0723,
-        "max_portfolio_drawdown": 0.3887,
-        "sold_fraction": 0.905,
-        "top": "2021-11-10",
-        "utility": 2.619057,
-        "value_at_low_vs_hold": 2.1538
+        "avg_sell_pct_of_peak": 0.785,
+        "end_value_vs_hold": 1.5454,
+        "max_portfolio_drawdown": 0.1923,
+        "sold_fraction": 1.0,
+        "top": "2021-04-14",
+        "utility": 8.254199,
+        "value_at_low_vs_hold": 1.5454
+      },
+      {
+        "asset": "ETH",
+        "avg_sell_pct_of_peak": 0.7046,
+        "end_value_vs_hold": 2.1915,
+        "max_portfolio_drawdown": 0.2684,
+        "sold_fraction": 1.0,
+        "top": "2021-05-12",
+        "utility": 19.099476,
+        "value_at_low_vs_hold": 2.1915
       }
     ]
   },
@@ -20557,109 +20519,109 @@
         "calibrated": {
           "bins": [
             {
-              "abs_error": 0.1445,
-              "avg_pred": 0.3101,
-              "n": 33,
-              "observed": 0.4545,
+              "abs_error": 0.1261,
+              "avg_pred": 0.3072,
+              "n": 30,
+              "observed": 0.4333,
               "range": "0.2-0.4"
             },
             {
-              "abs_error": 0.2553,
-              "avg_pred": 0.5117,
-              "n": 39,
-              "observed": 0.2564,
+              "abs_error": 0.3416,
+              "avg_pred": 0.4995,
+              "n": 38,
+              "observed": 0.1579,
               "range": "0.4-0.6"
             },
             {
-              "abs_error": 0.0823,
-              "avg_pred": 0.6715,
-              "n": 314,
-              "observed": 0.5892,
+              "abs_error": 0.0809,
+              "avg_pred": 0.6765,
+              "n": 324,
+              "observed": 0.5957,
               "range": "0.6-0.8"
             },
             {
-              "abs_error": 0.5011,
-              "avg_pred": 0.9321,
-              "n": 58,
-              "observed": 0.431,
+              "abs_error": 0.4465,
+              "avg_pred": 0.9299,
+              "n": 60,
+              "observed": 0.4833,
               "range": "0.8-1.0"
             }
           ],
-          "down20_brier": 0.28649,
-          "down20_calibration_mae": 0.15683
+          "down20_brier": 0.28008,
+          "down20_calibration_mae": 0.15435
         },
         "loco": {
           "interval_coverage": {
-            "above_p90_rate": 0.40991,
+            "above_p90_rate": 0.42699,
             "below_p10_rate": 0.0,
             "conformal_candidate": {
-              "coverage_delta_vs_raw": 0.25225,
-              "final_full_sample_scale_80": 2.00311,
+              "coverage_delta_vs_raw": 0.2677,
+              "final_full_sample_scale_80": 1.99381,
               "fold_stability_status": "WEAK_FOLDS",
               "groups": 9,
-              "loco_conformal_coverage": 0.84234,
-              "max_selected_scale_80": 2.0821,
-              "median_selected_scale_80": 2.03128,
+              "loco_conformal_coverage": 0.84071,
+              "max_selected_scale_80": 2.07127,
+              "median_selected_scale_80": 2.00042,
               "method": "log_price_asymmetric_p10_p50_p90_scale",
               "min_group_coverage": 0.0,
-              "n": 444,
-              "raw_coverage": 0.59009,
+              "n": 452,
+              "raw_coverage": 0.57301,
               "rows": [
                 {
                   "coverage": 1.0,
                   "curve_status": "leave_one_group_out",
                   "group": "BTC:cycle_low:2018-12-15",
-                  "n": 74,
-                  "raw_coverage": 0.93243,
-                  "selected_scale_80": 2.04592
+                  "n": 75,
+                  "raw_coverage": 0.93333,
+                  "selected_scale_80": 2.04463
                 },
                 {
                   "coverage": 1.0,
                   "curve_status": "leave_one_group_out",
                   "group": "BTC:cycle_low:2022-11-21",
                   "n": 109,
-                  "raw_coverage": 0.90826,
-                  "selected_scale_80": 2.0821
+                  "raw_coverage": 0.89908,
+                  "selected_scale_80": 2.07127
                 },
                 {
                   "coverage": 1.0,
                   "curve_status": "leave_one_group_out",
                   "group": "BTC:noncycle:2017",
                   "n": 43,
-                  "raw_coverage": 0.04651,
-                  "selected_scale_80": 2.03461
+                  "raw_coverage": 0.06977,
+                  "selected_scale_80": 2.00292
                 },
                 {
-                  "coverage": 0.97802,
+                  "coverage": 0.96703,
                   "curve_status": "leave_one_group_out",
                   "group": "BTC:noncycle:2020",
                   "n": 91,
-                  "raw_coverage": 0.85714,
-                  "selected_scale_80": 2.04592
+                  "raw_coverage": 0.83516,
+                  "selected_scale_80": 2.02526
                 },
                 {
                   "coverage": 0.63158,
                   "curve_status": "leave_one_group_out",
                   "group": "BTC:noncycle:2021",
                   "n": 19,
-                  "raw_coverage": 0.10526,
-                  "selected_scale_80": 1.93677
+                  "raw_coverage": 0.05263,
+                  "selected_scale_80": 1.9543
                 },
                 {
                   "coverage": 1.0,
                   "curve_status": "leave_one_group_out",
                   "group": "BTC:noncycle:2023",
-                  "n": 25,
-                  "raw_coverage": 0.48,
-                  "selected_scale_80": 2.03128
+                  "n": 24,
+                  "raw_coverage": 0.45833,
+                  "selected_scale_80": 2.00042
                 },
                 {
                   "coverage": 0.0,
                   "curve_status": "leave_one_group_out",
                   "group": "BTC:noncycle:2024",
-                  "n": 48,
+                  "n": 49,
                   "raw_coverage": 0.0,
-                  "selected_scale_80": 1.66623
+                  "selected_scale_80": 1.66598
                 },
                 {
                   "coverage": 0.0,
@@ -20667,15 +20629,15 @@
                   "group": "BTC:noncycle:2025",
                   "n": 13,
                   "raw_coverage": 0.0,
-                  "selected_scale_80": 1.88905
+                  "selected_scale_80": 1.88627
                 },
                 {
                   "coverage": 1.0,
                   "curve_status": "leave_one_group_out",
                   "group": "BTC:noncycle:2026",
-                  "n": 22,
+                  "n": 29,
                   "raw_coverage": 0.0,
-                  "selected_scale_80": 2.03128
+                  "selected_scale_80": 2.00042
                 }
               ],
               "scope": "research_candidate_not_live_default",
@@ -20689,16 +20651,16 @@
                   "curve_status": "leave_one_group_out",
                   "group": "BTC:noncycle:2021",
                   "n": 19,
-                  "raw_coverage": 0.10526,
-                  "selected_scale_80": 1.93677
+                  "raw_coverage": 0.05263,
+                  "selected_scale_80": 1.9543
                 },
                 {
                   "coverage": 0.0,
                   "curve_status": "leave_one_group_out",
                   "group": "BTC:noncycle:2024",
-                  "n": 48,
+                  "n": 49,
                   "raw_coverage": 0.0,
-                  "selected_scale_80": 1.66623
+                  "selected_scale_80": 1.66598
                 },
                 {
                   "coverage": 0.0,
@@ -20706,66 +20668,66 @@
                   "group": "BTC:noncycle:2025",
                   "n": 13,
                   "raw_coverage": 0.0,
-                  "selected_scale_80": 1.88905
+                  "selected_scale_80": 1.88627
                 }
               ],
               "zero_coverage_group_count": 2
             },
-            "coverage": 0.59009,
-            "coverage_error": -0.20991,
+            "coverage": 0.57301,
+            "coverage_error": -0.22699,
             "groups": 9,
             "interval": "low_p10_to_low_p90",
-            "median_width_to_spot": 0.45249,
-            "n": 444,
+            "median_width_to_spot": 0.45442,
+            "n": 452,
             "rows": [
               {
-                "above_p90_rate": 0.06757,
+                "above_p90_rate": 0.06667,
                 "below_p10_rate": 0.0,
-                "coverage": 0.93243,
+                "coverage": 0.93333,
                 "group": "BTC:cycle_low:2018-12-15",
-                "n": 74
+                "n": 75
               },
               {
-                "above_p90_rate": 0.09174,
+                "above_p90_rate": 0.10092,
                 "below_p10_rate": 0.0,
-                "coverage": 0.90826,
+                "coverage": 0.89908,
                 "group": "BTC:cycle_low:2022-11-21",
                 "n": 109
               },
               {
-                "above_p90_rate": 0.95349,
+                "above_p90_rate": 0.93023,
                 "below_p10_rate": 0.0,
-                "coverage": 0.04651,
+                "coverage": 0.06977,
                 "group": "BTC:noncycle:2017",
                 "n": 43
               },
               {
-                "above_p90_rate": 0.14286,
+                "above_p90_rate": 0.16484,
                 "below_p10_rate": 0.0,
-                "coverage": 0.85714,
+                "coverage": 0.83516,
                 "group": "BTC:noncycle:2020",
                 "n": 91
               },
               {
-                "above_p90_rate": 0.89474,
+                "above_p90_rate": 0.94737,
                 "below_p10_rate": 0.0,
-                "coverage": 0.10526,
+                "coverage": 0.05263,
                 "group": "BTC:noncycle:2021",
                 "n": 19
               },
               {
-                "above_p90_rate": 0.52,
+                "above_p90_rate": 0.54167,
                 "below_p10_rate": 0.0,
-                "coverage": 0.48,
+                "coverage": 0.45833,
                 "group": "BTC:noncycle:2023",
-                "n": 25
+                "n": 24
               },
               {
                 "above_p90_rate": 1.0,
                 "below_p10_rate": 0.0,
                 "coverage": 0.0,
                 "group": "BTC:noncycle:2024",
-                "n": 48
+                "n": 49
               },
               {
                 "above_p90_rate": 1.0,
@@ -20779,7 +20741,7 @@
                 "below_p10_rate": 0.0,
                 "coverage": 0.0,
                 "group": "BTC:noncycle:2026",
-                "n": 22
+                "n": 29
               }
             ],
             "status": "MEASURED",
@@ -20791,228 +20753,228 @@
           ],
           "probability": {
             "down20": {
-              "event_rate": 0.52928,
+              "event_rate": 0.53319,
               "grouping": "leave-one-future-low-cluster-out",
               "groups": 9,
-              "loco_calibrated_delta_vs_null": 0.03487,
-              "loco_calibrated_delta_vs_raw": -0.44288,
-              "loco_calibrated_log_loss": 0.75529,
-              "loco_null_log_loss": 0.72042,
-              "n": 444,
-              "raw_log_loss": 1.19817,
+              "loco_calibrated_delta_vs_null": 0.02943,
+              "loco_calibrated_delta_vs_raw": -0.43489,
+              "loco_calibrated_log_loss": 0.74588,
+              "loco_null_log_loss": 0.71645,
+              "n": 452,
+              "raw_log_loss": 1.18077,
               "rows": [
                 {
-                  "avg_raw_pred": 0.68709,
+                  "avg_raw_pred": 0.69311,
                   "curve_status": "fitted",
-                  "event_rate": 0.72973,
+                  "event_rate": 0.73333,
                   "group": "BTC:cycle_low:2018-12-15",
-                  "loco_calibrated_log_loss": 0.76658,
-                  "loco_null_log_loss": 0.70332,
-                  "n": 74,
-                  "raw_log_loss": 0.46397,
-                  "train_n": 370
+                  "loco_calibrated_log_loss": 0.76617,
+                  "loco_null_log_loss": 0.69942,
+                  "n": 75,
+                  "raw_log_loss": 0.44328,
+                  "train_n": 377
                 },
                 {
-                  "avg_raw_pred": 0.70407,
+                  "avg_raw_pred": 0.70646,
                   "curve_status": "fitted",
-                  "event_rate": 0.65138,
+                  "event_rate": 0.62385,
                   "group": "BTC:cycle_low:2022-11-21",
-                  "loco_calibrated_log_loss": 0.6717,
-                  "loco_null_log_loss": 0.69969,
+                  "loco_calibrated_log_loss": 0.65279,
+                  "loco_null_log_loss": 0.69102,
                   "n": 109,
-                  "raw_log_loss": 0.52,
-                  "train_n": 335
+                  "raw_log_loss": 0.53345,
+                  "train_n": 343
                 },
                 {
-                  "avg_raw_pred": 0.93693,
+                  "avg_raw_pred": 0.93387,
                   "curve_status": "fitted",
-                  "event_rate": 0.27907,
+                  "event_rate": 0.32558,
                   "group": "BTC:noncycle:2017",
-                  "loco_calibrated_log_loss": 0.85682,
-                  "loco_null_log_loss": 0.74928,
+                  "loco_calibrated_log_loss": 0.82985,
+                  "loco_null_log_loss": 0.73777,
                   "n": 43,
-                  "raw_log_loss": 2.00098,
-                  "train_n": 401
+                  "raw_log_loss": 1.86985,
+                  "train_n": 409
                 },
                 {
-                  "avg_raw_pred": 0.80436,
+                  "avg_raw_pred": 0.80479,
                   "curve_status": "fitted",
                   "event_rate": 0.48352,
                   "group": "BTC:noncycle:2020",
-                  "loco_calibrated_log_loss": 0.70877,
-                  "loco_null_log_loss": 0.69925,
+                  "loco_calibrated_log_loss": 0.70807,
+                  "loco_null_log_loss": 0.70036,
                   "n": 91,
-                  "raw_log_loss": 0.99644,
-                  "train_n": 353
+                  "raw_log_loss": 1.00451,
+                  "train_n": 361
                 },
                 {
-                  "avg_raw_pred": 0.99729,
+                  "avg_raw_pred": 0.99766,
                   "curve_status": "fitted",
                   "event_rate": 0.78947,
                   "group": "BTC:noncycle:2021",
-                  "loco_calibrated_log_loss": 0.60344,
-                  "loco_null_log_loss": 0.67333,
+                  "loco_calibrated_log_loss": 0.59483,
+                  "loco_null_log_loss": 0.66869,
                   "n": 19,
-                  "raw_log_loss": 1.2774,
-                  "train_n": 425
+                  "raw_log_loss": 1.28336,
+                  "train_n": 433
                 },
                 {
-                  "avg_raw_pred": 0.8093,
+                  "avg_raw_pred": 0.80633,
                   "curve_status": "fitted",
                   "event_rate": 0.0,
                   "group": "BTC:noncycle:2023",
-                  "loco_calibrated_log_loss": 0.90198,
-                  "loco_null_log_loss": 0.82294,
-                  "n": 25,
-                  "raw_log_loss": 1.80257,
-                  "train_n": 419
+                  "loco_calibrated_log_loss": 0.89448,
+                  "loco_null_log_loss": 0.82801,
+                  "n": 24,
+                  "raw_log_loss": 1.77149,
+                  "train_n": 428
                 },
                 {
-                  "avg_raw_pred": 0.98427,
+                  "avg_raw_pred": 0.98308,
                   "curve_status": "fitted",
-                  "event_rate": 0.16667,
+                  "event_rate": 0.18367,
                   "group": "BTC:noncycle:2024",
-                  "loco_calibrated_log_loss": 1.03119,
-                  "loco_null_log_loss": 0.80234,
-                  "n": 48,
-                  "raw_log_loss": 3.54391,
-                  "train_n": 396
+                  "loco_calibrated_log_loss": 1.0346,
+                  "loco_null_log_loss": 0.80124,
+                  "n": 49,
+                  "raw_log_loss": 3.41578,
+                  "train_n": 403
                 },
                 {
-                  "avg_raw_pred": 0.99862,
+                  "avg_raw_pred": 0.9987,
                   "curve_status": "fitted",
-                  "event_rate": 0.69231,
+                  "event_rate": 0.61538,
                   "group": "BTC:noncycle:2025",
-                  "loco_calibrated_log_loss": 0.63571,
-                  "loco_null_log_loss": 0.67558,
+                  "loco_calibrated_log_loss": 0.66629,
+                  "loco_null_log_loss": 0.68083,
                   "n": 13,
-                  "raw_log_loss": 1.90055,
-                  "train_n": 431
+                  "raw_log_loss": 2.44546,
+                  "train_n": 439
                 },
                 {
-                  "avg_raw_pred": 0.99521,
+                  "avg_raw_pred": 0.99582,
                   "curve_status": "fitted",
-                  "event_rate": 1.0,
+                  "event_rate": 0.96552,
                   "group": "BTC:noncycle:2026",
-                  "loco_calibrated_log_loss": 0.55857,
-                  "loco_null_log_loss": 0.68371,
-                  "n": 22,
-                  "raw_log_loss": 0.0048,
-                  "train_n": 422
+                  "loco_calibrated_log_loss": 0.56127,
+                  "loco_null_log_loss": 0.68657,
+                  "n": 29,
+                  "raw_log_loss": 0.15296,
+                  "train_n": 423
                 }
               ],
               "status": "MEASURED",
               "target": "future_low_down_20pct"
             },
             "low_below_spot": {
-              "event_rate": 0.96396,
+              "event_rate": 0.96239,
               "grouping": "leave-one-future-low-cluster-out",
               "groups": 9,
-              "loco_calibrated_delta_vs_null": 0.03245,
-              "loco_calibrated_delta_vs_raw": -0.0419,
-              "loco_calibrated_log_loss": 0.19106,
-              "loco_null_log_loss": 0.15862,
-              "n": 444,
-              "raw_log_loss": 0.23296,
+              "loco_calibrated_delta_vs_null": 0.03164,
+              "loco_calibrated_delta_vs_raw": -0.02556,
+              "loco_calibrated_log_loss": 0.19955,
+              "loco_null_log_loss": 0.16792,
+              "n": 452,
+              "raw_log_loss": 0.22511,
               "rows": [
                 {
-                  "avg_raw_pred": 0.82684,
+                  "avg_raw_pred": 0.78826,
                   "curve_status": "fitted",
-                  "event_rate": 0.97297,
+                  "event_rate": 0.98667,
                   "group": "BTC:cycle_low:2018-12-15",
-                  "loco_calibrated_log_loss": 0.18074,
-                  "loco_null_log_loss": 0.12603,
-                  "n": 74,
-                  "raw_log_loss": 0.22421,
-                  "train_n": 370
+                  "loco_calibrated_log_loss": 0.2038,
+                  "loco_null_log_loss": 0.08492,
+                  "n": 75,
+                  "raw_log_loss": 0.25897,
+                  "train_n": 377
                 },
                 {
-                  "avg_raw_pred": 0.87104,
+                  "avg_raw_pred": 0.8513,
                   "curve_status": "fitted",
-                  "event_rate": 0.99083,
+                  "event_rate": 0.98165,
                   "group": "BTC:cycle_low:2022-11-21",
-                  "loco_calibrated_log_loss": 0.17028,
-                  "loco_null_log_loss": 0.07389,
+                  "loco_calibrated_log_loss": 0.18317,
+                  "loco_null_log_loss": 0.10132,
                   "n": 109,
-                  "raw_log_loss": 0.16692,
-                  "train_n": 335
+                  "raw_log_loss": 0.19009,
+                  "train_n": 343
                 },
                 {
-                  "avg_raw_pred": 0.97085,
+                  "avg_raw_pred": 0.96915,
                   "curve_status": "fitted",
                   "event_rate": 0.90698,
                   "group": "BTC:noncycle:2017",
-                  "loco_calibrated_log_loss": 0.33833,
-                  "loco_null_log_loss": 0.35398,
+                  "loco_calibrated_log_loss": 0.328,
+                  "loco_null_log_loss": 0.35011,
                   "n": 43,
-                  "raw_log_loss": 0.39847,
-                  "train_n": 401
+                  "raw_log_loss": 0.32025,
+                  "train_n": 409
                 },
                 {
-                  "avg_raw_pred": 0.91168,
+                  "avg_raw_pred": 0.90148,
                   "curve_status": "fitted",
-                  "event_rate": 0.95604,
+                  "event_rate": 0.91209,
                   "group": "BTC:noncycle:2020",
-                  "loco_calibrated_log_loss": 0.18588,
-                  "loco_null_log_loss": 0.18171,
+                  "loco_calibrated_log_loss": 0.30594,
+                  "loco_null_log_loss": 0.34757,
                   "n": 91,
-                  "raw_log_loss": 0.21609,
-                  "train_n": 353
+                  "raw_log_loss": 0.38044,
+                  "train_n": 361
                 },
                 {
-                  "avg_raw_pred": 0.99952,
+                  "avg_raw_pred": 0.99963,
                   "curve_status": "fitted",
-                  "event_rate": 0.94737,
+                  "event_rate": 1.0,
                   "group": "BTC:noncycle:2021",
-                  "loco_calibrated_log_loss": 0.20678,
-                  "loco_null_log_loss": 0.21004,
+                  "loco_calibrated_log_loss": 0.05191,
+                  "loco_null_log_loss": 0.04005,
                   "n": 19,
-                  "raw_log_loss": 0.43108,
-                  "train_n": 425
+                  "raw_log_loss": 0.00037,
+                  "train_n": 433
                 },
                 {
-                  "avg_raw_pred": 0.9492,
+                  "avg_raw_pred": 0.94799,
                   "curve_status": "fitted",
-                  "event_rate": 0.96,
+                  "event_rate": 1.0,
                   "group": "BTC:noncycle:2023",
-                  "loco_calibrated_log_loss": 0.17551,
-                  "loco_null_log_loss": 0.16819,
-                  "n": 25,
-                  "raw_log_loss": 0.21301,
-                  "train_n": 419
+                  "loco_calibrated_log_loss": 0.05866,
+                  "loco_null_log_loss": 0.04053,
+                  "n": 24,
+                  "raw_log_loss": 0.05403,
+                  "train_n": 428
                 },
                 {
-                  "avg_raw_pred": 0.99786,
+                  "avg_raw_pred": 0.99763,
                   "curve_status": "fitted",
-                  "event_rate": 0.9375,
+                  "event_rate": 0.95918,
                   "group": "BTC:noncycle:2024",
-                  "loco_calibrated_log_loss": 0.23756,
-                  "loco_null_log_loss": 0.24482,
-                  "n": 48,
-                  "raw_log_loss": 0.38173,
-                  "train_n": 396
+                  "loco_calibrated_log_loss": 0.17136,
+                  "loco_null_log_loss": 0.1707,
+                  "n": 49,
+                  "raw_log_loss": 0.24285,
+                  "train_n": 403
                 },
                 {
-                  "avg_raw_pred": 0.99989,
+                  "avg_raw_pred": 0.99991,
                   "curve_status": "fitted",
                   "event_rate": 1.0,
                   "group": "BTC:noncycle:2025",
-                  "loco_calibrated_log_loss": 0.04823,
-                  "loco_null_log_loss": 0.03783,
+                  "loco_calibrated_log_loss": 0.05103,
+                  "loco_null_log_loss": 0.03949,
                   "n": 13,
-                  "raw_log_loss": 0.00011,
-                  "train_n": 431
+                  "raw_log_loss": 9e-05,
+                  "train_n": 439
                 },
                 {
-                  "avg_raw_pred": 0.99948,
+                  "avg_raw_pred": 0.99956,
                   "curve_status": "fitted",
                   "event_rate": 1.0,
                   "group": "BTC:noncycle:2026",
-                  "loco_calibrated_log_loss": 0.0494,
-                  "loco_null_log_loss": 0.03865,
-                  "n": 22,
-                  "raw_log_loss": 0.00052,
-                  "train_n": 422
+                  "loco_calibrated_log_loss": 0.05343,
+                  "loco_null_log_loss": 0.04102,
+                  "n": 29,
+                  "raw_log_loss": 0.00044,
+                  "train_n": 423
                 }
               ],
               "status": "MEASURED",
@@ -21020,151 +20982,151 @@
             }
           }
         },
-        "median_low_abs_error": 0.32623,
-        "median_low_signed_error": -0.30254,
-        "median_timing_abs_days": 84.0,
-        "n": 444,
+        "median_low_abs_error": 0.33144,
+        "median_low_signed_error": -0.308,
+        "median_timing_abs_days": 85.0,
+        "n": 452,
         "raw": {
           "bins": [
             {
-              "abs_error": 0.1713,
-              "avg_pred": 0.1713,
-              "n": 2,
+              "abs_error": 0.1715,
+              "avg_pred": 0.1715,
+              "n": 1,
               "observed": 0.0,
               "range": "0.0-0.2"
             },
             {
-              "abs_error": 0.147,
-              "avg_pred": 0.2975,
+              "abs_error": 0.0764,
+              "avg_pred": 0.294,
               "n": 27,
-              "observed": 0.4444,
+              "observed": 0.3704,
               "range": "0.2-0.4"
             },
             {
-              "abs_error": 0.332,
-              "avg_pred": 0.4859,
-              "n": 26,
-              "observed": 0.1538,
+              "abs_error": 0.3056,
+              "avg_pred": 0.4908,
+              "n": 27,
+              "observed": 0.1852,
               "range": "0.4-0.6"
             },
             {
-              "abs_error": 0.2117,
-              "avg_pred": 0.716,
-              "n": 115,
-              "observed": 0.5043,
+              "abs_error": 0.2187,
+              "avg_pred": 0.7143,
+              "n": 113,
+              "observed": 0.4956,
               "range": "0.6-0.8"
             },
             {
-              "abs_error": 0.3578,
-              "avg_pred": 0.9453,
-              "n": 274,
-              "observed": 0.5876,
+              "abs_error": 0.3474,
+              "avg_pred": 0.9459,
+              "n": 284,
+              "observed": 0.5986,
               "range": "0.8-1.0"
             }
           ],
-          "down20_brier": 0.3371,
-          "down20_calibration_mae": 0.30479
+          "down20_brier": 0.32976,
+          "down20_calibration_mae": 0.29615
         }
       },
       "ETH": {
         "calibrated": {
           "bins": [
             {
-              "abs_error": 0.2399,
-              "avg_pred": 0.3553,
-              "n": 42,
-              "observed": 0.5952,
+              "abs_error": 0.2595,
+              "avg_pred": 0.3503,
+              "n": 41,
+              "observed": 0.6098,
               "range": "0.2-0.4"
             },
             {
-              "abs_error": 0.0389,
-              "avg_pred": 0.5216,
-              "n": 87,
-              "observed": 0.4828,
+              "abs_error": 0.0278,
+              "avg_pred": 0.5177,
+              "n": 77,
+              "observed": 0.5455,
               "range": "0.4-0.6"
             },
             {
-              "abs_error": 0.1228,
-              "avg_pred": 0.6655,
-              "n": 137,
-              "observed": 0.7883,
+              "abs_error": 0.0748,
+              "avg_pred": 0.6623,
+              "n": 156,
+              "observed": 0.7372,
               "range": "0.6-0.8"
             },
             {
-              "abs_error": 0.3704,
-              "avg_pred": 0.9144,
+              "abs_error": 0.3701,
+              "avg_pred": 0.9061,
               "n": 125,
-              "observed": 0.544,
+              "observed": 0.536,
               "range": "0.8-1.0"
             }
           ],
-          "down20_brier": 0.2788,
-          "down20_calibration_mae": 0.19587
+          "down20_brier": 0.27712,
+          "down20_calibration_mae": 0.17722
         },
         "loco": {
           "interval_coverage": {
-            "above_p90_rate": 0.38363,
-            "below_p10_rate": 0.08696,
+            "above_p90_rate": 0.36842,
+            "below_p10_rate": 0.09023,
             "conformal_candidate": {
-              "coverage_delta_vs_raw": 0.31714,
-              "final_full_sample_scale_80": 1.95107,
+              "coverage_delta_vs_raw": 0.30326,
+              "final_full_sample_scale_80": 1.94657,
               "fold_stability_status": "WEAK_FOLDS",
               "groups": 9,
-              "loco_conformal_coverage": 0.84655,
-              "max_selected_scale_80": 2.10556,
-              "median_selected_scale_80": 1.95694,
+              "loco_conformal_coverage": 0.84461,
+              "max_selected_scale_80": 2.09976,
+              "median_selected_scale_80": 1.95689,
               "method": "log_price_asymmetric_p10_p50_p90_scale",
-              "min_group_coverage": 0.04762,
-              "n": 391,
-              "raw_coverage": 0.52941,
+              "min_group_coverage": 0.0,
+              "n": 399,
+              "raw_coverage": 0.54135,
               "rows": [
                 {
-                  "coverage": 0.98276,
+                  "coverage": 0.96552,
                   "curve_status": "leave_one_group_out",
                   "group": "ETH:cycle_low:2018-12-15",
                   "n": 58,
-                  "raw_coverage": 0.36207,
-                  "selected_scale_80": 2.03363
+                  "raw_coverage": 0.37931,
+                  "selected_scale_80": 1.99291
                 },
                 {
                   "coverage": 1.0,
                   "curve_status": "leave_one_group_out",
                   "group": "ETH:cycle_low:2022-11-21",
-                  "n": 94,
-                  "raw_coverage": 0.39362,
-                  "selected_scale_80": 2.10556
+                  "n": 93,
+                  "raw_coverage": 0.39785,
+                  "selected_scale_80": 2.09976
                 },
                 {
                   "coverage": 1.0,
                   "curve_status": "leave_one_group_out",
                   "group": "ETH:noncycle:2019",
-                  "n": 3,
+                  "n": 4,
                   "raw_coverage": 1.0,
-                  "selected_scale_80": 1.95157
+                  "selected_scale_80": 1.95107
                 },
                 {
                   "coverage": 0.58511,
                   "curve_status": "leave_one_group_out",
                   "group": "ETH:noncycle:2020",
                   "n": 94,
-                  "raw_coverage": 0.29787,
+                  "raw_coverage": 0.28723,
                   "selected_scale_80": 1.66491
                 },
                 {
-                  "coverage": 0.04762,
+                  "coverage": 0.0,
                   "curve_status": "leave_one_group_out",
                   "group": "ETH:noncycle:2021",
                   "n": 21,
                   "raw_coverage": 0.0,
-                  "selected_scale_80": 1.76095
+                  "selected_scale_80": 1.742
                 },
                 {
                   "coverage": 1.0,
                   "curve_status": "leave_one_group_out",
                   "group": "ETH:noncycle:2023",
-                  "n": 40,
-                  "raw_coverage": 0.95,
-                  "selected_scale_80": 2.01633
+                  "n": 41,
+                  "raw_coverage": 0.95122,
+                  "selected_scale_80": 1.99291
                 },
                 {
                   "coverage": 1.0,
@@ -21172,7 +21134,7 @@
                   "group": "ETH:noncycle:2024",
                   "n": 10,
                   "raw_coverage": 1.0,
-                  "selected_scale_80": 1.95694
+                  "selected_scale_80": 1.95689
                 },
                 {
                   "coverage": 1.0,
@@ -21180,15 +21142,15 @@
                   "group": "ETH:noncycle:2025",
                   "n": 62,
                   "raw_coverage": 0.98387,
-                  "selected_scale_80": 2.03457
+                  "selected_scale_80": 2.00053
                 },
                 {
                   "coverage": 1.0,
                   "curve_status": "leave_one_group_out",
                   "group": "ETH:noncycle:2026",
-                  "n": 9,
+                  "n": 16,
                   "raw_coverage": 1.0,
-                  "selected_scale_80": 1.95694
+                  "selected_scale_80": 1.95689
                 }
               ],
               "scope": "research_candidate_not_live_default",
@@ -21202,52 +21164,52 @@
                   "curve_status": "leave_one_group_out",
                   "group": "ETH:noncycle:2020",
                   "n": 94,
-                  "raw_coverage": 0.29787,
+                  "raw_coverage": 0.28723,
                   "selected_scale_80": 1.66491
                 },
                 {
-                  "coverage": 0.04762,
+                  "coverage": 0.0,
                   "curve_status": "leave_one_group_out",
                   "group": "ETH:noncycle:2021",
                   "n": 21,
                   "raw_coverage": 0.0,
-                  "selected_scale_80": 1.76095
+                  "selected_scale_80": 1.742
                 }
               ],
-              "zero_coverage_group_count": 0
+              "zero_coverage_group_count": 1
             },
-            "coverage": 0.52941,
-            "coverage_error": -0.27059,
+            "coverage": 0.54135,
+            "coverage_error": -0.25865,
             "groups": 9,
             "interval": "low_p10_to_low_p90",
-            "median_width_to_spot": 0.45573,
-            "n": 391,
+            "median_width_to_spot": 0.46154,
+            "n": 399,
             "rows": [
               {
-                "above_p90_rate": 0.05172,
-                "below_p10_rate": 0.58621,
-                "coverage": 0.36207,
+                "above_p90_rate": 0.01724,
+                "below_p10_rate": 0.60345,
+                "coverage": 0.37931,
                 "group": "ETH:cycle_low:2018-12-15",
                 "n": 58
               },
               {
-                "above_p90_rate": 0.60638,
+                "above_p90_rate": 0.60215,
                 "below_p10_rate": 0.0,
-                "coverage": 0.39362,
+                "coverage": 0.39785,
                 "group": "ETH:cycle_low:2022-11-21",
-                "n": 94
+                "n": 93
               },
               {
                 "above_p90_rate": 0.0,
                 "below_p10_rate": 0.0,
                 "coverage": 1.0,
                 "group": "ETH:noncycle:2019",
-                "n": 3
+                "n": 4
               },
               {
-                "above_p90_rate": 0.70213,
+                "above_p90_rate": 0.71277,
                 "below_p10_rate": 0.0,
-                "coverage": 0.29787,
+                "coverage": 0.28723,
                 "group": "ETH:noncycle:2020",
                 "n": 94
               },
@@ -21259,11 +21221,11 @@
                 "n": 21
               },
               {
-                "above_p90_rate": 0.05,
+                "above_p90_rate": 0.04878,
                 "below_p10_rate": 0.0,
-                "coverage": 0.95,
+                "coverage": 0.95122,
                 "group": "ETH:noncycle:2023",
-                "n": 40
+                "n": 41
               },
               {
                 "above_p90_rate": 0.0,
@@ -21273,8 +21235,8 @@
                 "n": 10
               },
               {
-                "above_p90_rate": 0.01613,
-                "below_p10_rate": 0.0,
+                "above_p90_rate": 0.0,
+                "below_p10_rate": 0.01613,
                 "coverage": 0.98387,
                 "group": "ETH:noncycle:2025",
                 "n": 62
@@ -21284,7 +21246,7 @@
                 "below_p10_rate": 0.0,
                 "coverage": 1.0,
                 "group": "ETH:noncycle:2026",
-                "n": 9
+                "n": 16
               }
             ],
             "status": "MEASURED",
@@ -21296,228 +21258,228 @@
           ],
           "probability": {
             "down20": {
-              "event_rate": 0.62148,
+              "event_rate": 0.62406,
               "grouping": "leave-one-future-low-cluster-out",
               "groups": 9,
-              "loco_calibrated_delta_vs_null": 0.00511,
-              "loco_calibrated_delta_vs_raw": -0.35805,
-              "loco_calibrated_log_loss": 0.70995,
-              "loco_null_log_loss": 0.70484,
-              "n": 391,
-              "raw_log_loss": 1.068,
+              "loco_calibrated_delta_vs_null": 0.0029,
+              "loco_calibrated_delta_vs_raw": -0.36105,
+              "loco_calibrated_log_loss": 0.7085,
+              "loco_null_log_loss": 0.7056,
+              "n": 399,
+              "raw_log_loss": 1.06955,
               "rows": [
                 {
-                  "avg_raw_pred": 0.58755,
+                  "avg_raw_pred": 0.58966,
                   "curve_status": "fitted",
-                  "event_rate": 0.84483,
+                  "event_rate": 0.87931,
                   "group": "ETH:cycle_low:2018-12-15",
-                  "loco_calibrated_log_loss": 0.64472,
-                  "loco_null_log_loss": 0.59202,
+                  "loco_calibrated_log_loss": 0.65631,
+                  "loco_null_log_loss": 0.58289,
                   "n": 58,
-                  "raw_log_loss": 0.55317,
-                  "train_n": 333
+                  "raw_log_loss": 0.55647,
+                  "train_n": 341
                 },
                 {
-                  "avg_raw_pred": 0.90456,
+                  "avg_raw_pred": 0.90856,
                   "curve_status": "fitted",
-                  "event_rate": 0.70213,
+                  "event_rate": 0.69892,
                   "group": "ETH:cycle_low:2022-11-21",
-                  "loco_calibrated_log_loss": 0.5772,
-                  "loco_null_log_loss": 0.63335,
-                  "n": 94,
-                  "raw_log_loss": 0.4742,
-                  "train_n": 297
+                  "loco_calibrated_log_loss": 0.57701,
+                  "loco_null_log_loss": 0.63237,
+                  "n": 93,
+                  "raw_log_loss": 0.49041,
+                  "train_n": 306
                 },
                 {
-                  "avg_raw_pred": 0.7633,
+                  "avg_raw_pred": 0.7402,
                   "curve_status": "fitted",
                   "event_rate": 0.0,
                   "group": "ETH:noncycle:2019",
-                  "loco_calibrated_log_loss": 1.18764,
-                  "loco_null_log_loss": 0.98427,
-                  "n": 3,
-                  "raw_log_loss": 1.44285,
-                  "train_n": 388
+                  "loco_calibrated_log_loss": 1.17819,
+                  "loco_null_log_loss": 0.99528,
+                  "n": 4,
+                  "raw_log_loss": 1.36876,
+                  "train_n": 395
                 },
                 {
-                  "avg_raw_pred": 0.97095,
+                  "avg_raw_pred": 0.97319,
                   "curve_status": "fitted",
-                  "event_rate": 0.51064,
+                  "event_rate": 0.53191,
                   "group": "ETH:noncycle:2020",
-                  "loco_calibrated_log_loss": 0.84115,
-                  "loco_null_log_loss": 0.73785,
+                  "loco_calibrated_log_loss": 0.81185,
+                  "loco_null_log_loss": 0.72184,
                   "n": 94,
-                  "raw_log_loss": 1.97256,
-                  "train_n": 297
+                  "raw_log_loss": 1.93011,
+                  "train_n": 305
                 },
                 {
-                  "avg_raw_pred": 0.9986,
+                  "avg_raw_pred": 0.99863,
                   "curve_status": "fitted",
-                  "event_rate": 0.38095,
+                  "event_rate": 0.33333,
                   "group": "ETH:noncycle:2021",
-                  "loco_calibrated_log_loss": 0.89699,
-                  "loco_null_log_loss": 0.79706,
+                  "loco_calibrated_log_loss": 0.95444,
+                  "loco_null_log_loss": 0.83015,
                   "n": 21,
-                  "raw_log_loss": 4.08877,
-                  "train_n": 370
+                  "raw_log_loss": 4.41859,
+                  "train_n": 378
                 },
                 {
-                  "avg_raw_pred": 0.42854,
+                  "avg_raw_pred": 0.43014,
                   "curve_status": "fitted",
-                  "event_rate": 0.1,
+                  "event_rate": 0.04878,
                   "group": "ETH:noncycle:2023",
-                  "loco_calibrated_log_loss": 0.78469,
-                  "loco_null_log_loss": 1.06649,
-                  "n": 40,
-                  "raw_log_loss": 0.56275,
-                  "train_n": 351
+                  "loco_calibrated_log_loss": 0.85124,
+                  "loco_null_log_loss": 1.13199,
+                  "n": 41,
+                  "raw_log_loss": 0.57137,
+                  "train_n": 358
                 },
                 {
-                  "avg_raw_pred": 0.6235,
+                  "avg_raw_pred": 0.6189,
                   "curve_status": "fitted",
                   "event_rate": 0.2,
                   "group": "ETH:noncycle:2024",
-                  "loco_calibrated_log_loss": 0.82256,
-                  "loco_null_log_loss": 0.89253,
+                  "loco_calibrated_log_loss": 0.80513,
+                  "loco_null_log_loss": 0.89704,
                   "n": 10,
-                  "raw_log_loss": 0.79456,
-                  "train_n": 381
+                  "raw_log_loss": 0.76463,
+                  "train_n": 389
                 },
                 {
-                  "avg_raw_pred": 0.59835,
+                  "avg_raw_pred": 0.59057,
                   "curve_status": "fitted",
-                  "event_rate": 0.91935,
+                  "event_rate": 0.90323,
                   "group": "ETH:noncycle:2025",
-                  "loco_calibrated_log_loss": 0.62344,
-                  "loco_null_log_loss": 0.59151,
+                  "loco_calibrated_log_loss": 0.59924,
+                  "loco_null_log_loss": 0.58574,
                   "n": 62,
-                  "raw_log_loss": 0.47261,
-                  "train_n": 329
+                  "raw_log_loss": 0.47214,
+                  "train_n": 337
                 },
                 {
-                  "avg_raw_pred": 0.53973,
+                  "avg_raw_pred": 0.57924,
                   "curve_status": "fitted",
                   "event_rate": 1.0,
                   "group": "ETH:noncycle:2026",
-                  "loco_calibrated_log_loss": 0.68961,
-                  "loco_null_log_loss": 0.4901,
-                  "n": 9,
-                  "raw_log_loss": 0.61762,
-                  "train_n": 382
+                  "loco_calibrated_log_loss": 0.61172,
+                  "loco_null_log_loss": 0.497,
+                  "n": 16,
+                  "raw_log_loss": 0.55149,
+                  "train_n": 383
                 }
               ],
               "status": "MEASURED",
               "target": "future_low_down_20pct"
             },
             "low_below_spot": {
-              "event_rate": 0.96164,
+              "event_rate": 0.97995,
               "grouping": "leave-one-future-low-cluster-out",
               "groups": 9,
-              "loco_calibrated_delta_vs_null": 0.03939,
-              "loco_calibrated_delta_vs_raw": -0.06716,
-              "loco_calibrated_log_loss": 0.20643,
-              "loco_null_log_loss": 0.16704,
-              "n": 391,
-              "raw_log_loss": 0.27359,
+              "loco_calibrated_delta_vs_null": 0.04411,
+              "loco_calibrated_delta_vs_raw": -0.07461,
+              "loco_calibrated_log_loss": 0.14487,
+              "loco_null_log_loss": 0.10076,
+              "n": 399,
+              "raw_log_loss": 0.21948,
               "rows": [
                 {
-                  "avg_raw_pred": 0.73565,
+                  "avg_raw_pred": 0.70934,
                   "curve_status": "fitted",
-                  "event_rate": 0.94828,
+                  "event_rate": 0.98276,
                   "group": "ETH:cycle_low:2018-12-15",
-                  "loco_calibrated_log_loss": 0.37344,
-                  "loco_null_log_loss": 0.20669,
+                  "loco_calibrated_log_loss": 0.29453,
+                  "loco_null_log_loss": 0.08738,
                   "n": 58,
-                  "raw_log_loss": 0.38713,
-                  "train_n": 333
+                  "raw_log_loss": 0.37208,
+                  "train_n": 341
                 },
                 {
-                  "avg_raw_pred": 0.95141,
+                  "avg_raw_pred": 0.94586,
                   "curve_status": "fitted",
-                  "event_rate": 0.98936,
+                  "event_rate": 0.98925,
                   "group": "ETH:cycle_low:2022-11-21",
-                  "loco_calibrated_log_loss": 0.09033,
-                  "loco_null_log_loss": 0.08027,
-                  "n": 94,
-                  "raw_log_loss": 0.0614,
-                  "train_n": 297
+                  "loco_calibrated_log_loss": 0.06976,
+                  "loco_null_log_loss": 0.06351,
+                  "n": 93,
+                  "raw_log_loss": 0.06562,
+                  "train_n": 306
                 },
                 {
-                  "avg_raw_pred": 0.8847,
+                  "avg_raw_pred": 0.852,
                   "curve_status": "fitted",
                   "event_rate": 1.0,
                   "group": "ETH:noncycle:2019",
-                  "loco_calibrated_log_loss": 0.07512,
-                  "loco_null_log_loss": 0.03943,
-                  "n": 3,
-                  "raw_log_loss": 0.12252,
-                  "train_n": 388
+                  "loco_calibrated_log_loss": 0.05512,
+                  "loco_null_log_loss": 0.02046,
+                  "n": 4,
+                  "raw_log_loss": 0.16096,
+                  "train_n": 395
                 },
                 {
-                  "avg_raw_pred": 0.99163,
+                  "avg_raw_pred": 0.99195,
                   "curve_status": "fitted",
-                  "event_rate": 0.93617,
+                  "event_rate": 0.97872,
                   "group": "ETH:noncycle:2020",
-                  "loco_calibrated_log_loss": 0.24479,
-                  "loco_null_log_loss": 0.25199,
+                  "loco_calibrated_log_loss": 0.10707,
+                  "loco_null_log_loss": 0.10303,
                   "n": 94,
-                  "raw_log_loss": 0.3912,
-                  "train_n": 297
+                  "raw_log_loss": 0.10022,
+                  "train_n": 305
                 },
                 {
                   "avg_raw_pred": 0.9995,
                   "curve_status": "fitted",
                   "event_rate": 0.90476,
                   "group": "ETH:noncycle:2021",
-                  "loco_calibrated_log_loss": 0.3405,
-                  "loco_null_log_loss": 0.35127,
+                  "loco_calibrated_log_loss": 0.37266,
+                  "loco_null_log_loss": 0.40906,
                   "n": 21,
-                  "raw_log_loss": 0.70017,
-                  "train_n": 370
+                  "raw_log_loss": 0.69229,
+                  "train_n": 378
                 },
                 {
-                  "avg_raw_pred": 0.77716,
+                  "avg_raw_pred": 0.7129,
                   "curve_status": "fitted",
-                  "event_rate": 0.95,
+                  "event_rate": 0.95122,
                   "group": "ETH:noncycle:2023",
-                  "loco_calibrated_log_loss": 0.25338,
-                  "loco_null_log_loss": 0.20065,
-                  "n": 40,
-                  "raw_log_loss": 0.3122,
-                  "train_n": 351
+                  "loco_calibrated_log_loss": 0.20269,
+                  "loco_null_log_loss": 0.21553,
+                  "n": 41,
+                  "raw_log_loss": 0.3688,
+                  "train_n": 358
                 },
                 {
-                  "avg_raw_pred": 0.87073,
+                  "avg_raw_pred": 0.84254,
                   "curve_status": "fitted",
                   "event_rate": 1.0,
                   "group": "ETH:noncycle:2024",
-                  "loco_calibrated_log_loss": 0.0829,
-                  "loco_null_log_loss": 0.04017,
+                  "loco_calibrated_log_loss": 0.05768,
+                  "loco_null_log_loss": 0.02078,
                   "n": 10,
-                  "raw_log_loss": 0.13858,
-                  "train_n": 381
+                  "raw_log_loss": 0.1721,
+                  "train_n": 389
                 },
                 {
-                  "avg_raw_pred": 0.83854,
+                  "avg_raw_pred": 0.79583,
                   "curve_status": "fitted",
-                  "event_rate": 0.98387,
+                  "event_rate": 1.0,
                   "group": "ETH:noncycle:2025",
-                  "loco_calibrated_log_loss": 0.13379,
-                  "loco_null_log_loss": 0.0937,
+                  "loco_calibrated_log_loss": 0.0972,
+                  "loco_null_log_loss": 0.02403,
                   "n": 62,
-                  "raw_log_loss": 0.18309,
-                  "train_n": 329
+                  "raw_log_loss": 0.23559,
+                  "train_n": 337
                 },
                 {
-                  "avg_raw_pred": 0.82988,
+                  "avg_raw_pred": 0.78697,
                   "curve_status": "fitted",
                   "event_rate": 1.0,
                   "group": "ETH:noncycle:2026",
-                  "loco_calibrated_log_loss": 0.10215,
-                  "loco_null_log_loss": 0.04006,
-                  "n": 9,
-                  "raw_log_loss": 0.18654,
-                  "train_n": 382
+                  "loco_calibrated_log_loss": 0.07559,
+                  "loco_null_log_loss": 0.02111,
+                  "n": 16,
+                  "raw_log_loss": 0.24003,
+                  "train_n": 383
                 }
               ],
               "status": "MEASURED",
@@ -21525,57 +21487,57 @@
             }
           }
         },
-        "median_low_abs_error": 0.49982,
+        "median_low_abs_error": 0.50664,
         "median_low_signed_error": -0.24959,
-        "median_timing_abs_days": 73.0,
-        "n": 391,
+        "median_timing_abs_days": 75.0,
+        "n": 399,
         "raw": {
           "bins": [
             {
-              "abs_error": 0.1876,
-              "avg_pred": 0.1876,
-              "n": 5,
+              "abs_error": 0.1896,
+              "avg_pred": 0.1896,
+              "n": 4,
               "observed": 0.0,
               "range": "0.0-0.2"
             },
             {
-              "abs_error": 0.1489,
-              "avg_pred": 0.3248,
-              "n": 38,
-              "observed": 0.4737,
+              "abs_error": 0.1533,
+              "avg_pred": 0.3189,
+              "n": 36,
+              "observed": 0.4722,
               "range": "0.2-0.4"
             },
             {
-              "abs_error": 0.0035,
-              "avg_pred": 0.5097,
-              "n": 76,
-              "observed": 0.5132,
+              "abs_error": 0.0039,
+              "avg_pred": 0.5039,
+              "n": 82,
+              "observed": 0.5,
               "range": "0.4-0.6"
             },
             {
-              "abs_error": 0.0962,
-              "avg_pred": 0.7004,
-              "n": 59,
-              "observed": 0.7966,
+              "abs_error": 0.13,
+              "avg_pred": 0.6981,
+              "n": 64,
+              "observed": 0.8281,
               "range": "0.6-0.8"
             },
             {
-              "abs_error": 0.3128,
-              "avg_pred": 0.9654,
+              "abs_error": 0.3172,
+              "avg_pred": 0.9651,
               "n": 213,
-              "observed": 0.6526,
+              "observed": 0.6479,
               "range": "0.8-1.0"
             }
           ],
-          "down20_brier": 0.27125,
-          "down20_calibration_mae": 0.20247
+          "down20_brier": 0.27016,
+          "down20_calibration_mae": 0.20672
         }
       }
     },
     "top": {
       "BTC": {
         "calibrated": {
-          "avg_pred": 0.31535,
+          "avg_pred": 0.31714,
           "bins": [
             {
               "abs_error": 0.1009,
@@ -21592,10 +21554,10 @@
               "range": "0.2-0.4"
             },
             {
-              "abs_error": 0.3188,
-              "avg_pred": 0.4616,
-              "n": 21,
-              "observed": 0.1429,
+              "abs_error": 0.2837,
+              "avg_pred": 0.4655,
+              "n": 22,
+              "observed": 0.1818,
               "range": "0.4-0.6"
             },
             {
@@ -21606,13 +21568,13 @@
               "range": "0.6-0.8"
             }
           ],
-          "drawdown35_brier": 0.23257,
-          "drawdown35_calibration_mae": 0.10999
+          "drawdown35_brier": 0.23235,
+          "drawdown35_calibration_mae": 0.10566
         },
-        "event_rate": 0.30233,
-        "n": 129,
+        "event_rate": 0.30769,
+        "n": 130,
         "raw": {
-          "avg_pred": 0.23137,
+          "avg_pred": 0.23353,
           "bins": [
             {
               "abs_error": 0.1157,
@@ -21629,10 +21591,10 @@
               "range": "0.2-0.4"
             },
             {
-              "abs_error": 0.095,
-              "avg_pred": 0.47,
-              "n": 8,
-              "observed": 0.375,
+              "abs_error": 0.0303,
+              "avg_pred": 0.4748,
+              "n": 9,
+              "observed": 0.4444,
               "range": "0.4-0.6"
             },
             {
@@ -21643,13 +21605,13 @@
               "range": "0.6-0.8"
             }
           ],
-          "drawdown35_brier": 0.22805,
-          "drawdown35_calibration_mae": 0.10218
+          "drawdown35_brier": 0.22813,
+          "drawdown35_calibration_mae": 0.09764
         }
       },
       "ETH": {
         "calibrated": {
-          "avg_pred": 0.33414,
+          "avg_pred": 0.33465,
           "bins": [
             {
               "abs_error": 0.6401,
@@ -21659,10 +21621,10 @@
               "range": "0.0-0.2"
             },
             {
-              "abs_error": 0.1002,
-              "avg_pred": 0.3331,
-              "n": 60,
-              "observed": 0.4333,
+              "abs_error": 0.1087,
+              "avg_pred": 0.3339,
+              "n": 61,
+              "observed": 0.4426,
               "range": "0.2-0.4"
             },
             {
@@ -21680,13 +21642,13 @@
               "range": "0.6-0.8"
             }
           ],
-          "drawdown35_brier": 0.3104,
-          "drawdown35_calibration_mae": 0.16814
+          "drawdown35_brier": 0.31117,
+          "drawdown35_calibration_mae": 0.17298
         },
-        "event_rate": 0.5,
-        "n": 92,
+        "event_rate": 0.50538,
+        "n": 93,
         "raw": {
-          "avg_pred": 0.22795,
+          "avg_pred": 0.22833,
           "bins": [
             {
               "abs_error": 0.2934,
@@ -21696,10 +21658,10 @@
               "range": "0.0-0.2"
             },
             {
-              "abs_error": 0.2699,
-              "avg_pred": 0.2539,
-              "n": 21,
-              "observed": 0.5238,
+              "abs_error": 0.2911,
+              "avg_pred": 0.2543,
+              "n": 22,
+              "observed": 0.5455,
               "range": "0.2-0.4"
             },
             {
@@ -21717,13 +21679,13 @@
               "range": "0.6-0.8"
             }
           ],
-          "drawdown35_brier": 0.3253,
-          "drawdown35_calibration_mae": 0.27205
+          "drawdown35_brier": 0.32763,
+          "drawdown35_calibration_mae": 0.27704
         }
       }
     }
   },
-  "generated_at": "2026-08-30T16:19:15.381143+00:00",
+  "generated_at": "2026-08-31T18:59:30.515444+00:00",
   "history_file": "reports/history.json",
   "policy_objective": {
     "accumulation": {
@@ -21749,14 +21711,15 @@
   "schema_version": 1,
   "verdict": {
     "reasons": [
-      "bottom calibration MAE 0.20 > 0.18"
+      "all current utility promotion gates passed",
+      "common-exam plateau and synthetic adverse-path gates are reported separately and are not included in this scoped verdict"
     ],
     "scope": "CURRENT_UTILITY_AUDIT",
-    "status": "WATCH"
+    "status": "PASS"
   },
   "w_sun_retune_confirmation": {
-    "history_path": "/Users/block/agentic-coding/After20260728/Model/crypto-cycle-detection-gpt56/reports/history.json",
-    "history_sha256": "4bf220a94acbfdd3b99ecc4e691a3d6556dadc43741dc48c69633b854c3281cd",
+    "history_path": "/Users/block/agentic-coding/After20260728/Model/crypto-cycle-dashboard-gpt56-source/reports/history.json",
+    "history_sha256": "445111590accc4063380a079c1019ca63f0e84c6ca73db7f7cc971ff06c45753",
     "parameters": {
       "deep_anchor_m": 0.6,
       "floor_w": 1.0,
@@ -21769,6 +21732,6 @@
       "reserve_offset": 0.0
     },
     "production_config_mutated": false,
-    "scope": "spec-0007-selected-parameter-robustness-confirmation"
+    "scope": "spec-0008-live-parity-incumbent"
   }
 }
