@@ -61,10 +61,22 @@ header { padding:20px 24px; background:#161b22; border-bottom:1px solid #21262d;
 .decision { margin-top:12px; border-top:1px solid #283241; padding-top:10px; }
 .decision-main { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
 .decision-main b { color:#3fb950; }
-.minirows { margin-top:8px; display:grid; gap:5px; }
-.minirow { display:grid; grid-template-columns:1fr 54px 62px; gap:8px; color:#8b949e; font-size:12px;
-           font-variant-numeric:tabular-nums; }
-.minirow:first-child { color:#e6edf3; }
+.minirows { margin-top:10px; display:grid; gap:5px; padding:9px 11px; background:#0d111780;
+            border:1px solid #21262d; border-radius:9px; }
+.minirows-title { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.minirows-title b { color:#e6edf3; font-size:12px; font-weight:600; }
+.minirows-badge { color:#79c0ff; background:#1f6feb1a; border:1px solid #1f6feb55;
+                  border-radius:999px; padding:2px 6px; font-size:9px; font-weight:800;
+                  letter-spacing:.06em; }
+.minirows-caption { color:#6e7681; font-size:10.5px; line-height:1.35; }
+.minirow { display:grid; grid-template-columns:minmax(0,1fr) 66px 62px; gap:8px;
+           color:#8b949e; font-size:12px; font-variant-numeric:tabular-nums; }
+.minirow span:nth-child(n+2) { text-align:right; }
+.minirow-head { color:#6e7681; font-size:10px; text-transform:uppercase; letter-spacing:.04em;
+                padding:2px 0 3px; border-bottom:1px solid #21262d; }
+.minirow-data .mini-scenario { color:#c9d1d9; }
+.minirows-note { margin-top:2px; padding-top:5px; border-top:1px solid #21262d;
+                 color:#6e7681; font-size:10.5px; line-height:1.35; }
 .card-head { display:flex; justify-content:space-between; align-items:center; gap:10px; }
 .asset { font-size:22px; font-weight:800; }
 .price { color:#8b949e; font-size:16px; margin-left:6px; }
@@ -302,9 +314,12 @@ pre.err { background:#161b22; border:1px solid #5a1f1f; color:#ffb4b4; padding:1
               <span class="sub">mode bottom accumulation · depth floor events 15 · fast-crash overlay 0 / 0% · late-start fast-V 5 / 16% · shallow governor 0 · price-improvement catch-up 0 / 0% · hard reserve floor 20% · reserve released 0% · redeployed 0% · avg cost $68,054</span>
               <span class="sub">top distribution hold / LOW · target exposure 100% of total asset pool · calibrated P(35% drawdown, 52w) 33% · top arm 0% · prior-ATH retest 0%</span>
             </div>
-            <div class="minirows">
-              <div class="minirow"><span>lowest-regret rows</span><span>target</span><span>score</span></div>
-              <div class='minirow'><span>wait</span><span>0%</span><span>0.02</span></div><div class='minirow'><span>model target</span><span>20%</span><span>0.35</span></div><div class='minirow'><span>starter</span><span>20%</span><span>0.36</span></div>
+            <div class="minirows" aria-label="Raw snapshot comparison">
+              <div class="minirows-title"><b>Raw snapshot comparison</b><span class="minirows-badge">REFERENCE</span></div>
+              <div class="minirows-caption">Hypothetical one-shot exposures under today's posterior; not the execution plan.</div>
+              <div class="minirow minirow-head"><span>alternative</span><span>exposure</span><span>regret ↓</span></div>
+              <div class='minirow minirow-data'><span class='mini-scenario'>No-deployment baseline</span><span>0.0%</span><span>0.02</span></div><div class='minirow minirow-data'><span class='mini-scenario'>Raw posterior target</span><span>19.6%</span><span>0.35</span></div><div class='minirow minirow-data'><span class='mini-scenario'>Starter (25% of working)</span><span>20.0%</span><span>0.36</span></div>
+              <div class="minirows-note">Lower is better · 0% is a baseline, not a sell signal · follow full policy above</div>
             </div>
           </div>
         </section>
@@ -349,9 +364,12 @@ pre.err { background:#161b22; border:1px solid #5a1f1f; color:#ffb4b4; padding:1
               <span class="sub">mode recovery redeploy active · depth floor events 7 · fast-crash overlay 0 / 0% · late-start fast-V 0 / 0% · shallow governor 0 · price-improvement catch-up 0 / 0% · hard reserve floor 30% · reserve released 0% · redeployed 8% · avg cost $1,934</span>
               <span class="sub">top distribution inactive / LOW · target exposure 100% of total asset pool · calibrated P(35% drawdown, 52w) 35% · top arm 0% · prior-ATH retest 0%</span>
             </div>
-            <div class="minirows">
-              <div class="minirow"><span>lowest-regret rows</span><span>target</span><span>score</span></div>
-              <div class='minirow'><span>wait</span><span>0%</span><span>0.09</span></div><div class='minirow'><span>starter</span><span>18%</span><span>0.22</span></div><div class='minirow'><span>model target</span><span>41%</span><span>0.38</span></div>
+            <div class="minirows" aria-label="Raw snapshot comparison">
+              <div class="minirows-title"><b>Raw snapshot comparison</b><span class="minirows-badge">REFERENCE</span></div>
+              <div class="minirows-caption">Hypothetical one-shot exposures under today's posterior; not the execution plan.</div>
+              <div class="minirow minirow-head"><span>alternative</span><span>exposure</span><span>regret ↓</span></div>
+              <div class='minirow minirow-data'><span class='mini-scenario'>No-deployment baseline</span><span>0.0%</span><span>0.09</span></div><div class='minirow minirow-data'><span class='mini-scenario'>Starter (25% of working)</span><span>17.5%</span><span>0.22</span></div><div class='minirow minirow-data'><span class='mini-scenario'>Raw posterior target</span><span>40.8%</span><span>0.38</span></div>
+              <div class="minirows-note">Lower is better · 0% is a baseline, not a sell signal · follow full policy above</div>
             </div>
           </div>
         </section></div></section>
