@@ -9082,17 +9082,17 @@
     ],
     "status": "CORE_FAILED_STRICTER_GATES"
   },
-  "generated_at": "2026-09-02T16:00:26-04:00",
+  "generated_at": "2026-09-02T20:30:41-04:00",
   "ledger": {
-    "count": 720,
+    "count": 721,
     "last": {
       "data_age_days": 0,
       "data_as_of": "2026-09-02",
-      "generated_at": "2026-09-02T16:00:25-04:00",
-      "key": "live|2026-09-02|2026-09-02T16:00",
+      "generated_at": "2026-09-02T20:30:38-04:00",
+      "key": "close|2026-09-02|2026-09-02T20:30",
       "material": true,
       "run_date": "2026-09-02",
-      "run_kind": "live",
+      "run_kind": "close",
       "schema_version": 1,
       "signals": {
         "BTC": {
@@ -9102,13 +9102,13 @@
             "raw-policy divergence >=15pp"
           ],
           "full_policy_target": 0.3606,
-          "price": 77179.0,
+          "price": 77310.44,
           "prior_close_target": 0.3606,
-          "raw_policy_gap": 0.162,
-          "raw_posterior_target": 0.1986,
+          "raw_policy_gap": 0.1616,
+          "raw_posterior_target": 0.199,
           "top_keep": 1.0,
           "top_phase": "hold",
-          "top_risk": 0.329
+          "top_risk": 0.3291
         },
         "ETH": {
           "action": "OPTIONAL_CATCHUP_ONLY",
@@ -9116,36 +9116,17 @@
             "policy above today-only posterior"
           ],
           "full_policy_target": 0.5132,
-          "price": 2388.42,
+          "price": 2390.95,
           "prior_close_target": 0.5132,
-          "raw_policy_gap": 0.1074,
-          "raw_posterior_target": 0.4058,
+          "raw_policy_gap": 0.1033,
+          "raw_posterior_target": 0.4099,
           "top_keep": 1.0,
           "top_phase": "inactive",
-          "top_risk": 0.3452
+          "top_risk": 0.3453
         }
       }
     },
     "open_material_signals": [
-      {
-        "action": "OPTIONAL_CATCHUP_ONLY",
-        "asset": "BTC",
-        "flags": [
-          "policy above today-only posterior",
-          "raw-policy divergence >=15pp"
-        ],
-        "gap": 0.1624,
-        "generated_at": "2026-09-02T14:30:29-04:00"
-      },
-      {
-        "action": "OPTIONAL_CATCHUP_ONLY",
-        "asset": "ETH",
-        "flags": [
-          "policy above today-only posterior"
-        ],
-        "gap": 0.1073,
-        "generated_at": "2026-09-02T14:30:29-04:00"
-      },
       {
         "action": "OPTIONAL_CATCHUP_ONLY",
         "asset": "BTC",
@@ -9202,17 +9183,36 @@
         ],
         "gap": 0.1074,
         "generated_at": "2026-09-02T16:00:25-04:00"
+      },
+      {
+        "action": "OPTIONAL_CATCHUP_ONLY",
+        "asset": "BTC",
+        "flags": [
+          "policy above today-only posterior",
+          "raw-policy divergence >=15pp"
+        ],
+        "gap": 0.1616,
+        "generated_at": "2026-09-02T20:30:38-04:00"
+      },
+      {
+        "action": "OPTIONAL_CATCHUP_ONLY",
+        "asset": "ETH",
+        "flags": [
+          "policy above today-only posterior"
+        ],
+        "gap": 0.1033,
+        "generated_at": "2026-09-02T20:30:38-04:00"
       }
     ]
   },
   "live_record": {
     "data_age_days": 0,
     "data_as_of": "2026-09-02",
-    "generated_at": "2026-09-02T16:00:25-04:00",
-    "key": "live|2026-09-02|2026-09-02T16:00",
+    "generated_at": "2026-09-02T20:30:38-04:00",
+    "key": "close|2026-09-02|2026-09-02T20:30",
     "material": true,
     "run_date": "2026-09-02",
-    "run_kind": "live",
+    "run_kind": "close",
     "schema_version": 1,
     "signals": {
       "BTC": {
@@ -9222,13 +9222,13 @@
           "raw-policy divergence >=15pp"
         ],
         "full_policy_target": 0.3606,
-        "price": 77179.0,
+        "price": 77310.44,
         "prior_close_target": 0.3606,
-        "raw_policy_gap": 0.162,
-        "raw_posterior_target": 0.1986,
+        "raw_policy_gap": 0.1616,
+        "raw_posterior_target": 0.199,
         "top_keep": 1.0,
         "top_phase": "hold",
-        "top_risk": 0.329
+        "top_risk": 0.3291
       },
       "ETH": {
         "action": "OPTIONAL_CATCHUP_ONLY",
@@ -9236,13 +9236,13 @@
           "policy above today-only posterior"
         ],
         "full_policy_target": 0.5132,
-        "price": 2388.42,
+        "price": 2390.95,
         "prior_close_target": 0.5132,
-        "raw_policy_gap": 0.1074,
-        "raw_posterior_target": 0.4058,
+        "raw_policy_gap": 0.1033,
+        "raw_posterior_target": 0.4099,
         "top_keep": 1.0,
         "top_phase": "inactive",
-        "top_risk": 0.3452
+        "top_risk": 0.3453
       }
     }
   },
@@ -9281,15 +9281,15 @@
   "schema_version": 1,
   "watchdog": {
     "data_age_days": 0.0,
-    "expected_latest_slot_et": "2026-09-02T16:00-04:00",
+    "expected_latest_slot_et": "2026-09-02T20:30-04:00",
     "last_close_log_done": "2026-09-01 20:32:03",
-    "last_live_log_done": "2026-09-02 15:31:05",
+    "last_live_log_done": "2026-09-02 16:01:04",
     "minutes_behind_expected": 0.0,
     "reasons": [
       "refresh cadence healthy"
     ],
-    "site_index_mtime_et": "2026-09-02T15:30:31-04:00",
-    "snapshot_generated_at_et": "2026-09-02T16:00-04:00",
+    "site_index_mtime_et": "2026-09-02T16:00:30-04:00",
+    "snapshot_generated_at_et": "2026-09-02T20:30-04:00",
     "status": "PASS"
   }
 }
