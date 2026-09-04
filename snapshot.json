@@ -4,7 +4,7 @@
   "run_kind": "live",
   "scheduled_close_as_of": null,
   "forecast_anchor": "latest_live_spot",
-  "generated_at": "2026-09-04T15:00:54-04:00",
+  "generated_at": "2026-09-04T15:31:09-04:00",
   "run_date": "2026-09-04",
   "data_as_of": "2026-09-04",
   "data_age_days": 0,
@@ -52,23 +52,23 @@
     "BTC": {
       "asset": "BTC",
       "as_of": "2026-09-04",
-      "spot": 79643.0,
-      "median_low": 43246.496403,
-      "price_sigma_log": 0.320038,
+      "spot": 79812.0,
+      "median_low": 43272.352557,
+      "price_sigma_log": 0.319997,
       "date_sigma_days": 44.867488,
       "price_quantiles": {
-        "p10": 28398.330325,
-        "p25": 36531.36304,
-        "p50": 47543.55744,
-        "p75": 79643.0,
-        "p90": 79643.0
+        "p10": 28416.837897,
+        "p25": 36553.993398,
+        "p50": 47571.406249,
+        "p75": 79812.0,
+        "p90": 79812.0
       },
       "raw_price_quantiles": {
-        "p10": 28696.38439,
-        "p25": 34850.027664,
-        "p50": 43246.496403,
-        "p75": 53665.938781,
-        "p90": 65174.045124
+        "p10": 28715.047857,
+        "p25": 34871.826652,
+        "p50": 43272.352557,
+        "p75": 53696.541753,
+        "p90": 65209.58994
       },
       "price_distribution_basis": "calibrated_reliability_curve",
       "price_distribution_calibration": {
@@ -138,17 +138,17 @@
         "low_below_spot": 0.955461,
         "already_seen_or_shallow": 0.044539,
         "down_10": 0.695723,
-        "down_20": 0.59079,
+        "down_20": 0.59117,
         "down_30": 0.516443,
-        "down_40": 0.437224
+        "down_40": 0.438094
       },
       "raw_probabilities": {
-        "low_below_spot": 0.971806,
-        "down_10": 0.94281,
-        "down_20": 0.887009,
-        "down_30": 0.786268,
-        "down_40": 0.622433,
-        "already_seen_or_shallow": 0.028194
+        "low_below_spot": 0.972127,
+        "down_10": 0.943376,
+        "down_20": 0.887948,
+        "down_30": 0.78768,
+        "down_40": 0.624254,
+        "already_seen_or_shallow": 0.027873
       },
       "calibration": {
         "type": "fixed-bin-monotone-shrinkage",
@@ -421,61 +421,61 @@
       "decision_probability_basis": "raw_structural",
       "decision": {
         "score_input_now_fraction": 0.360641,
-        "model_now_fraction": 0.193141,
+        "model_now_fraction": 0.192888,
         "working_fraction": 0.8,
-        "remaining_working_fraction": 0.606859,
+        "remaining_working_fraction": 0.607112,
         "reserve_fraction": 0.2,
         "hard_reserve_fraction": 0.2,
-        "cash_not_deployed_fraction": 0.806859,
-        "tactical_holdback_fraction": 0.091029,
+        "cash_not_deployed_fraction": 0.807112,
+        "tactical_holdback_fraction": 0.091067,
         "best_row": {
           "label": "wait",
           "target_fraction": 0.0,
           "expected_mark_to_low": 0.0,
-          "wait_regret": 0.013984,
+          "wait_regret": 0.013825,
           "deep_leg_regret": 0.0,
-          "score": 0.013984
+          "score": 0.013825
         },
         "rows": [
           {
             "label": "wait",
             "target_fraction": 0.0,
             "expected_mark_to_low": 0.0,
-            "wait_regret": 0.013984,
+            "wait_regret": 0.013825,
             "deep_leg_regret": 0.0,
-            "score": 0.013984
+            "score": 0.013825
           },
           {
             "label": "model target",
-            "target_fraction": 0.193141,
-            "expected_mark_to_low": 0.173656,
-            "wait_regret": 0.010608,
-            "deep_leg_regret": 0.171318,
-            "score": 0.355582
+            "target_fraction": 0.192888,
+            "expected_mark_to_low": 0.173985,
+            "wait_regret": 0.010492,
+            "deep_leg_regret": 0.171275,
+            "score": 0.355751
           },
           {
             "label": "starter",
             "target_fraction": 0.2,
-            "expected_mark_to_low": 0.179824,
-            "wait_regret": 0.010488,
-            "deep_leg_regret": 0.177402,
-            "score": 0.367714
+            "expected_mark_to_low": 0.180399,
+            "wait_regret": 0.010369,
+            "deep_leg_regret": 0.17759,
+            "score": 0.368358
           },
           {
             "label": "score-input target",
             "target_fraction": 0.360641,
-            "expected_mark_to_low": 0.324259,
-            "wait_regret": 0.00768,
-            "deep_leg_regret": 0.319892,
-            "score": 0.651831
+            "expected_mark_to_low": 0.325297,
+            "wait_regret": 0.007593,
+            "deep_leg_regret": 0.32023,
+            "score": 0.65312
           },
           {
             "label": "full working",
             "target_fraction": 0.8,
-            "expected_mark_to_low": 0.719295,
+            "expected_mark_to_low": 0.721597,
             "wait_regret": 0.0,
-            "deep_leg_regret": 0.709608,
-            "score": 1.428903
+            "deep_leg_regret": 0.710358,
+            "score": 1.431956
           }
         ]
       },
@@ -491,18 +491,18 @@
         "daily_trigger_n": 343,
         "analogue_n": 3,
         "analogue_effective_n": 2.999992,
-        "price_band_pct": 0.844056,
+        "price_band_pct": 0.844004,
         "date_window_days": 115
       },
       "forecast_source": "valuation-state",
       "legacy_reference": {
-        "price": 48856.23099,
+        "price": 48938.490722,
         "date": "2026-07-12",
         "reg_weight": 0.55,
         "ana_weight": 0.45,
-        "implied_decline": -0.38656,
-        "lo_price": 41863.800856,
-        "hi_price": 52566.1918,
+        "implied_decline": -0.386828,
+        "lo_price": 41945.784231,
+        "hi_price": 52609.430636,
         "lo_date": "2026-06-09",
         "hi_date": "2026-08-14"
       }
@@ -510,23 +510,23 @@
     "ETH": {
       "asset": "ETH",
       "as_of": "2026-09-04",
-      "spot": 2450.64,
-      "median_low": 1924.101957,
-      "price_sigma_log": 0.30088,
+      "spot": 2457.42,
+      "median_low": 1927.109712,
+      "price_sigma_log": 0.301523,
       "date_sigma_days": 51.109922,
       "price_quantiles": {
-        "p10": 1117.120808,
-        "p25": 1281.652721,
-        "p50": 1734.360024,
-        "p75": 2450.64,
-        "p90": 2450.64
+        "p10": 1117.568975,
+        "p25": 1282.543083,
+        "p50": 1736.686159,
+        "p75": 2457.42,
+        "p90": 2457.42
       },
       "raw_price_quantiles": {
-        "p10": 1308.479522,
-        "p25": 1570.695792,
-        "p50": 1924.101957,
-        "p75": 2357.024421,
-        "p90": 2450.64
+        "p10": 1309.446436,
+        "p25": 1572.469598,
+        "p50": 1927.109712,
+        "p75": 2361.732048,
+        "p90": 2457.42
       },
       "price_distribution_basis": "calibrated_reliability_curve",
       "price_distribution_calibration": {
@@ -593,20 +593,20 @@
         "p90": "2026-11-25"
       },
       "probabilities": {
-        "low_below_spot": 0.894112,
-        "already_seen_or_shallow": 0.105888,
-        "down_10": 0.754289,
-        "down_20": 0.524726,
-        "down_30": 0.419771,
-        "down_40": 0.371283
+        "low_below_spot": 0.894455,
+        "already_seen_or_shallow": 0.105545,
+        "down_10": 0.755517,
+        "down_20": 0.526218,
+        "down_30": 0.421998,
+        "down_40": 0.373077
       },
       "raw_probabilities": {
-        "low_below_spot": 0.789284,
-        "down_10": 0.675002,
-        "down_20": 0.52484,
-        "down_30": 0.351417,
-        "down_40": 0.185706,
-        "already_seen_or_shallow": 0.210716
+        "low_below_spot": 0.789939,
+        "down_10": 0.676086,
+        "down_20": 0.526373,
+        "down_30": 0.353197,
+        "down_40": 0.187286,
+        "already_seen_or_shallow": 0.210061
       },
       "calibration": {
         "type": "fixed-bin-monotone-shrinkage",
@@ -878,62 +878,62 @@
       },
       "decision_probability_basis": "raw_structural",
       "decision": {
-        "score_input_now_fraction": 0.512301,
-        "model_now_fraction": 0.398173,
+        "score_input_now_fraction": 0.513111,
+        "model_now_fraction": 0.398259,
         "working_fraction": 0.7,
-        "remaining_working_fraction": 0.301827,
+        "remaining_working_fraction": 0.301741,
         "reserve_fraction": 0.3,
         "hard_reserve_fraction": 0.3,
-        "cash_not_deployed_fraction": 0.601827,
-        "tactical_holdback_fraction": 0.045274,
+        "cash_not_deployed_fraction": 0.601741,
+        "tactical_holdback_fraction": 0.045261,
         "best_row": {
           "label": "wait",
           "target_fraction": 0.0,
           "expected_mark_to_low": 0.0,
-          "wait_regret": 0.091451,
+          "wait_regret": 0.091166,
           "deep_leg_regret": 0.0,
-          "score": 0.091451
+          "score": 0.091166
         },
         "rows": [
           {
             "label": "wait",
             "target_fraction": 0.0,
             "expected_mark_to_low": 0.0,
-            "wait_regret": 0.091451,
+            "wait_regret": 0.091166,
             "deep_leg_regret": 0.0,
-            "score": 0.091451
+            "score": 0.091166
           },
           {
             "label": "starter",
             "target_fraction": 0.175,
-            "expected_mark_to_low": 0.056845,
-            "wait_regret": 0.068588,
-            "deep_leg_regret": 0.091847,
-            "score": 0.21728
+            "expected_mark_to_low": 0.05714,
+            "wait_regret": 0.068375,
+            "deep_leg_regret": 0.092115,
+            "score": 0.21763
           },
           {
             "label": "model target",
-            "target_fraction": 0.398173,
-            "expected_mark_to_low": 0.129339,
-            "wait_regret": 0.039432,
-            "deep_leg_regret": 0.208977,
-            "score": 0.377747
+            "target_fraction": 0.398259,
+            "expected_mark_to_low": 0.130038,
+            "wait_regret": 0.039298,
+            "deep_leg_regret": 0.209633,
+            "score": 0.378968
           },
           {
             "label": "score-input target",
-            "target_fraction": 0.512301,
-            "expected_mark_to_low": 0.166411,
-            "wait_regret": 0.024522,
-            "deep_leg_regret": 0.268876,
-            "score": 0.459809
+            "target_fraction": 0.513111,
+            "expected_mark_to_low": 0.167539,
+            "wait_regret": 0.02434,
+            "deep_leg_regret": 0.270088,
+            "score": 0.461966
           },
           {
             "label": "full working",
             "target_fraction": 0.7,
-            "expected_mark_to_low": 0.227381,
+            "expected_mark_to_low": 0.228561,
             "wait_regret": 0.0,
-            "deep_leg_regret": 0.367388,
-            "score": 0.594769
+            "deep_leg_regret": 0.368461,
+            "score": 0.597021
           }
         ]
       },
@@ -948,19 +948,19 @@
         "event_n": 9,
         "daily_trigger_n": 261,
         "analogue_n": 3,
-        "analogue_effective_n": 2.999994,
-        "price_band_pct": 0.647264,
+        "analogue_effective_n": 2.999995,
+        "price_band_pct": 0.649074,
         "date_window_days": 131
       },
       "forecast_source": "valuation-state",
       "legacy_reference": {
-        "price": 1579.176169,
+        "price": 1582.022726,
         "date": "2026-06-21",
         "reg_weight": 0.35,
         "ana_weight": 0.65,
-        "implied_decline": -0.355607,
-        "lo_price": 1271.367888,
-        "hi_price": 1613.858188,
+        "implied_decline": -0.356226,
+        "lo_price": 1274.071352,
+        "hi_price": 1616.807451,
         "lo_date": "2026-05-17",
         "hi_date": "2026-07-24"
       }
@@ -968,20 +968,20 @@
   },
   "assets": {
     "BTC": {
-      "price": 79643.0,
+      "price": 79812.0,
       "policy_week_end": "2026-08-30",
       "target_fraction": 0.3606,
-      "raw_posterior_target_fraction": 0.1931,
+      "raw_posterior_target_fraction": 0.1929,
       "decision_probability_basis": "raw_structural",
       "working_fraction": 0.8,
       "reserve_fraction": 0.2,
-      "remaining_working_fraction": 0.6069,
-      "cash_not_deployed_fraction": 0.8069,
-      "tactical_holdback_fraction": 0.091,
+      "remaining_working_fraction": 0.6071,
+      "cash_not_deployed_fraction": 0.8071,
+      "tactical_holdback_fraction": 0.0911,
       "full_policy": {
         "target_fraction": 0.3606,
         "cash_fraction": 0.6394,
-        "raw_posterior_target_fraction": 0.1931,
+        "raw_posterior_target_fraction": 0.1929,
         "avg_cost": 68053.87,
         "bull_mode": false,
         "hard_reserve_floor": 0.2,
@@ -1000,8 +1000,8 @@
       "live_since_close": {
         "close_as_of": "2026-09-03",
         "close_price": 81267.23,
-        "price_delta_fraction": -0.019986,
-        "price_delta_pct": -1.999,
+        "price_delta_fraction": -0.017907,
+        "price_delta_pct": -1.791,
         "close_target_fraction": 0.3606,
         "target_delta_fraction": 4.1e-05,
         "target_delta_percentage_points": 0.004,
@@ -1009,25 +1009,25 @@
       },
       "future_low": {
         "basis": "raw_structural",
-        "p10": 28696.38,
-        "p50": 43246.5,
-        "p90": 65174.05
+        "p10": 28715.05,
+        "p50": 43272.35,
+        "p90": 65209.59
       },
       "raw_future_low": {
         "basis": "raw_structural",
-        "p10": 28696.38,
-        "p50": 43246.5,
-        "p90": 65174.05
+        "p10": 28715.05,
+        "p50": 43272.35,
+        "p90": 65209.59
       },
       "bottom_forecast": {
         "source": "valuation-state",
-        "model_price": 43246.5,
+        "model_price": 43272.35,
         "model_date": "2026-09-22",
-        "model_lo_price": 32142.07,
-        "model_hi_price": 68644.52,
+        "model_lo_price": 32165.67,
+        "model_hi_price": 68687.72,
         "model_lo_date": "2026-09-04",
         "model_hi_date": "2026-12-28",
-        "reference_model_price": 48856.23,
+        "reference_model_price": 48938.49,
         "reference_model_date": "2026-07-12"
       },
       "timing": {
@@ -1056,28 +1056,28 @@
       },
       "probabilities": {
         "basis": "raw_structural",
-        "low_below_spot": 0.971806,
-        "down_10": 0.94281,
-        "down_20": 0.887009,
-        "down_30": 0.786268,
-        "down_40": 0.622433
+        "low_below_spot": 0.972127,
+        "down_10": 0.943376,
+        "down_20": 0.887948,
+        "down_30": 0.78768,
+        "down_40": 0.624254
       },
       "raw_probabilities": {
         "basis": "raw_structural",
-        "low_below_spot": 0.971806,
-        "down_10": 0.94281,
-        "down_20": 0.887009,
-        "down_30": 0.786268,
-        "down_40": 0.622433
+        "low_below_spot": 0.972127,
+        "down_10": 0.943376,
+        "down_20": 0.887948,
+        "down_30": 0.78768,
+        "down_40": 0.624254
       },
       "threshold_calibrated_probabilities": {
         "basis": "independent_threshold_reliability_curves",
         "role": "diagnostic_only",
         "low_below_spot": 0.955461,
         "down_10": 0.695723,
-        "down_20": 0.59079,
+        "down_20": 0.59117,
         "down_30": 0.516443,
-        "down_40": 0.437224
+        "down_40": 0.438094
       },
       "top_distribution": {
         "phase": "hold",
@@ -1085,21 +1085,21 @@
         "active_distribution": false,
         "position_target": 1.0,
         "trim_fraction": 0.0,
-        "top_soon_probability": 0.435662,
-        "top_seen_probability": 0.007441,
-        "drawdown_26w_probability": 0.199477,
-        "drawdown_52w_probability": 0.336023,
-        "raw_drawdown_52w_probability": 0.274424,
+        "top_soon_probability": 0.436379,
+        "top_seen_probability": 0.007365,
+        "drawdown_26w_probability": 0.199912,
+        "drawdown_52w_probability": 0.336349,
+        "raw_drawdown_52w_probability": 0.274923,
         "drawdown_52w_probability_basis": "calibrated_reliability_curve",
         "trail_stop_pct": null,
         "stop_price": null,
         "components": {
-          "extension": 0.789600434364583,
-          "trend_extension": 0.4851272917120578,
-          "blowoff": 0.7675701926212766,
+          "extension": 0.7919814840432606,
+          "trend_extension": 0.48910748927162356,
+          "blowoff": 0.7708726988936372,
           "ath_structure": 0.00010981556714174307,
           "cycle_maturity": 0.9943923493858219,
-          "legacy_heat": 0.00019130561109674063,
+          "legacy_heat": 0.0001914659466127876,
           "prior_ath_retest": 0.0,
           "euphoria_arm": 0.0
         }
@@ -1115,26 +1115,26 @@
         "event_n": 6,
         "daily_trigger_n": 343,
         "analogue_n": 3,
-        "analogue_effective_n": 2.9999923411690155,
-        "price_band_pct": 0.8440558010035489,
+        "analogue_effective_n": 2.999992190803139,
+        "price_band_pct": 0.8440042697025809,
         "date_window_days": 115
       }
     },
     "ETH": {
-      "price": 2450.64,
+      "price": 2457.42,
       "policy_week_end": "2026-08-30",
       "target_fraction": 0.5132,
-      "raw_posterior_target_fraction": 0.3982,
+      "raw_posterior_target_fraction": 0.3983,
       "decision_probability_basis": "raw_structural",
       "working_fraction": 0.7,
       "reserve_fraction": 0.3,
-      "remaining_working_fraction": 0.3018,
-      "cash_not_deployed_fraction": 0.6018,
+      "remaining_working_fraction": 0.3017,
+      "cash_not_deployed_fraction": 0.6017,
       "tactical_holdback_fraction": 0.0453,
       "full_policy": {
         "target_fraction": 0.5132,
         "cash_fraction": 0.4868,
-        "raw_posterior_target_fraction": 0.3982,
+        "raw_posterior_target_fraction": 0.3983,
         "avg_cost": 1933.79,
         "bull_mode": true,
         "hard_reserve_floor": 0.3,
@@ -1153,8 +1153,8 @@
       "live_since_close": {
         "close_as_of": "2026-09-03",
         "close_price": 2507.59,
-        "price_delta_fraction": -0.022711,
-        "price_delta_pct": -2.271,
+        "price_delta_fraction": -0.020007,
+        "price_delta_pct": -2.001,
         "close_target_fraction": 0.5132,
         "target_delta_fraction": 4.5e-05,
         "target_delta_percentage_points": 0.005,
@@ -1162,25 +1162,25 @@
       },
       "future_low": {
         "basis": "raw_structural",
-        "p10": 1308.48,
-        "p50": 1924.1,
-        "p90": 2450.64
+        "p10": 1309.45,
+        "p50": 1927.11,
+        "p90": 2457.42
       },
       "raw_future_low": {
         "basis": "raw_structural",
-        "p10": 1308.48,
-        "p50": 1924.1,
-        "p90": 2450.64
+        "p10": 1309.45,
+        "p50": 1927.11,
+        "p90": 2457.42
       },
       "bottom_forecast": {
         "source": "valuation-state",
-        "model_price": 1924.1,
+        "model_price": 1927.11,
         "model_date": "2026-09-20",
-        "model_lo_price": 1205.24,
-        "model_hi_price": 2450.64,
+        "model_lo_price": 1206.58,
+        "model_hi_price": 2457.42,
         "model_lo_date": "2026-09-04",
         "model_hi_date": "2027-01-13",
-        "reference_model_price": 1579.18,
+        "reference_model_price": 1582.02,
         "reference_model_date": "2026-06-21"
       },
       "timing": {
@@ -1209,28 +1209,28 @@
       },
       "probabilities": {
         "basis": "raw_structural",
-        "low_below_spot": 0.789284,
-        "down_10": 0.675002,
-        "down_20": 0.52484,
-        "down_30": 0.351417,
-        "down_40": 0.185706
+        "low_below_spot": 0.789939,
+        "down_10": 0.676086,
+        "down_20": 0.526373,
+        "down_30": 0.353197,
+        "down_40": 0.187286
       },
       "raw_probabilities": {
         "basis": "raw_structural",
-        "low_below_spot": 0.789284,
-        "down_10": 0.675002,
-        "down_20": 0.52484,
-        "down_30": 0.351417,
-        "down_40": 0.185706
+        "low_below_spot": 0.789939,
+        "down_10": 0.676086,
+        "down_20": 0.526373,
+        "down_30": 0.353197,
+        "down_40": 0.187286
       },
       "threshold_calibrated_probabilities": {
         "basis": "independent_threshold_reliability_curves",
         "role": "diagnostic_only",
-        "low_below_spot": 0.894112,
-        "down_10": 0.754289,
-        "down_20": 0.524726,
-        "down_30": 0.419771,
-        "down_40": 0.371283
+        "low_below_spot": 0.894455,
+        "down_10": 0.755517,
+        "down_20": 0.526218,
+        "down_30": 0.421998,
+        "down_40": 0.373077
       },
       "top_distribution": {
         "phase": "inactive",
@@ -1238,21 +1238,21 @@
         "active_distribution": false,
         "position_target": 1.0,
         "trim_fraction": 0.0,
-        "top_soon_probability": 0.152807,
-        "top_seen_probability": 0.001351,
-        "drawdown_26w_probability": 0.150332,
-        "drawdown_52w_probability": 0.34549,
-        "raw_drawdown_52w_probability": 0.187619,
+        "top_soon_probability": 0.153061,
+        "top_seen_probability": 0.001329,
+        "drawdown_26w_probability": 0.150631,
+        "drawdown_52w_probability": 0.345659,
+        "raw_drawdown_52w_probability": 0.187938,
         "drawdown_52w_probability_basis": "calibrated_reliability_curve",
         "trail_stop_pct": null,
         "stop_price": null,
         "components": {
-          "extension": 0.07610683294601357,
-          "trend_extension": 0.5841783811168596,
-          "blowoff": 0.6637747852067946,
+          "extension": 0.07668535003062985,
+          "trend_extension": 0.5881042503008402,
+          "blowoff": 0.6664618571075611,
           "ath_structure": 7.658335077360924e-07,
           "cycle_maturity": 0.9943923493858219,
-          "legacy_heat": 7.830989266361358e-07,
+          "legacy_heat": 7.840344385741404e-07,
           "prior_ath_retest": 0.0,
           "euphoria_arm": 0.0
         }
@@ -1268,8 +1268,8 @@
         "event_n": 9,
         "daily_trigger_n": 261,
         "analogue_n": 3,
-        "analogue_effective_n": 2.999994035831748,
-        "price_band_pct": 0.6472643304202113,
+        "analogue_effective_n": 2.999994507274825,
+        "price_band_pct": 0.6490738409565892,
         "date_window_days": 131
       }
     }
