@@ -9082,72 +9082,52 @@
     ],
     "status": "CORE_FAILED_STRICTER_GATES"
   },
-  "generated_at": "2026-09-20T16:00:32-04:00",
+  "generated_at": "2026-09-20T20:00:38-04:00",
   "ledger": {
-    "count": 1000,
+    "count": 1001,
     "last": {
       "data_age_days": 0,
       "data_as_of": "2026-09-20",
-      "generated_at": "2026-09-20T16:00:30-04:00",
-      "key": "live|2026-09-20|2026-09-20T16:00",
+      "generated_at": "2026-09-20T20:00:35-04:00",
+      "key": "close|2026-09-20|2026-09-20T20:00",
       "material": true,
       "run_date": "2026-09-20",
-      "run_kind": "live",
+      "run_kind": "close",
       "schema_version": 1,
       "signals": {
         "BTC": {
-          "action": "OPTIONAL_CATCHUP_ONLY",
+          "action": "BUY_RAISE_TARGET",
           "flags": [
             "policy above today-only posterior",
             "raw-policy divergence >=15pp"
           ],
-          "full_policy_target": 0.5201,
-          "price": 81153.0,
+          "full_policy_target": 0.5695,
+          "price": 81173.41,
           "prior_close_target": 0.5201,
-          "raw_policy_gap": 0.2432,
-          "raw_posterior_target": 0.2769,
+          "raw_policy_gap": 0.2666,
+          "raw_posterior_target": 0.3029,
           "top_keep": 1.0,
           "top_phase": "hold",
-          "top_risk": 0.319
+          "top_risk": 0.3189
         },
         "ETH": {
-          "action": "BUY_ACCUMULATE",
+          "action": "BUY_RAISE_TARGET",
           "flags": [
             "policy above today-only posterior",
             "raw-policy divergence >=15pp"
           ],
-          "full_policy_target": 0.6117,
-          "price": 2632.25,
+          "full_policy_target": 0.6462,
+          "price": 2642.65,
           "prior_close_target": 0.6117,
-          "raw_policy_gap": 0.1616,
-          "raw_posterior_target": 0.4501,
+          "raw_policy_gap": 0.177,
+          "raw_posterior_target": 0.4692,
           "top_keep": 1.0,
           "top_phase": "inactive",
-          "top_risk": 0.3383
+          "top_risk": 0.3385
         }
       }
     },
     "open_material_signals": [
-      {
-        "action": "OPTIONAL_CATCHUP_ONLY",
-        "asset": "BTC",
-        "flags": [
-          "policy above today-only posterior",
-          "raw-policy divergence >=15pp"
-        ],
-        "gap": 0.2434,
-        "generated_at": "2026-09-20T14:30:30-04:00"
-      },
-      {
-        "action": "BUY_ACCUMULATE",
-        "asset": "ETH",
-        "flags": [
-          "policy above today-only posterior",
-          "raw-policy divergence >=15pp"
-        ],
-        "gap": 0.1616,
-        "generated_at": "2026-09-20T14:30:30-04:00"
-      },
       {
         "action": "OPTIONAL_CATCHUP_ONLY",
         "asset": "BTC",
@@ -9207,48 +9187,68 @@
         ],
         "gap": 0.1616,
         "generated_at": "2026-09-20T16:00:30-04:00"
+      },
+      {
+        "action": "BUY_RAISE_TARGET",
+        "asset": "BTC",
+        "flags": [
+          "policy above today-only posterior",
+          "raw-policy divergence >=15pp"
+        ],
+        "gap": 0.2666,
+        "generated_at": "2026-09-20T20:00:35-04:00"
+      },
+      {
+        "action": "BUY_RAISE_TARGET",
+        "asset": "ETH",
+        "flags": [
+          "policy above today-only posterior",
+          "raw-policy divergence >=15pp"
+        ],
+        "gap": 0.177,
+        "generated_at": "2026-09-20T20:00:35-04:00"
       }
     ]
   },
   "live_record": {
     "data_age_days": 0,
     "data_as_of": "2026-09-20",
-    "generated_at": "2026-09-20T16:00:30-04:00",
-    "key": "live|2026-09-20|2026-09-20T16:00",
+    "generated_at": "2026-09-20T20:00:35-04:00",
+    "key": "close|2026-09-20|2026-09-20T20:00",
     "material": true,
     "run_date": "2026-09-20",
-    "run_kind": "live",
+    "run_kind": "close",
     "schema_version": 1,
     "signals": {
       "BTC": {
-        "action": "OPTIONAL_CATCHUP_ONLY",
+        "action": "BUY_RAISE_TARGET",
         "flags": [
           "policy above today-only posterior",
           "raw-policy divergence >=15pp"
         ],
-        "full_policy_target": 0.5201,
-        "price": 81153.0,
+        "full_policy_target": 0.5695,
+        "price": 81173.41,
         "prior_close_target": 0.5201,
-        "raw_policy_gap": 0.2432,
-        "raw_posterior_target": 0.2769,
+        "raw_policy_gap": 0.2666,
+        "raw_posterior_target": 0.3029,
         "top_keep": 1.0,
         "top_phase": "hold",
-        "top_risk": 0.319
+        "top_risk": 0.3189
       },
       "ETH": {
-        "action": "BUY_ACCUMULATE",
+        "action": "BUY_RAISE_TARGET",
         "flags": [
           "policy above today-only posterior",
           "raw-policy divergence >=15pp"
         ],
-        "full_policy_target": 0.6117,
-        "price": 2632.25,
+        "full_policy_target": 0.6462,
+        "price": 2642.65,
         "prior_close_target": 0.6117,
-        "raw_policy_gap": 0.1616,
-        "raw_posterior_target": 0.4501,
+        "raw_policy_gap": 0.177,
+        "raw_posterior_target": 0.4692,
         "top_keep": 1.0,
         "top_phase": "inactive",
-        "top_risk": 0.3383
+        "top_risk": 0.3385
       }
     }
   },
@@ -9287,15 +9287,15 @@
   "schema_version": 1,
   "watchdog": {
     "data_age_days": 0.0,
-    "expected_latest_slot_et": "2026-09-20T16:00-04:00",
+    "expected_latest_slot_et": "2026-09-20T20:00-04:00",
     "last_close_log_done": "2026-09-19 20:32:05",
-    "last_live_log_done": "2026-09-20 15:31:09",
+    "last_live_log_done": "2026-09-20 16:01:09",
     "minutes_behind_expected": 0.0,
     "reasons": [
       "refresh cadence healthy"
     ],
-    "site_index_mtime_et": "2026-09-20T15:30:36-04:00",
-    "snapshot_generated_at_et": "2026-09-20T16:00-04:00",
+    "site_index_mtime_et": "2026-09-20T16:00:36-04:00",
+    "snapshot_generated_at_et": "2026-09-20T20:00-04:00",
     "status": "PASS"
   }
 }
